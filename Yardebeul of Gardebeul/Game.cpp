@@ -38,7 +38,19 @@ void Game::Update()
     this->UpdateEventSFML();
 
     if (!this->states.empty())
+    {
         this->states.top()->Update(this->deltaTime);
+
+        if (this->states.top()->GetQuit())
+        {
+            delete this->states.top();
+            this->states.pop();
+        }
+    }
+    else
+    {
+        this->window->close();
+    }
 
 }
 
@@ -70,6 +82,5 @@ Game::~Game()
     {
         delete this->states.top();
         this->states.pop();
-
     }
 }
