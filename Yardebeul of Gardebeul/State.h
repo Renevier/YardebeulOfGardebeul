@@ -1,6 +1,8 @@
 #pragma once
 //Mother of all our states
 #include <iostream>
+#include <stack>
+#include <map>
 
 #include "SFML/System.hpp"
 #include "SFML/Window.hpp"
@@ -14,13 +16,14 @@ using namespace sf;
 class State
 {
 private:  
-
+	RenderWindow* window;
 	vector<Texture> textures;
 
 public:
-	State();
-	virtual void Update() = 0;
-	virtual void Render() = 0;
+	State(RenderWindow *_window);
+	virtual void Update(const float &_dt) = 0;
+	virtual void Render(RenderTarget *_target = nullptr) = 0;
+	virtual void EndState() = 0;
 	~State();
 
 private:

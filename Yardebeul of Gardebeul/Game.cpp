@@ -1,15 +1,22 @@
 #include "Game.h"
 
-
-Game::Game()
-{
-    this->InitWindow();
-}
-
 void Game::InitWindow()
 {
     this->window = new RenderWindow(VideoMode(800, 600), "Yardebeul of Gardebeul");
 }
+
+
+void Game::InitState()
+{
+    this->states.push(new GameState(this->window));
+}
+
+Game::Game()
+{
+    this->InitWindow();
+    this->InitState();
+}
+
 
 void Game::Run()
 {
@@ -28,10 +35,14 @@ void Game::UpdateDt()
 
 void Game::Update()
 {
-    this->UpdateEvent();
+    this->UpdateEventSFML();
+
+    if (!this->states.empty())
+        this->states.top()->Update(this->deltaTime);
+
 }
 
-void Game::UpdateEvent()
+void Game::UpdateEventSFML()
 {
     while (this->window->pollEvent(this->event))
     {
@@ -45,6 +56,8 @@ void Game::Render()
     this->window->clear();
 
     //Draw the items here
+    if (!this->states.empty())
+        this->states.top()->Render(this->window);
 
     this->window->display();
 }
@@ -52,4 +65,11 @@ void Game::Render()
 Game::~Game()
 {
 	delete this->window;
+
+    while (!this->states.empty())
+    {
+        delete this->states.top();
+        this->states.pop();
+
+    }
 }

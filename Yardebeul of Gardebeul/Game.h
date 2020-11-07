@@ -1,5 +1,5 @@
 #pragma once
-#include "State.h"
+#include "GameState.h"
 
 class Game
 {
@@ -10,17 +10,22 @@ private:
 	Clock clock;
 	float deltaTime;
 
+	stack<State*> states;
+
+private:
+	void InitWindow();
+	void InitState();
+
 public:
 	Game();
 	void Run();
 	void Update();
-	void UpdateEvent();
+	void UpdateEventSFML();
 	void UpdateDt();
 	void Render();
 	~Game();
 
-private:
-	void InitWindow();
+
 };
 
 
