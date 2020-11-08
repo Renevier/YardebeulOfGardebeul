@@ -22,3 +22,12 @@ static float tableDeType[4][4] =
 	{ 2, .5, 0, 0 },
 	{ 0, 0, 0,  0 }
 };
+
+enum class STATE_EVENT
+{
+	NOTHING,
+	FIGHT,
+	MEET,
+	ENVIRONEMENT,
+	PUZZLE
+};

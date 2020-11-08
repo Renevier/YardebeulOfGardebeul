@@ -12,6 +12,7 @@ protected:
 	float manaPoints;
 	float endurePoints;
 	float mindPoints;
+	int pointToDistribute;
 
 	Weapon *weapon;
 

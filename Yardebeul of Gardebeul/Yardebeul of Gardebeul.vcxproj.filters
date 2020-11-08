@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Fichiers de ressources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Classes">
       <UniqueIdentifier>{7a375191-434c-401b-9dd2-9bd2c5b9c5d9}</UniqueIdentifier>
     </Filter>
@@ -51,6 +47,12 @@
     </Filter>
     <Filter Include="Classes\Entites\Object\Consumable">
       <UniqueIdentifier>{1af26f7e-57ca-454d-8bcb-6ea24e8f2bb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Event">
+      <UniqueIdentifier>{e58e873a-7051-41a3-9f54-f7787b430335}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Chest">
+      <UniqueIdentifier>{d772188c-7918-4292-aa3a-468b88ad7e89}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +100,12 @@
     </ClCompile>
     <ClCompile Include="Consumable.cpp">
       <Filter>Classes\Entites\Object\Consumable</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Classes\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Chest.cpp">
+      <Filter>Classes\Entites\Chest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +156,12 @@
     </ClInclude>
     <ClInclude Include="Consumable.h">
       <Filter>Classes\Entites\Object\Consumable</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Classes\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Chest.h">
+      <Filter>Classes\Entites\Chest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
