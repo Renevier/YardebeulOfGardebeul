@@ -13,14 +13,35 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="States">
+    <Filter Include="Classes">
+      <UniqueIdentifier>{7a375191-434c-401b-9dd2-9bd2c5b9c5d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\States">
       <UniqueIdentifier>{9d1ca24e-4c1e-4607-9c45-d6bf4e615e5b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game">
+    <Filter Include="Classes\Game">
       <UniqueIdentifier>{f95a3931-a737-4a52-92ca-08b485a26fcd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Entites">
+    <Filter Include="Classes\Entites">
       <UniqueIdentifier>{1fd561d4-7505-4dc5-a865-3f6f956476a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character">
+      <UniqueIdentifier>{b0c61257-ec83-44b0-8e02-417bf88e9192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character\Hero">
+      <UniqueIdentifier>{4d79ba08-1303-429d-860d-73c2a02945de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character\NPC">
+      <UniqueIdentifier>{b6dd5688-22b2-45a1-b8dd-0c9933e93ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Object">
+      <UniqueIdentifier>{7cb6ce8a-3408-458f-b030-3bd65a44c3e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Object\Armor">
+      <UniqueIdentifier>{0974ae01-4754-404d-bdee-89ae6c4a2566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Object\Weapon">
+      <UniqueIdentifier>{7391ef63-34ba-48c6-9923-4b654cb0a0e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,33 +49,72 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>States</Filter>
+      <Filter>Classes\States</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Game</Filter>
+      <Filter>Classes\Game</Filter>
     </ClCompile>
     <ClCompile Include="GameState.cpp">
-      <Filter>States</Filter>
+      <Filter>Classes\States</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Classes\Entites</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Classes\Entites\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Classes\Entites\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>Classes\Entites\Character\Hero</Filter>
+    </ClCompile>
+    <ClCompile Include="NPC.cpp">
+      <Filter>Classes\Entites\Character\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="Armor.cpp">
+      <Filter>Classes\Entites\Object\Armor</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Classes\Entites\Object\Weapon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
-      <Filter>States</Filter>
+      <Filter>Classes\States</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Game</Filter>
+      <Filter>Classes\Game</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
-      <Filter>States</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Classes\States</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Classes\Entites</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Classes\Entites\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Classes\Entites\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>Classes\Entites\Character\Hero</Filter>
+    </ClInclude>
+    <ClInclude Include="NPC.h">
+      <Filter>Classes\Entites\Character\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="Armor.h">
+      <Filter>Classes\Entites\Object\Armor</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Classes\Entites\Object\Weapon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

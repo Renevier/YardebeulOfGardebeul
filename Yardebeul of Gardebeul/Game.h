@@ -12,6 +12,7 @@ private:
 
 	stack<State*> states;
 
+
 private:
 	void InitWindow();
 	void InitState();
