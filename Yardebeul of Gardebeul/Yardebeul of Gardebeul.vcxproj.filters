@@ -43,6 +43,12 @@
     <Filter Include="Classes\Entites\Object\Weapon">
       <UniqueIdentifier>{7391ef63-34ba-48c6-9923-4b654cb0a0e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Effect">
+      <UniqueIdentifier>{c8a424b9-201d-4b53-bc5b-6db9e45d740d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container">
+      <UniqueIdentifier>{9d74d694-0c41-4dcf-b1bc-869f44dfda26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -77,6 +83,15 @@
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
       <Filter>Classes\Entites\Object\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>Classes\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponContainer.cpp">
+      <Filter>Classes\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectContainer.cpp">
+      <Filter>Classes\Container</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +130,15 @@
     </ClInclude>
     <ClInclude Include="Weapon.h">
       <Filter>Classes\Entites\Object\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>Classes\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponContainer.h">
+      <Filter>Classes\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectContainer.h">
+      <Filter>Classes\Container</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

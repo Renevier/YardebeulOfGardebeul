@@ -11,10 +11,11 @@ protected:
 
 	//Functions
 private:
-	virtual void InitVariables() = 0;
+	virtual void InitVariables();
 
 public:
 	Object();
 	virtual void Choose() = 0;
+	virtual void DisplayStat() = 0;
 	~Object();
 };

@@ -13,6 +13,7 @@ private:
 
 public:
 	Weapon(string _name, float _price, float _durability, float _attack);
+	virtual void Choose();
+	virtual void DisplayStat();
 	~Weapon();
 };
-
