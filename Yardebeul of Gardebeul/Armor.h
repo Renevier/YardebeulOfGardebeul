@@ -8,10 +8,11 @@ protected:
 
 	//Functions
 private:
-	virtual void InitVariables(string _name, float _price, float _durability, float _defense);
+	void InitVariables(string _name, float _price, float _durability, float _defense);
 
 public:
 	Armor(string _name, float _price, float _durability, float _defense);
+	virtual void DisplayStat();
 	~Armor();
 };
 

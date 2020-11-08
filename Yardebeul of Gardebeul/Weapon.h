@@ -8,8 +8,8 @@ protected:
 	float attack;
 
 	//Functions
-private:
-	virtual void InitVaribles(string _name, float _price, float _durability, float _attack); 
+protected:
+	void InitVariables(string _name, float _price, float _durability, float _attack);
 
 public:
 	Weapon(string _name, float _price, float _durability, float _attack);

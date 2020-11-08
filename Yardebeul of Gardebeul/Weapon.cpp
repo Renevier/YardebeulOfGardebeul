@@ -1,6 +1,6 @@
 #include "Weapon.h"
 
-void Weapon::InitVaribles(string _name, float _price, float _durability, float _attack)
+void Weapon::InitVariables(string _name, float _price, float _durability, float _attack)
 {
 	this->name = _name;
 	this->price = _price;
@@ -10,11 +10,15 @@ void Weapon::InitVaribles(string _name, float _price, float _durability, float _
 
 Weapon::Weapon(string _name, float _price, float _durability, float _attack)
 {
-	this->InitVaribles(_name, _price, _durability, _attack);
+	this->InitVariables(_name, _price, _durability, _attack);
 }
 
 void Weapon::Choose()
 {
+	cout << this->name << endl;
+	cout << this->price << endl;
+	cout << this->durability << endl;
+	cout << this->attack << endl;
 }
 
 void Weapon::DisplayStat()

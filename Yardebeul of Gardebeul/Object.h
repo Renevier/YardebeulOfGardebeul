@@ -1,4 +1,5 @@
 #pragma once
+#include "Effect.h"
 #include "Entity.h"
 
 class Object
@@ -9,10 +10,9 @@ protected:
 	float price;
 	float durability;
 
-	//Functions
-private:
-	virtual void InitVariables();
+	Effect* effect;
 
+	//Functions
 public:
 	Object();
 	virtual void Choose() = 0;

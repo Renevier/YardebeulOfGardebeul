@@ -49,6 +49,9 @@
     <Filter Include="Classes\Container">
       <UniqueIdentifier>{9d74d694-0c41-4dcf-b1bc-869f44dfda26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Entites\Object\Consumable">
+      <UniqueIdentifier>{1af26f7e-57ca-454d-8bcb-6ea24e8f2bb3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -92,6 +95,9 @@
     </ClCompile>
     <ClCompile Include="EffectContainer.cpp">
       <Filter>Classes\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="Consumable.cpp">
+      <Filter>Classes\Entites\Object\Consumable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="EffectContainer.h">
       <Filter>Classes\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="Consumable.h">
+      <Filter>Classes\Entites\Object\Consumable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

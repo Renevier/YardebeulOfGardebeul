@@ -1,11 +1,11 @@
 #pragma once
+#include"Weapon.h"
 #include"Entity.h"
 
 class Character: public Entity
 {
 protected:
 	//Variables
-
 	string name;
 	int level;
 	float healthPoints;
@@ -13,12 +13,14 @@ protected:
 	float endurePoints;
 	float mindPoints;
 
+	Weapon *weapon;
+
 	//Function
 private:	
 	virtual void InitVariable() = 0;
 
 public:
 	Character();
-	virtual void DisplayStats() = 0;
+	void DisplayStats();
 	~Character();
 };
