@@ -5,6 +5,7 @@ class Entity
 {
 	//Variables
 protected:
+	RectangleShape shape;
 	Texture *texture;
 	Sprite *sprite;
 
@@ -19,8 +20,8 @@ public:
 	Entity();
 	virtual void SetPosition(const float _x, const float _y);
 	virtual void Move(const float& _dt, const float _x, const float _y);
-	virtual void Update(const float &_dt) = 0;
-	virtual void Render(RenderTarget &_target) = 0;
+	virtual void Update(const float &_dt);
+	virtual void Render(RenderTarget* _target);
 	~Entity();
 
 };
