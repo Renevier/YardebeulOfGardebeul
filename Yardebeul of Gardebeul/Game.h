@@ -12,11 +12,9 @@ private:
 
 	stack<State*> states;
 
-	map<string, int> supportedKeys;
 
 private:
 	void InitWindow();
-	void InitKeys();
 	void InitState();
 
 public:
