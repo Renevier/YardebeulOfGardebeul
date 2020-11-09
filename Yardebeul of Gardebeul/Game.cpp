@@ -3,17 +3,31 @@
 void Game::InitWindow()
 {
     this->window = new RenderWindow(VideoMode(800, 600), "Yardebeul of Gardebeul");
+    this->window->setFramerateLimit(120);
+    this->window->setVerticalSyncEnabled(false);
 }
 
 
 void Game::InitState()
 {
-    this->states.push(new GameState(this->window));
+    this->states.push(new GameState(this->window, &this->supportedKeys));
+}
+
+void Game::InitKeys()
+{
+    this->supportedKeys.emplace("Escape", Keyboard::Key::Escape);
+    this->supportedKeys.emplace("Up", Keyboard::Key::Up);
+    this->supportedKeys.emplace("Left", Keyboard::Key::Left);
+    this->supportedKeys.emplace("Right", Keyboard::Key::Right);
+    this->supportedKeys.emplace("Down", Keyboard::Key::Down);
+
+
 }
 
 Game::Game()
 {
     this->InitWindow();
+    this->InitKeys();
     this->InitState();
 }
 
