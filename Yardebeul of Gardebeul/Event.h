@@ -12,7 +12,7 @@ protected:
 	STATE_EVENT stateEvent;
 	bool isBoss;
 	vector<Chest> chests;
-	int sortOfDunjeon;
+	int sortOfDungeon;
 
 	//Functions
 private:

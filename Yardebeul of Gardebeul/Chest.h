@@ -1,8 +1,8 @@
 #pragma once
-#include "pch.h"
 #include "Object.h"
+#include "Entity.h"
 
-class Chest
+class Chest: public Entity
 {
 	//Variables
 protected:

@@ -18,6 +18,7 @@ public:
 	Hero(string _name, float _x, float _y, Texture* texture);
 	void LevelProgress();
 	void LvlUp(vector<int> _arrayOfExp);
+	void PickedUp();
 	float TotalExpNeed();
 	~Hero();
 

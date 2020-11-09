@@ -54,6 +54,9 @@
     <Filter Include="Classes\Entites\Chest">
       <UniqueIdentifier>{d772188c-7918-4292-aa3a-468b88ad7e89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Entites\Dungeon">
+      <UniqueIdentifier>{e7585b2d-f5a2-44d5-8960-378087871b5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -106,6 +109,9 @@
     </ClCompile>
     <ClCompile Include="Chest.cpp">
       <Filter>Classes\Entites\Chest</Filter>
+    </ClCompile>
+    <ClCompile Include="Dungeon.cpp">
+      <Filter>Classes\Entites\Dungeon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +168,9 @@
     </ClInclude>
     <ClInclude Include="Chest.h">
       <Filter>Classes\Entites\Chest</Filter>
+    </ClInclude>
+    <ClInclude Include="Dungeon.h">
+      <Filter>Classes\Entites\Dungeon</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

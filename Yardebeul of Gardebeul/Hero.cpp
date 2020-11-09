@@ -39,6 +39,11 @@ void Hero::LvlUp(vector<int> _arrayOfExp)
 		this->level++;
 }
 
+void Hero::PickedUp()
+{
+	//put the object in the inventory
+}
+
 float Hero::TotalExpNeed()
 {
 	vector<int> arrayOfLvl;
