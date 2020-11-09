@@ -4,16 +4,14 @@ class GameState :
     public State
 {
 protected:
-    Entity player;
     map<string, Texture> textures;
 
     //Function
-private:
-    virtual void InitKeybins();
+protected:
     void InitTexture();
 
 public:
-    GameState(RenderWindow *_window, map<string, int>* _supportedKeys);
+    GameState(RenderWindow *_window);
     virtual void UpdateInput(const float& _dt);
     virtual void Update(const float &_dt);
     virtual void Render(RenderTarget *_target);

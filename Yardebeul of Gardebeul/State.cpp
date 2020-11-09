@@ -1,10 +1,9 @@
 #include "State.h"
 
-State::State(RenderWindow *_window, map<string, int>* _supportedKeys)
+State::State(RenderWindow *_window)
 {
 	this->window = _window;
 	this->Quit = false;
-	this->supportedKeys = _supportedKeys;
 }
 
 void State::CheckForQuit()
