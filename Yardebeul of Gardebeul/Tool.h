@@ -31,3 +31,11 @@ enum class STATE_EVENT
 	ENVIRONEMENT,
 	PUZZLE
 };
+
+enum class BIOME
+{
+	NONE,
+	FIRE,
+	WATER,
+	PLANT
+};

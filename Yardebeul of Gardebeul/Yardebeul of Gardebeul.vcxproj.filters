@@ -48,14 +48,14 @@
     <Filter Include="Classes\Entites\Object\Consumable">
       <UniqueIdentifier>{1af26f7e-57ca-454d-8bcb-6ea24e8f2bb3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Event">
-      <UniqueIdentifier>{e58e873a-7051-41a3-9f54-f7787b430335}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Entites\Chest">
       <UniqueIdentifier>{d772188c-7918-4292-aa3a-468b88ad7e89}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Entites\Dungeon">
       <UniqueIdentifier>{e7585b2d-f5a2-44d5-8960-378087871b5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Room">
+      <UniqueIdentifier>{e58e873a-7051-41a3-9f54-f7787b430335}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -104,14 +104,14 @@
     <ClCompile Include="Consumable.cpp">
       <Filter>Classes\Entites\Object\Consumable</Filter>
     </ClCompile>
-    <ClCompile Include="Event.cpp">
-      <Filter>Classes\Event</Filter>
-    </ClCompile>
     <ClCompile Include="Chest.cpp">
       <Filter>Classes\Entites\Chest</Filter>
     </ClCompile>
     <ClCompile Include="Dungeon.cpp">
       <Filter>Classes\Entites\Dungeon</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Classes\Room</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -163,14 +163,14 @@
     <ClInclude Include="Consumable.h">
       <Filter>Classes\Entites\Object\Consumable</Filter>
     </ClInclude>
-    <ClInclude Include="Event.h">
-      <Filter>Classes\Event</Filter>
-    </ClInclude>
     <ClInclude Include="Chest.h">
       <Filter>Classes\Entites\Chest</Filter>
     </ClInclude>
     <ClInclude Include="Dungeon.h">
       <Filter>Classes\Entites\Dungeon</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Classes\Room</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
