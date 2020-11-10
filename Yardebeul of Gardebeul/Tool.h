@@ -34,7 +34,6 @@ enum class STATE_EVENT
 
 enum class BIOME
 {
-	NONE,
 	FIRE,
 	WATER,
 	PLANT

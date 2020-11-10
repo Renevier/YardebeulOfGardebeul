@@ -72,6 +72,18 @@
     <Filter Include="Classes\Container\ArmorContainer">
       <UniqueIdentifier>{ecf290f3-23a8-44d3-b0ec-416cc2fe1133}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Container\ConsumableContainer">
+      <UniqueIdentifier>{beaba162-58c2-4276-995e-083b599481cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\EventContainer">
+      <UniqueIdentifier>{11289ce0-6149-4985-9817-08636c899162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\States\GameState">
+      <UniqueIdentifier>{e9fdbf45-f468-45b3-be52-122142e1b782}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\ChestContainer">
+      <UniqueIdentifier>{85944e9e-6e7f-4bc1-866a-ee4f39b9fcd2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -82,9 +94,6 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Classes\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="GameState.cpp">
-      <Filter>Classes\States</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Classes\Entites</Filter>
@@ -138,6 +147,15 @@
       <Filter>Classes\Container\ArmorContainer</Filter>
     </ClCompile>
     <ClCompile Include="ConsumableContainer.cpp">
+      <Filter>Classes\Container\ConsumableContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="EventContainer.cpp">
+      <Filter>Classes\Container\EventContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Classes\States\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="ChestContainer.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -147,9 +165,6 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Classes\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="GameState.h">
-      <Filter>Classes\States</Filter>
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Fichiers d%27en-tête</Filter>
@@ -209,6 +224,15 @@
       <Filter>Classes\Container\ArmorContainer</Filter>
     </ClInclude>
     <ClInclude Include="ConsumableContainer.h">
+      <Filter>Classes\Container\ConsumableContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="EventContainer.h">
+      <Filter>Classes\Container\EventContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>Classes\States\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="ChestContainer.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
