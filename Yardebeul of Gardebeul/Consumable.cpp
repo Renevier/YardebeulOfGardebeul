@@ -15,6 +15,14 @@ Consumable::Consumable(string _name, float _price, Effect _effect, float _durabi
 	this->InitVariable(_name, _price, _effect, _durability);
 }
 
+void Consumable::Choose()
+{
+}
+
+void Consumable::DisplayStat()
+{
+}
+
 Consumable::~Consumable()
 {
 }

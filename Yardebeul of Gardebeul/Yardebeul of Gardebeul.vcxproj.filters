@@ -12,47 +12,14 @@
     <Filter Include="Classes">
       <UniqueIdentifier>{7a375191-434c-401b-9dd2-9bd2c5b9c5d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\States">
-      <UniqueIdentifier>{9d1ca24e-4c1e-4607-9c45-d6bf4e615e5b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Game">
       <UniqueIdentifier>{f95a3931-a737-4a52-92ca-08b485a26fcd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites">
-      <UniqueIdentifier>{1fd561d4-7505-4dc5-a865-3f6f956476a6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Character">
-      <UniqueIdentifier>{b0c61257-ec83-44b0-8e02-417bf88e9192}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Character\Hero">
-      <UniqueIdentifier>{4d79ba08-1303-429d-860d-73c2a02945de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Character\NPC">
-      <UniqueIdentifier>{b6dd5688-22b2-45a1-b8dd-0c9933e93ed4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Object">
-      <UniqueIdentifier>{7cb6ce8a-3408-458f-b030-3bd65a44c3e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Object\Armor">
-      <UniqueIdentifier>{0974ae01-4754-404d-bdee-89ae6c4a2566}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Object\Weapon">
-      <UniqueIdentifier>{7391ef63-34ba-48c6-9923-4b654cb0a0e3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Effect">
       <UniqueIdentifier>{c8a424b9-201d-4b53-bc5b-6db9e45d740d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Container">
       <UniqueIdentifier>{9d74d694-0c41-4dcf-b1bc-869f44dfda26}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Object\Consumable">
-      <UniqueIdentifier>{1af26f7e-57ca-454d-8bcb-6ea24e8f2bb3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Chest">
-      <UniqueIdentifier>{d772188c-7918-4292-aa3a-468b88ad7e89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Entites\Dungeon">
-      <UniqueIdentifier>{e7585b2d-f5a2-44d5-8960-378087871b5e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Room">
       <UniqueIdentifier>{e58e873a-7051-41a3-9f54-f7787b430335}</UniqueIdentifier>
@@ -75,14 +42,53 @@
     <Filter Include="Classes\Container\ConsumableContainer">
       <UniqueIdentifier>{beaba162-58c2-4276-995e-083b599481cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Container\EventContainer">
-      <UniqueIdentifier>{11289ce0-6149-4985-9817-08636c899162}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\States\GameState">
-      <UniqueIdentifier>{e9fdbf45-f468-45b3-be52-122142e1b782}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Container\ChestContainer">
       <UniqueIdentifier>{85944e9e-6e7f-4bc1-866a-ee4f39b9fcd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\DugeonContainer">
+      <UniqueIdentifier>{73c1aac1-10cf-4dbc-add8-08831261eb0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\NpcContainer">
+      <UniqueIdentifier>{259705e6-13b3-464d-99fe-902a4882af15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\ConsumableContainer\EventContainer">
+      <UniqueIdentifier>{11289ce0-6149-4985-9817-08636c899162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites">
+      <UniqueIdentifier>{1fd561d4-7505-4dc5-a865-3f6f956476a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character">
+      <UniqueIdentifier>{b0c61257-ec83-44b0-8e02-417bf88e9192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character\Hero">
+      <UniqueIdentifier>{4d79ba08-1303-429d-860d-73c2a02945de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character\NPC">
+      <UniqueIdentifier>{b6dd5688-22b2-45a1-b8dd-0c9933e93ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character\Object">
+      <UniqueIdentifier>{7cb6ce8a-3408-458f-b030-3bd65a44c3e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character\Object\Armor">
+      <UniqueIdentifier>{0974ae01-4754-404d-bdee-89ae6c4a2566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character\Object\Weapon">
+      <UniqueIdentifier>{7391ef63-34ba-48c6-9923-4b654cb0a0e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Character\Object\Consumable">
+      <UniqueIdentifier>{1af26f7e-57ca-454d-8bcb-6ea24e8f2bb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Chest">
+      <UniqueIdentifier>{d772188c-7918-4292-aa3a-468b88ad7e89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Entites\Dungeon">
+      <UniqueIdentifier>{e7585b2d-f5a2-44d5-8960-378087871b5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\States">
+      <UniqueIdentifier>{9d1ca24e-4c1e-4607-9c45-d6bf4e615e5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\States\GameState">
+      <UniqueIdentifier>{e9fdbf45-f468-45b3-be52-122142e1b782}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +96,7 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>Classes\States</Filter>
+      <Filter>Classes\Game\States</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Classes\Game</Filter>
@@ -102,7 +108,7 @@
       <Filter>Classes\Entites\Character</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
-      <Filter>Classes\Entites\Object</Filter>
+      <Filter>Classes\Entites\Character\Object</Filter>
     </ClCompile>
     <ClCompile Include="Hero.cpp">
       <Filter>Classes\Entites\Character\Hero</Filter>
@@ -111,16 +117,16 @@
       <Filter>Classes\Entites\Character\NPC</Filter>
     </ClCompile>
     <ClCompile Include="Armor.cpp">
-      <Filter>Classes\Entites\Object\Armor</Filter>
+      <Filter>Classes\Entites\Character\Object\Armor</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
-      <Filter>Classes\Entites\Object\Weapon</Filter>
+      <Filter>Classes\Entites\Character\Object\Weapon</Filter>
     </ClCompile>
     <ClCompile Include="Effect.cpp">
       <Filter>Classes\Effect</Filter>
     </ClCompile>
     <ClCompile Include="Consumable.cpp">
-      <Filter>Classes\Entites\Object\Consumable</Filter>
+      <Filter>Classes\Entites\Character\Object\Consumable</Filter>
     </ClCompile>
     <ClCompile Include="Chest.cpp">
       <Filter>Classes\Entites\Chest</Filter>
@@ -150,18 +156,24 @@
       <Filter>Classes\Container\ConsumableContainer</Filter>
     </ClCompile>
     <ClCompile Include="EventContainer.cpp">
-      <Filter>Classes\Container\EventContainer</Filter>
+      <Filter>Classes\Container\ConsumableContainer\EventContainer</Filter>
     </ClCompile>
     <ClCompile Include="GameState.cpp">
-      <Filter>Classes\States\GameState</Filter>
+      <Filter>Classes\Game\States\GameState</Filter>
     </ClCompile>
     <ClCompile Include="ChestContainer.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Classes\Container\ChestContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="NpcContainer.cpp">
+      <Filter>Classes\Container\NpcContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="DungeonContainer.cpp">
+      <Filter>Classes\Container\DugeonContainer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
-      <Filter>Classes\States</Filter>
+      <Filter>Classes\Game\States</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Classes\Game</Filter>
@@ -179,7 +191,7 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Object.h">
-      <Filter>Classes\Entites\Object</Filter>
+      <Filter>Classes\Entites\Character\Object</Filter>
     </ClInclude>
     <ClInclude Include="Hero.h">
       <Filter>Classes\Entites\Character\Hero</Filter>
@@ -188,16 +200,16 @@
       <Filter>Classes\Entites\Character\NPC</Filter>
     </ClInclude>
     <ClInclude Include="Armor.h">
-      <Filter>Classes\Entites\Object\Armor</Filter>
+      <Filter>Classes\Entites\Character\Object\Armor</Filter>
     </ClInclude>
     <ClInclude Include="Weapon.h">
-      <Filter>Classes\Entites\Object\Weapon</Filter>
+      <Filter>Classes\Entites\Character\Object\Weapon</Filter>
     </ClInclude>
     <ClInclude Include="Effect.h">
       <Filter>Classes\Effect</Filter>
     </ClInclude>
     <ClInclude Include="Consumable.h">
-      <Filter>Classes\Entites\Object\Consumable</Filter>
+      <Filter>Classes\Entites\Character\Object\Consumable</Filter>
     </ClInclude>
     <ClInclude Include="Chest.h">
       <Filter>Classes\Entites\Chest</Filter>
@@ -227,13 +239,19 @@
       <Filter>Classes\Container\ConsumableContainer</Filter>
     </ClInclude>
     <ClInclude Include="EventContainer.h">
-      <Filter>Classes\Container\EventContainer</Filter>
+      <Filter>Classes\Container\ConsumableContainer\EventContainer</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
-      <Filter>Classes\States\GameState</Filter>
+      <Filter>Classes\Game\States\GameState</Filter>
     </ClInclude>
     <ClInclude Include="ChestContainer.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Classes\Container\ChestContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="NpcContainer.h">
+      <Filter>Classes\Container\NpcContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="DungeonContainer.h">
+      <Filter>Classes\Container\DugeonContainer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

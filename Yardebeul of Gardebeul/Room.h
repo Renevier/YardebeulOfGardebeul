@@ -3,7 +3,7 @@
 #include "Tool.h"
 #include "pch.h"
 
-class Event
+class Room
 {
 	//Variables
 protected:
@@ -18,6 +18,6 @@ protected:
 private:
 
 public:
-	Event();
-	~Event();
+	Room();
+	~Room();
 };

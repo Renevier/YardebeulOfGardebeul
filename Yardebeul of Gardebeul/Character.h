@@ -17,8 +17,7 @@ protected:
 	Weapon *weapon;
 
 	//Function
-private:	
-	virtual void InitVariable() = 0;
+protected:
 
 public:
 	Character();

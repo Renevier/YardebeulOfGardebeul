@@ -5,7 +5,7 @@
 class ChestContainer
 {
 protected:
-	map<string, Chest> container;
+	//map<string, Chest> container;
 
 private:
 	void Fill();

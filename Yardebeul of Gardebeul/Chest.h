@@ -6,7 +6,7 @@ class Chest: public Entity
 {
 	//Variables
 protected:
-	vector<Object> chest;
+	//vector<Object> chest;
 
 	//Functions
 private:
