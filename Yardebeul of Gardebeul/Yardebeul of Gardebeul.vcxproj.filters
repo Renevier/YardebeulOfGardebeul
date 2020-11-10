@@ -57,6 +57,21 @@
     <Filter Include="Classes\Room">
       <UniqueIdentifier>{e58e873a-7051-41a3-9f54-f7787b430335}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Event">
+      <UniqueIdentifier>{8f718761-de64-4dce-b542-36e936b6ff4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Event\Event-type">
+      <UniqueIdentifier>{63990c07-6c4e-4b91-b716-69a0a7eedca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\EffectContainer">
+      <UniqueIdentifier>{0f6499a7-01ae-4096-86f1-5e24b734b38a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\WeaponContainer">
+      <UniqueIdentifier>{20c82e14-58f0-413f-b5a1-4574e8b53b0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\ArmorContainer">
+      <UniqueIdentifier>{ecf290f3-23a8-44d3-b0ec-416cc2fe1133}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -95,12 +110,6 @@
     <ClCompile Include="Effect.cpp">
       <Filter>Classes\Effect</Filter>
     </ClCompile>
-    <ClCompile Include="WeaponContainer.cpp">
-      <Filter>Classes\Container</Filter>
-    </ClCompile>
-    <ClCompile Include="EffectContainer.cpp">
-      <Filter>Classes\Container</Filter>
-    </ClCompile>
     <ClCompile Include="Consumable.cpp">
       <Filter>Classes\Entites\Object\Consumable</Filter>
     </ClCompile>
@@ -112,6 +121,24 @@
     </ClCompile>
     <ClCompile Include="Room.cpp">
       <Filter>Classes\Room</Filter>
+    </ClCompile>
+    <ClCompile Include="cEvent.cpp">
+      <Filter>Classes\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectContainer.cpp">
+      <Filter>Classes\Container\EffectContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponContainer.cpp">
+      <Filter>Classes\Container\WeaponContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="EventType.cpp">
+      <Filter>Classes\Event\Event-type</Filter>
+    </ClCompile>
+    <ClCompile Include="ArmorContainer.cpp">
+      <Filter>Classes\Container\ArmorContainer</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsumableContainer.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,12 +181,6 @@
     <ClInclude Include="Effect.h">
       <Filter>Classes\Effect</Filter>
     </ClInclude>
-    <ClInclude Include="WeaponContainer.h">
-      <Filter>Classes\Container</Filter>
-    </ClInclude>
-    <ClInclude Include="EffectContainer.h">
-      <Filter>Classes\Container</Filter>
-    </ClInclude>
     <ClInclude Include="Consumable.h">
       <Filter>Classes\Entites\Object\Consumable</Filter>
     </ClInclude>
@@ -171,6 +192,24 @@
     </ClInclude>
     <ClInclude Include="Room.h">
       <Filter>Classes\Room</Filter>
+    </ClInclude>
+    <ClInclude Include="cEvent.h">
+      <Filter>Classes\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectContainer.h">
+      <Filter>Classes\Container\EffectContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponContainer.h">
+      <Filter>Classes\Container\WeaponContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="EventType.h">
+      <Filter>Classes\Event\Event-type</Filter>
+    </ClInclude>
+    <ClInclude Include="ArmorContainer.h">
+      <Filter>Classes\Container\ArmorContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsumableContainer.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

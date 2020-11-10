@@ -5,7 +5,7 @@ class WeaponContainer
 {
 	//Variable
 protected:
-	vector<Weapon> container;
+	map<string, Weapon> container;
 
 	//Fonctions
 private:

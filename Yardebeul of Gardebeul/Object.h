@@ -9,6 +9,7 @@ protected:
 	string name;
 	float price;
 	float durability;
+	int levelToAccess;
 
 	Effect* effect;
 

@@ -8,6 +8,14 @@ void Effect::InitVariable(string _name, bool _isAoe, float _damage, float _durat
 	this->duration = _duration;
 }
 
+Effect::Effect()
+{
+	this->name = " ";
+	this->isAoe = false;
+	this->damage = 0;
+	this->duration = 0;
+}
+
 Effect::Effect(string _name, bool _isAoe, float _damage, float _duration)
 {
 	this->InitVariable(_name, _isAoe, _damage, _duration);

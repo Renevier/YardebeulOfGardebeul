@@ -152,13 +152,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Armor.cpp" />
+    <ClCompile Include="ArmorContainer.cpp" />
+    <ClCompile Include="cEvent.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Chest.cpp" />
     <ClCompile Include="Consumable.cpp" />
+    <ClCompile Include="ConsumableContainer.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="EffectContainer.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EventType.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -172,13 +176,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Armor.h" />
+    <ClInclude Include="ArmorContainer.h" />
+    <ClInclude Include="cEvent.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Chest.h" />
     <ClInclude Include="Consumable.h" />
+    <ClInclude Include="ConsumableContainer.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="Effect.h" />
     <ClInclude Include="EffectContainer.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="EventType.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />

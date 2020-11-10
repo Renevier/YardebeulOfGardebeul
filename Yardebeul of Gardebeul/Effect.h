@@ -15,6 +15,7 @@ private:
 	void InitVariable(string _name, bool _isAoe, float _damage, float _duration);
 
 public:
+	Effect();
 	Effect(string _name, bool _isAoe, float _damage, float _duration);
 	void AffectPlayer();
 	~Effect();

@@ -6,7 +6,7 @@ class EffectContainer
 {
 	//Variable
 protected:
-	vector<Effect> container;
+	map<string, Effect> container;
 
 	//Functions
 private:
@@ -14,6 +14,7 @@ private:
 
 public:
 	EffectContainer();
+	map<string, Effect> const GetContainer() const;
 	~EffectContainer();
 
 };
