@@ -166,6 +166,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EventContainer.cpp" />
     <ClCompile Include="EventType.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="NpcContainer.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EventContainer.h" />
     <ClInclude Include="EventType.h" />
+    <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="NpcContainer.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Game.h" />

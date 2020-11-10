@@ -84,11 +84,14 @@
     <Filter Include="Classes\Entites\Dungeon">
       <UniqueIdentifier>{e7585b2d-f5a2-44d5-8960-378087871b5e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Game\States">
+    <Filter Include="Classes\States">
       <UniqueIdentifier>{9d1ca24e-4c1e-4607-9c45-d6bf4e615e5b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Game\States\GameState">
+    <Filter Include="Classes\States\GameState">
       <UniqueIdentifier>{e9fdbf45-f468-45b3-be52-122142e1b782}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\States\MainMenuState">
+      <UniqueIdentifier>{73a8964d-8ae3-4a02-9d6a-50d143178458}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,7 +99,7 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>Classes\Game\States</Filter>
+      <Filter>Classes\States</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Classes\Game</Filter>
@@ -159,7 +162,7 @@
       <Filter>Classes\Container\ConsumableContainer\EventContainer</Filter>
     </ClCompile>
     <ClCompile Include="GameState.cpp">
-      <Filter>Classes\Game\States\GameState</Filter>
+      <Filter>Classes\States\GameState</Filter>
     </ClCompile>
     <ClCompile Include="ChestContainer.cpp">
       <Filter>Classes\Container\ChestContainer</Filter>
@@ -170,10 +173,13 @@
     <ClCompile Include="DungeonContainer.cpp">
       <Filter>Classes\Container\DugeonContainer</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
+      <Filter>Classes\States\MainMenuState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
-      <Filter>Classes\Game\States</Filter>
+      <Filter>Classes\States</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Classes\Game</Filter>
@@ -242,7 +248,7 @@
       <Filter>Classes\Container\ConsumableContainer\EventContainer</Filter>
     </ClInclude>
     <ClInclude Include="GameState.h">
-      <Filter>Classes\Game\States\GameState</Filter>
+      <Filter>Classes\States\GameState</Filter>
     </ClInclude>
     <ClInclude Include="ChestContainer.h">
       <Filter>Classes\Container\ChestContainer</Filter>
@@ -252,6 +258,9 @@
     </ClInclude>
     <ClInclude Include="DungeonContainer.h">
       <Filter>Classes\Container\DugeonContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.h">
+      <Filter>Classes\States\MainMenuState</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

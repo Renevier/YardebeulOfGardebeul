@@ -9,6 +9,11 @@ void Dungeon::InitVariable(string _name, int _level, STATE_EVENT _type, int _nbE
 	this->listOfEvent = _listOfEvent;
 }
 
+void Dungeon::Fill()
+{
+	this->container.emplace("", Room());
+}
+
 Dungeon::Dungeon(string _name, int _level, STATE_EVENT _type, int _nbEvent, vector<STATE_EVENT> _listOfEvent)
 {
 	this->InitVariable(_name, _level, _type, _nbEvent, _listOfEvent);

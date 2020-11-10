@@ -14,8 +14,8 @@ GameState::GameState(RenderWindow *_window, map<string, int>* _supportedKeys): S
 	this->InitKeybins();
 }
 
-/*Seb ALED !!!*/
-void GameState::UpdateInput(const float& _dt)
+/*will see*/
+void GameState::UpdateInput(float& _dt)
 {
 
 	

@@ -14,7 +14,7 @@ private:
 
 public:
     GameState(RenderWindow *_window, map<string, int>* _supportedKeys);
-    virtual void UpdateInput(const float& _dt);
+    virtual void UpdateInput(float& _dt);
     virtual void Update(const float &_dt);
     virtual void Render(RenderTarget *_target);
     virtual void EndState();
