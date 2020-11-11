@@ -11,6 +11,10 @@ protected:
 	map<string, int> keybinds;
 	bool Quit;
 
+	Vector2i mousePosScreen;
+	Vector2i mousePosWindow;
+	Vector2f mousePosView;
+
 	vector<Texture> states;
 
 	//Functions
@@ -19,7 +23,8 @@ private:
 
 public:
 	State(RenderWindow *_window, map<string, int>* _supportedKeys);
-	virtual void UpdateInput(float& _dt) = 0;
+	virtual void UpdateMousePosition();
+	virtual void UpdateInput(const float& _dt) = 0;
 	virtual void Update(const float &_dt) = 0;
 	virtual void Render(RenderTarget *_target) = 0;
 	virtual void CheckForQuit();

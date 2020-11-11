@@ -93,6 +93,12 @@
     <Filter Include="Classes\States\MainMenuState">
       <UniqueIdentifier>{73a8964d-8ae3-4a02-9d6a-50d143178458}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Ressources files">
+      <UniqueIdentifier>{fc309245-be4e-41e6-b2e0-c7308ffee4cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Ressources files\Button">
+      <UniqueIdentifier>{8c92b23e-1131-4a4e-ab95-9b429ca6270f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -175,6 +181,9 @@
     </ClCompile>
     <ClCompile Include="MainMenuState.cpp">
       <Filter>Classes\States\MainMenuState</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Classes\Ressources files\Button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +270,9 @@
     </ClInclude>
     <ClInclude Include="MainMenuState.h">
       <Filter>Classes\States\MainMenuState</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Classes\Ressources files\Button</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

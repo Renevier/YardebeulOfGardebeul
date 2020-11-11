@@ -10,7 +10,7 @@ void Game::InitWindow()
 
 void Game::InitState()
 {
-    this->states.push(new GameState(this->window, &this->supportedKeys));
+    this->states.push(new MainMenuState(this->window, &this->supportedKeys));
 }
 
 void Game::InitKeys()

@@ -14,19 +14,8 @@ GameState::GameState(RenderWindow *_window, map<string, int>* _supportedKeys): S
 	this->InitKeybins();
 }
 
-/*will see*/
-void GameState::UpdateInput(float& _dt)
+void GameState::UpdateInput(const float& _dt)
 {
-
-	
-}
-
-void GameState::Update(const float &_dt)
-{
-	//this->player.Update(_dt);
-	this->CheckForQuit();
-
-	//player input 
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_TOP"))))
 		this->player.Move(_dt, 0.f, -1.f);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_DOWN"))))
@@ -34,7 +23,16 @@ void GameState::Update(const float &_dt)
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_LEFT"))))
 		this->player.Move(_dt, -1.f, 0.f);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
-		this->player.Move(_dt, 1.f, 0.f);
+		this->player.Move(_dt, 1.f, 0.f);	
+}
+
+void GameState::Update(const float &_dt)
+{
+	this->UpdateMousePosition();
+	this->UpdateInput(_dt);
+	this->CheckForQuit();
+ 
+	
 }
 
 void GameState::Render(RenderTarget *_target)
