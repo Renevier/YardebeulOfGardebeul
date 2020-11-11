@@ -6,6 +6,7 @@ class State
 {
 	//Variables
 protected:  
+	stack<State*>* states;
 	RenderWindow* window;
 	map<string, int>* supportedKeys;
 	map<string, int> keybinds;
@@ -14,15 +15,13 @@ protected:
 	Vector2i mousePosScreen;
 	Vector2i mousePosWindow;
 	Vector2f mousePosView;
-
-	vector<Texture> states;
-
+	
 	//Functions
 private:
 	virtual void InitKeybins() = 0;
 
 public:
-	State(RenderWindow *_window, map<string, int>* _supportedKeys);
+	State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);
 	virtual void UpdateMousePosition();
 	virtual void UpdateInput(const float& _dt) = 0;
 	virtual void Update(const float &_dt) = 0;

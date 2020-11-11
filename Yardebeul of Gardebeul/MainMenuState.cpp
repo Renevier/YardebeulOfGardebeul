@@ -2,10 +2,7 @@
 
 void MainMenuState::InitKeybins()
 {
-	this->keybinds.emplace("MOVE_TOP", this->supportedKeys->at("Up"));
-	this->keybinds.emplace("MOVE_LEFT", this->supportedKeys->at("Left"));
-	this->keybinds.emplace("MOVE_RIGHT", this->supportedKeys->at("Right"));
-	this->keybinds.emplace("MOVE_DOWN", this->supportedKeys->at("Down"));
+	this->keybinds.emplace("ESCAPE", this->supportedKeys->at("Escape"));
 }
 
 void MainMenuState::InitFont()
@@ -46,7 +43,7 @@ void MainMenuState::UpdateButton()
 		it.second->Update(this->mousePosView);
 
 	if (this->buttons.at("GAME_STATE")->IsPressed())
-		this->Quit = true;
+		//this->Quit = true;
 
 	if (this->buttons.at("EXIT_STATE")->IsPressed())
 		this->Quit = true;
