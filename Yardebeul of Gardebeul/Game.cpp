@@ -10,7 +10,7 @@ void Game::InitWindow()
 
 void Game::InitState()
 {
-    this->states.push(new MainMenuState(this->window, &this->supportedKeys));
+    this->states.push(new MainMenuState(this->window, &this->supportedKeys, &this->states));
 }
 
 void Game::InitKeys()
@@ -20,8 +20,6 @@ void Game::InitKeys()
     this->supportedKeys.emplace("Left", Keyboard::Key::Left);
     this->supportedKeys.emplace("Right", Keyboard::Key::Right);
     this->supportedKeys.emplace("Down", Keyboard::Key::Down);
-
-
 }
 
 Game::Game()

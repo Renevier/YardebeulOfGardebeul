@@ -9,7 +9,8 @@ void GameState::InitKeybins()
 	this->keybinds.emplace("MOVE_DOWN", this->supportedKeys->at("Down"));
 }
 
-GameState::GameState(RenderWindow *_window, map<string, int>* _supportedKeys): State(_window, _supportedKeys)
+GameState::GameState(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states)
+	: State(_window, _supportedKeys, _states)
 {
 	this->InitKeybins();
 }

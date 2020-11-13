@@ -23,7 +23,8 @@ void MainMenuState::InitButton()
 
 }
 
-MainMenuState::MainMenuState(RenderWindow* _window, map<string, int>* _supportedKeys) : State(_window, _supportedKeys)
+MainMenuState::MainMenuState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states) 
+	: State(_window, _supportedKeys, _states)
 {
 	this->InitFont();
 	this->InitKeybins();
@@ -43,7 +44,7 @@ void MainMenuState::UpdateButton()
 		it.second->Update(this->mousePosView);
 
 	if (this->buttons.at("GAME_STATE")->IsPressed())
-		//this->Quit = true;
+		this->states->push(new GameState(this->window, this->supportedKeys, this->states));
 
 	if (this->buttons.at("EXIT_STATE")->IsPressed())
 		this->Quit = true;
