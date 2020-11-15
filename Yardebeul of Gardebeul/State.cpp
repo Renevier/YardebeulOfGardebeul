@@ -3,9 +3,11 @@
 State::State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states)
 {
 	this->window = _window;
-	this->Quit = false;
 	this->supportedKeys = _supportedKeys;
 	this->states = _states;
+
+	this->Quit = false;
+	this->pause = false;
 }
 
 void State::UpdateMousePosition()
@@ -15,17 +17,14 @@ void State::UpdateMousePosition()
 	this->mousePosView = this->window->mapPixelToCoords(Mouse::getPosition(*this->window));
 }
 
-void State::CheckForQuit()
-{
-	if (Keyboard::isKeyPressed(Keyboard::Escape))
-	{
-		this->Quit = true;
-	}
-}
-
 const bool& State::GetQuit() const
 {
 	return this->Quit;
+}
+
+const bool& State::GetPause() const
+{
+	return this->pause;
 }
 
 State::~State()

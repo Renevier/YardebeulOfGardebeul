@@ -13,7 +13,7 @@ class Button
 protected:
 	BTN_STATES buttonState;
 
-	RectangleShape Shape;
+	RectangleShape shape;
 	Font* font;
 	Text text;
 

@@ -99,6 +99,9 @@
     <Filter Include="Classes\Ressources files\Button">
       <UniqueIdentifier>{8c92b23e-1131-4a4e-ab95-9b429ca6270f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\States\MapEditorState">
+      <UniqueIdentifier>{6e811d35-cdce-4912-8f30-67e8f51769fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -184,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Classes\Ressources files\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="MapEditorState.cpp">
+      <Filter>Classes\States\MapEditorState</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +279,9 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Classes\Ressources files\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="MapEditorState.h">
+      <Filter>Classes\States\MapEditorState</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

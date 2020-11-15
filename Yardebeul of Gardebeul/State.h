@@ -10,7 +10,9 @@ protected:
 	RenderWindow* window;
 	map<string, int>* supportedKeys;
 	map<string, int> keybinds;
+
 	bool Quit;
+	bool pause;
 
 	Vector2i mousePosScreen;
 	Vector2i mousePosWindow;
@@ -18,7 +20,6 @@ protected:
 	
 	//Functions
 private:
-	virtual void InitKeybins() = 0;
 
 public:
 	State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);
@@ -26,9 +27,9 @@ public:
 	virtual void UpdateInput(const float& _dt) = 0;
 	virtual void Update(const float &_dt) = 0;
 	virtual void Render(RenderTarget *_target) = 0;
-	virtual void CheckForQuit();
 	virtual void EndState() = 0;
 	const bool& GetQuit() const;
+	const bool& GetPause() const;
 	~State();
 
 };

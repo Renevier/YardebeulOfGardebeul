@@ -5,7 +5,7 @@
 class Game
 {
 private:
-	RenderWindow *window;
+	RenderWindow* window;
 	Event event;
 
 	Clock clock;
@@ -28,9 +28,4 @@ public:
 	void UpdateDt();
 	void Render();
 	~Game();
-
-
 };
-
-
-
