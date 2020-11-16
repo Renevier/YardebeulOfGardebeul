@@ -191,9 +191,6 @@
     <ClCompile Include="MapEditorState.cpp">
       <Filter>Classes\States\MapEditorState</Filter>
     </ClCompile>
-    <ClCompile Include="Database.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -285,9 +282,6 @@
     </ClInclude>
     <ClInclude Include="MapEditorState.h">
       <Filter>Classes\States\MapEditorState</Filter>
-    </ClInclude>
-    <ClInclude Include="Database.h">
-      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

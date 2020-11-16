@@ -160,7 +160,6 @@
     <ClCompile Include="ChestContainer.cpp" />
     <ClCompile Include="Consumable.cpp" />
     <ClCompile Include="ConsumableContainer.cpp" />
-    <ClCompile Include="Database.cpp" />
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="DungeonContainer.cpp" />
     <ClCompile Include="Effect.cpp" />
@@ -192,7 +191,6 @@
     <ClInclude Include="ChestContainer.h" />
     <ClInclude Include="Consumable.h" />
     <ClInclude Include="ConsumableContainer.h" />
-    <ClInclude Include="Database.h" />
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="DungeonContainer.h" />
     <ClInclude Include="Effect.h" />
