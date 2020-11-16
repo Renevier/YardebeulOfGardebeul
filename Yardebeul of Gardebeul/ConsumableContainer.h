@@ -15,4 +15,8 @@ public:
 	ConsumableContainer();
 	~ConsumableContainer();
 
+	//get
+	inline  map<string, Consumable> GetContainer() const { return this->container; }
+
+	//set
 };

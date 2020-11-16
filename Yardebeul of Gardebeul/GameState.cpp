@@ -54,8 +54,7 @@ void GameState::EndState()
 
 void GameState::CheckForPause()
 {
-	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("ESCAPE"))))
-		this->pause = true;
+	//if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("ESCAPE"))))
 }
 
 void GameState::PauseMenu()

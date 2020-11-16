@@ -1,15 +1,23 @@
 #include "ChestContainer.h"
 
-//void ChestContainer::Fill()
-//{
-//	this->container.emplace("Chest of quest", Chest());
-//	this->container.emplace("Chest of boss", Chest());
-//	this->container.emplace("Chest of puzzle", Chest());
-//}
+void ChestContainer::Fill()
+{
+	WeaponContainer myWeaponContainer;
+	ArmorContainer myArmorContainer;
+	ConsumableContainer myConsumableContainer;
+
+	Chest questChest("QUEST_CHEST", &myArmorContainer.GetContainer().at(0));
+	Chest bossChest("CHEST_BOSS", &myArmorContainer.GetContainer().at(0));
+	Chest puzzleChest("PUZZLE_CHEST", &myArmorContainer.GetContainer().at(0));
+
+	this->container.emplace("Chest of quest", questChest);
+	this->container.emplace("Chest of boss", bossChest);
+	this->container.emplace("Chest of puzzle", puzzleChest);
+}
 
 ChestContainer::ChestContainer()
 {
-	//this->Fill();
+	this->Fill();
 }
 
 ChestContainer::~ChestContainer()

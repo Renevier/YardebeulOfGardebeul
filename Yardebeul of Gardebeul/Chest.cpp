@@ -1,7 +1,8 @@
 #include "Chest.h"
 
-Chest::Chest()
+Chest::Chest(string _name, Object* _myObject)
 {
+	this->chest.emplace(_name, _myObject);
 }
 
 Chest::~Chest()

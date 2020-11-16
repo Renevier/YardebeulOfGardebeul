@@ -6,13 +6,14 @@ class Chest: public Entity
 {
 	//Variables
 protected:
-	//vector<Object> chest;
+	string name;
+	map<string, Object*> chest; //'Object' is a pointeur because 'object' class is abstract
 
 	//Functions
 private:
 
 public:
-	Chest();
+	Chest(string _name, Object* _myObject);
 	~Chest();
 };
 

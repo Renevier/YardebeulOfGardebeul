@@ -5,7 +5,7 @@
 class ArmorContainer
 {
 protected:
-	vector<Armor> container;
+	map<string, Armor> container;
 
 private:
 	void Fill();
@@ -13,4 +13,9 @@ private:
 public:
 	ArmorContainer();
 	~ArmorContainer();
+
+	//get
+	inline  map<string, Armor> GetContainer() const { return this->container; }
+
+	//set
 };

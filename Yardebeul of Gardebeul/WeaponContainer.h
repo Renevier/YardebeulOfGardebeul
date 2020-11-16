@@ -14,6 +14,11 @@ private:
 public:
 	WeaponContainer();
 	~WeaponContainer();
+
+	//get
+	inline  map<string, Weapon> GetContainer() const { return this->container; }
+
+	//set
 };
 
 

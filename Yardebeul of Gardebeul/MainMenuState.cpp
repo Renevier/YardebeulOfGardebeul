@@ -18,11 +18,11 @@ void MainMenuState::InitFont()
 
 void MainMenuState::InitButton()
 {
-	this->buttons.emplace("RESUME_GAME", new Button(100, 240, 250, 50,
-		&this->font, "Resume Game", Color::White, Color::Green, Color::Red));
+	this->buttons.emplace("NEW_GAME", new Button(100, 240, 250, 50,
+		&this->font, "New game", Color::White, Color::Green, Color::Red));
 
-	this->buttons.emplace("NEW_GAME", new Button(100, 320, 250, 50,
-		&this->font, "New Game", Color::White, Color::Green, Color::Red));
+	this->buttons.emplace("LOAD_GAME", new Button(100, 320, 250, 50,
+		&this->font, "Load game", Color::White, Color::Green, Color::Red));
 
 	this->buttons.emplace("MAP_EDITOR", new Button(100, 400, 250, 50,
 		&this->font, "Map editor", Color::White, Color::Green, Color::Red));
@@ -51,6 +51,8 @@ void MainMenuState::UpdateButton()
 
 	if (this->buttons.at("NEW_GAME")->IsPressed())
 		this->states->push(new GameState(this->window, this->supportedKeys, this->states));
+	
+	//if (this->buttons.at("LOAD_GAME")->IsPressed())
 
 	if (this->buttons.at("MAP_EDITOR")->IsPressed())
 		this->states->push(new MapEditorState(this->window, this->supportedKeys, this->states));
