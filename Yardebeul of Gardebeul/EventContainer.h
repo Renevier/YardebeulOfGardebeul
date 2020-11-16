@@ -15,4 +15,9 @@ public:
 	EventContainer();
 	~EventContainer();
 
+	//get
+	inline map<string, cEvent> GetContainer() const { return this->container; }
+
+	//set
+
 };

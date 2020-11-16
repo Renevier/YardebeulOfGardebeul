@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "EventContainer.h"
 #include "Room.h"
 
 class Dungeon :
@@ -13,7 +14,7 @@ protected:
     int nbEvent;
     vector<STATE_EVENT> listOfEvent;
 
-    map<string, Room> container;
+    map<string, Room> containerOfRoom;
 
     //Functions
 private:

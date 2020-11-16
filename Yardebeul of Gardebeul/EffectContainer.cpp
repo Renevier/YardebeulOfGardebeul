@@ -16,11 +16,6 @@ EffectContainer::EffectContainer()
 	this->Fill();
 }
 
-map<string, Effect> const EffectContainer::GetContainer() const
-{
-	return container;
-}
-
 EffectContainer::~EffectContainer()
 {
 }

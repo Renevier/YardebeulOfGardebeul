@@ -17,4 +17,8 @@ public:
 	ChestContainer();
 	~ChestContainer();
 
+	//get
+	inline  map<string, Chest> GetContainer() const { return this->container; }
+
+	//set
 };

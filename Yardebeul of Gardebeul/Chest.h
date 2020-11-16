@@ -7,7 +7,9 @@ class Chest: public Entity
 	//Variables
 protected:
 	string name;
-	map<string, Object*> chest; //'Object' is a pointeur because 'object' class is abstract
+
+	//'Object' is a pointeur because 'object' class is abstract
+	map<string, Object*> chest; 
 
 	//Functions
 private:

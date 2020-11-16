@@ -10,6 +10,7 @@ void DungeonContainer::Fill()
 
 DungeonContainer::DungeonContainer()
 {
+	this->Fill();
 }
 
 DungeonContainer::~DungeonContainer()

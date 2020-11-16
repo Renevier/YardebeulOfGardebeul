@@ -9,6 +9,7 @@ void WeaponContainer::Fill()
 
 WeaponContainer::WeaponContainer()
 {
+	this->Fill();
 }
 
 WeaponContainer::~WeaponContainer()

@@ -45,9 +45,6 @@
     <Filter Include="Classes\Container\ChestContainer">
       <UniqueIdentifier>{85944e9e-6e7f-4bc1-866a-ee4f39b9fcd2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Container\DugeonContainer">
-      <UniqueIdentifier>{73c1aac1-10cf-4dbc-add8-08831261eb0a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Container\NpcContainer">
       <UniqueIdentifier>{259705e6-13b3-464d-99fe-902a4882af15}</UniqueIdentifier>
     </Filter>
@@ -101,6 +98,9 @@
     </Filter>
     <Filter Include="Classes\Object\Consumable">
       <UniqueIdentifier>{1af26f7e-57ca-454d-8bcb-6ea24e8f2bb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Container\DungeonContainer">
+      <UniqueIdentifier>{73c1aac1-10cf-4dbc-add8-08831261eb0a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -180,7 +180,7 @@
       <Filter>Classes\Container\NpcContainer</Filter>
     </ClCompile>
     <ClCompile Include="DungeonContainer.cpp">
-      <Filter>Classes\Container\DugeonContainer</Filter>
+      <Filter>Classes\Container\DungeonContainer</Filter>
     </ClCompile>
     <ClCompile Include="MainMenuState.cpp">
       <Filter>Classes\States\MainMenuState</Filter>
@@ -190,6 +190,9 @@
     </ClCompile>
     <ClCompile Include="MapEditorState.cpp">
       <Filter>Classes\States\MapEditorState</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -272,7 +275,7 @@
       <Filter>Classes\Container\NpcContainer</Filter>
     </ClInclude>
     <ClInclude Include="DungeonContainer.h">
-      <Filter>Classes\Container\DugeonContainer</Filter>
+      <Filter>Classes\Container\DungeonContainer</Filter>
     </ClInclude>
     <ClInclude Include="MainMenuState.h">
       <Filter>Classes\States\MainMenuState</Filter>
@@ -282,6 +285,9 @@
     </ClInclude>
     <ClInclude Include="MapEditorState.h">
       <Filter>Classes\States\MapEditorState</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

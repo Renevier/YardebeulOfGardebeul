@@ -13,5 +13,10 @@ private:
 public:
 	DungeonContainer();
 	~DungeonContainer();
+
+	//get
+	inline  map<string, Dungeon> GetContainer() const { return this->container; }
+
+	//set
 };
 

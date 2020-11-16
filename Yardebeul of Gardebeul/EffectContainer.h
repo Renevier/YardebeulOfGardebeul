@@ -14,8 +14,12 @@ private:
 
 public:
 	EffectContainer();
-	map<string, Effect> const GetContainer() const;
 	~EffectContainer();
+
+	//Get
+	inline map<string, Effect> GetContainer() const { return this->container; }
+
+	//Set
 
 };
 

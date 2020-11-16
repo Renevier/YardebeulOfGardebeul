@@ -13,5 +13,9 @@ public:
 	NpcContainer();
 	~NpcContainer();
 
+	//get
+	inline  map<string, NPC> GetContainer() const { return this->container; }
+
+	//set
 };
 
