@@ -178,6 +178,7 @@
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="State.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Weapon.cpp" />
     <ClCompile Include="WeaponContainer.cpp" />
   </ItemGroup>
@@ -209,6 +210,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="Tile.h" />
     <ClInclude Include="Tool.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="WeaponContainer.h" />

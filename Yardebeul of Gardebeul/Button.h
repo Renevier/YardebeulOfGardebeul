@@ -27,7 +27,7 @@ public:
 	Button(float _x, float _y, float _width, float _height, Font* font, string text, Color _idleColor, Color _hoverColor, Color _activeColor);
 	void Update(const Vector2f _mousePos);
 	void Render(RenderTarget* target);
-	const bool IsPressed() const;
+	bool IsPressed() const;
 	~Button();
 
 

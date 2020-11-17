@@ -18,16 +18,16 @@ void MainMenuState::InitFont()
 
 void MainMenuState::InitButton()
 {
-	this->buttons.emplace("NEW_GAME", new Button(100, 240, 250, 50,
+	this->buttons.emplace("NEW_GAME", new Button(100, 420, 250, 50,
 		&this->font, "New game", Color::White, Color::Green, Color::Red));
 
-	this->buttons.emplace("LOAD_GAME", new Button(100, 320, 250, 50,
+	this->buttons.emplace("LOAD_GAME", new Button(100, 520, 250, 50,
 		&this->font, "Load game", Color::White, Color::Green, Color::Red));
 
-	this->buttons.emplace("MAP_EDITOR", new Button(100, 400, 250, 50,
+	this->buttons.emplace("MAP_EDITOR", new Button(100, 600, 250, 50,
 		&this->font, "Map editor", Color::White, Color::Green, Color::Red));
 
-	this->buttons.emplace("EXIT", new Button(100, 500, 250, 50,
+	this->buttons.emplace("EXIT", new Button(100, 700, 250, 50,
 		&this->font, "Quit", Color::White, Color::Green, Color::Red));
 
 }
@@ -84,8 +84,8 @@ void MainMenuState::Render(RenderTarget* _target)
 	this->RenderButton(_target);
 
 	//print mouse potiton in the console
-	system("CLS");
-	cout << this->mousePosView.x << " " << this->mousePosView.y;
+	/*system("CLS");
+	cout << this->mousePosView.x << " " << this->mousePosView.y;*/
 }
 
 void MainMenuState::EndState()

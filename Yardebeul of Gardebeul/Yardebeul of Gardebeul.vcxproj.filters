@@ -102,6 +102,12 @@
     <Filter Include="Classes\Container\DungeonContainer">
       <UniqueIdentifier>{73c1aac1-10cf-4dbc-add8-08831261eb0a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\TileMap">
+      <UniqueIdentifier>{7d6ba806-6530-4120-926c-0ddb16a83e04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\TileMap\Tile">
+      <UniqueIdentifier>{f3970711-b8bf-4521-b0ec-c1bef9433b5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -190,6 +196,9 @@
     </ClCompile>
     <ClCompile Include="MapEditorState.cpp">
       <Filter>Classes\States\MapEditorState</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Classes\TileMap\Tile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -282,6 +291,9 @@
     </ClInclude>
     <ClInclude Include="MapEditorState.h">
       <Filter>Classes\States\MapEditorState</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Classes\TileMap\Tile</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

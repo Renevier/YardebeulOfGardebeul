@@ -5,9 +5,9 @@ Button::Button(float _x, float _y, float _width, float _height, Font* _font, str
 	this->buttonState = BTN_STATES::BTN_IDLE;
 
 	this->shape.setSize(Vector2f(_width, _height));
+	this->shape.setOrigin(this->shape.getGlobalBounds().width / 2, this->shape.getGlobalBounds().height / 2);
 	this->shape.setPosition(_x + this->shape.getGlobalBounds().width / 2,
 		_y + this->shape.getGlobalBounds().height / 2);
-	this->shape.setOrigin(this->shape.getGlobalBounds().width / 2, this->shape.getGlobalBounds().height / 2);
 
 	this->font = _font;
 
@@ -63,7 +63,7 @@ void Button::Render(RenderTarget* target)
 	target->draw(this->text);
 }
 
-const bool Button::IsPressed() const
+bool Button::IsPressed() const
 {
 	if(this->buttonState == BTN_STATES::BTN_PRESSED)
 		return true;
