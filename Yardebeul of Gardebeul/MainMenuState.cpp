@@ -1,5 +1,9 @@
 #include "MainMenuState.h"
 
+void MainMenuState::InitKeybinds()
+{
+}
+
 void MainMenuState::InitBackground()
 {
 	this->background.setSize(Vector2f((float)this->window->getSize().x, (float)this->window->getSize().y));

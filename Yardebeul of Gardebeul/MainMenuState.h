@@ -15,6 +15,7 @@ protected:
     map<string, Button*> buttons;
 
 private:
+    virtual void InitKeybinds();
     void InitBackground();
     virtual void InitFont();
     void InitButton();

@@ -17,9 +17,15 @@ protected:
 	Vector2i mousePosScreen;
 	Vector2i mousePosWindow;
 	Vector2f mousePosView;
+	Vector2u mousePosGrid;
 	
+	View view;
+	float viewSpeed;
+
 	//Functions
 private:
+	virtual void InitKeybinds() = 0;
+	void InitView();
 
 public:
 	State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);

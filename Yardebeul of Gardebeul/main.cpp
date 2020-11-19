@@ -7,13 +7,13 @@
 #include "EffectContainer.h"
 #include "Effect.h"
 
-void AfficheStat(Character &_c)
-{
-    _c.DisplayStats();
-}
+//void AfficheStat(Character &_c)
+//{
+//    _c.DisplayStats();
+//}
 
 
-void main()
+int main()
 {
     //with SFML
     Game game;
@@ -22,21 +22,22 @@ void main()
 
     //without SFML
 
-    Hero myHero("Toto");
+    //Hero myHero("Toto");
 
-    myHero.GainExp(201);
-    AfficheStat(myHero);
+    //myHero.GainExp(201);
+    //AfficheStat(myHero);
 
-    NPC npc("tutu", 2, Behaviour::HELPFULL, 100.0f, 10.f, 10.f);
+    //NPC npc("tutu", 2, Behaviour::HELPFULL, 100.0f, 10.f, 10.f);
 
-    cout << "Effect: ----------------------" << endl;
-    Effect myEffect("Fire ball", false, 10, 3);
-    Effect my_effect("Leech seed", false, -10, 3);
+    //cout << "Effect: ----------------------" << endl;
+    //Effect myEffect("Fire ball", false, 10, 3);
+    //Effect my_effect("Leech seed", false, -10, 3);
 
-    myEffect.AffectPlayer();
-    my_effect.AffectPlayer();
+    //myEffect.AffectPlayer();
+    //my_effect.AffectPlayer();
 
-    EffectContainer myEffectConttainer;
+    //EffectContainer myEffectConttainer;
 
-    myEffectConttainer.GetContainer().at(0);
+    //myEffectConttainer.GetContainer().at(0);
+    return 0;
 }

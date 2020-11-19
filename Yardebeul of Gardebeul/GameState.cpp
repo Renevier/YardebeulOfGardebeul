@@ -1,7 +1,7 @@
 #include "GameState.h"
 
 
-void GameState::InitKeybins()
+void GameState::InitKeybinds()
 {
 	this->keybinds.emplace("ESCAPE", this->supportedKeys->at("Escape"));
 	this->keybinds.emplace("MOVE_TOP", this->supportedKeys->at("Up"));
@@ -13,7 +13,7 @@ void GameState::InitKeybins()
 GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
 	: State(_window, _supportedKeys, _states)
 {
-	this->InitKeybins();
+	this->InitKeybinds();
 }
 
 void GameState::UpdateInput(const float& _dt)
@@ -59,8 +59,8 @@ void GameState::CheckForPause()
 
 void GameState::PauseMenu()
 {
-	if(this->pause)
-		this->states->push(new MainMenuState(this->window, this->supportedKeys, this->states));
+	/*if(this->pause)
+		this->states->push(new MainMenuState(this->window, this->supportedKeys, this->states));*/
 }
 
 GameState::~GameState()

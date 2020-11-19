@@ -4,6 +4,7 @@
 #include <list>
 #include <stack>
 #include <map>
+#include <fstream>
 
 #include "SFML/System.hpp"
 #include "SFML/Window.hpp"

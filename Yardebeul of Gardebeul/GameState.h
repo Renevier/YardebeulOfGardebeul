@@ -8,7 +8,7 @@ protected:
 
     //Function
 private:
-    virtual void InitKeybins();
+    virtual void InitKeybinds();
 
 public:
     GameState(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);
