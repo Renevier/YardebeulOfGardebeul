@@ -16,8 +16,8 @@ protected:
 	Texture texture;
 	RectangleShape shape;
 
-	Color idleColor;
 	Color hoverColor;
+	Color idleColor;
 	Color activeColor;
 
 private:

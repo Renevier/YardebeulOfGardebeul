@@ -14,11 +14,20 @@ void Hero::InitVariable(string _name)
 	this->totalExp = .0f;
 }
 
-Hero::Hero(string _name, float _x, float _y, Texture *_texture)
+Hero::Hero(string _name)
 {
 	InitVariable(_name);
-	this->CreateSprite(_texture);
-	this->SetPosition(_x, _y);
+	cout << "Welcome " << this->name << endl;
+}
+
+void Hero::DisplayStats()
+{
+	cout << endl << "Stat of " << this->name << endl;
+	cout << " Level: " << this->level << endl;
+	cout << " HP: " << this->healthPoints << endl;
+	cout << " Mp: " << this->manaPoints << endl;
+	cout << " EndurePoint: " << this->endurePoints << endl;
+	cout << " MindPoint: " << this->mindPoints << endl;
 }
 
 void Hero::LevelProgress()
@@ -31,12 +40,24 @@ void Hero::LevelProgress()
 		percent = this->currentExp / (this->currentExp + this->expNeed) * 100;
 }
 
+void Hero::GainExp(float _exp)
+{
+	this->currentExp += _exp;
+
+	cout << "you gain " << _exp << " experience";
+
+	this->TotalExpNeed(); 
+}
+
 void Hero::LvlUp(vector<int> _arrayOfExp)
 {
 	int i = _arrayOfExp[this->level];
 
 	if (this->currentExp >= _arrayOfExp[this->level + 1] && this->currentExp > i)
+	{
 		this->level++;
+		this->caracPoint++;
+	}
 }
 
 void Hero::PickedUp()

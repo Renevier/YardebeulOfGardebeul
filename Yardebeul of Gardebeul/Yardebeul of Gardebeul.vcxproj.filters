@@ -108,6 +108,9 @@
     <Filter Include="Classes\TileMap\Tile">
       <UniqueIdentifier>{f3970711-b8bf-4521-b0ec-c1bef9433b5a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Error">
+      <UniqueIdentifier>{606920d9-fbca-41d4-852d-84c038c888c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -199,6 +202,9 @@
     </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>Classes\TileMap\Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Classes\Error</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +300,9 @@
     </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Classes\TileMap\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Classes\Error</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

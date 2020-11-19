@@ -11,6 +11,7 @@ private:
 
 public:
     NPC(string _name, float _level, Behaviour _behaviour, float _Hp, float _Mp, float _endure);
+    virtual void DisplayStats();
     ~NPC();
 };
 

@@ -9,12 +9,10 @@ void MapEditorState::InitTiles()
 {
 	int sideOfTile = 50;
 
-	for (int x = 0; x < this->window->getSize().x / sideOfTile; ++x)
+	for (int x = 0; x < this->window->getSize().x / sideOfTile; x++)
 	{
-		for (int y = 0; y < this->window->getSize().y / sideOfTile; ++y)
-		{
+		for (int y = 0; y < this->window->getSize().y / sideOfTile; y++)
 			this->tiles.emplace((x, y), new Tile(x * sideOfTile, y * sideOfTile, sideOfTile, Color::Black));
-		}
 	}
 }
 

@@ -21,6 +21,6 @@ protected:
 
 public:
 	Character();
-	void DisplayStats();
+	virtual void DisplayStats() = 0;
 	~Character();
 };

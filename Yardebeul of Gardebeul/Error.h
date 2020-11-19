@@ -15,7 +15,4 @@ public:
 	virtual const char* What() const throw();
 	int GetLevel() const throw();
 	~Error();
-
-private:
-
 };
