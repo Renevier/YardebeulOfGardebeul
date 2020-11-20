@@ -1,8 +1,13 @@
 #include "MapEditorState.h"
 
-void MapEditorState::InitBackground()
+void MapEditorState::InitText()
 {
-	
+	if (!this->font.loadFromFile("../Ressources/Font/rpgFont.ttf"))
+		exit(0);
+
+	this->text.setCharacterSize(12);
+	this->text.setFillColor(Color::White);
+	this->text.setFont(this->font);
 }
 
 void MapEditorState::InitKeybinds()
@@ -14,10 +19,17 @@ void MapEditorState::InitKeybinds()
 	this->keybinds.emplace("MOVE_DOWN", this->supportedKeys->at("Down"));
 }
 
-void MapEditorState::InitGrid()
+void MapEditorState::InitTiles()
 {
-	this->gridSizeF = 100.f;
-	this->shape.setSize(Vector2f(gridSizeF, gridSizeF));
+	this->tileSize = 100.f;
+
+	for (int x = 0; x < this->window->getSize().x; x++)
+	{
+		for (int y = 0; y < this->window->getSize().y; y++)
+		{
+			this->tiles.emplace((x + y), new Tile(x * this->tileSize, y * this->tileSize, this->tileSize));
+		}
+	}
 }
 
 void MapEditorState::InitVariables()
@@ -29,7 +41,8 @@ void MapEditorState::InitVariables()
 MapEditorState::MapEditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
 	: State(_window, _supportedKeys, _states)
 {
-	this->InitGrid();
+	this->InitText();
+	this->InitTiles();
 	this->InitVariables();
 	this->InitKeybinds();
 }
@@ -48,7 +61,17 @@ void MapEditorState::UpdateInput(const float& _dt)
 
 void MapEditorState::Update(const float& _dt)
 {
+	this->UpdateMousePosition();
+
+	if (this->mousePosView.x >= 0)
+		mousePosGrid.x = mousePosView.x / this->tileSize;
+
+	if (this->mousePosView.y >= 0)
+		mousePosGrid.y = mousePosView.y / this->tileSize;
+
 	this->UpdateInput(_dt);
+
+		
 }
 
 void MapEditorState::Render(RenderTarget* _target)
@@ -57,18 +80,32 @@ void MapEditorState::Render(RenderTarget* _target)
 		_target = this->window;
 
 	this->ViewRender(_target);
+
+	cout << "Screen: " << this->mousePosScreen.x << " " << this->mousePosScreen.y << endl <<
+		"Window: " << this->mousePosWindow.x << " " << this->mousePosWindow.y << endl <<
+		"View: " << this->mousePosView.x << " " << this->mousePosView.y << endl <<
+		"Grid: " << this->mousePosGrid.x << " " << this->mousePosGrid.y;
+
+	system("CLS");
 }
 
 void MapEditorState::ViewRender(RenderTarget* _target)
 {
 	_target->setView(this->view);
-	this->GridRender(_target);
+	this->TilesRender(_target);
 	this->window->setView(_target->getDefaultView());
+	this->TextRender(_target);
 }
 
-void MapEditorState::GridRender(RenderTarget* _target)
+void MapEditorState::TilesRender(RenderTarget* _target)
 {
-	_target->draw(shape);
+	for (auto it : this->tiles)
+		it.second->Render(_target);
+}
+
+void MapEditorState::TextRender(RenderTarget* _target)
+{
+	_target->draw(this->text);	
 }
 
 void MapEditorState::UpdateState()

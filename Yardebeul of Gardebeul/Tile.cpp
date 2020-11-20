@@ -1,6 +1,6 @@
 #include "Tile.h"
 
-Tile::Tile(float _x, float _y, float _side, Color _hoverColor)
+Tile::Tile(float _x, float _y, float _side)
 {
 	this->idleColor = Color::White;
 	this->tileState = TILE_STATE::TILE_IDLE;
@@ -11,8 +11,7 @@ Tile::Tile(float _x, float _y, float _side, Color _hoverColor)
 	this->shape.setOrigin(this->shape.getGlobalBounds().width / 2, this->shape.getGlobalBounds().height / 2);
 	this->shape.setPosition(_x + this->shape.getGlobalBounds().width / 2,
 		_y + this->shape.getGlobalBounds().height / 2);
-
-	this->hoverColor = _hoverColor;
+		
 }
 
 void Tile::Update(const Vector2f _mousePos)
