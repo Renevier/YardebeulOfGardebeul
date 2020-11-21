@@ -21,7 +21,7 @@ private:
     void InitButton();
 
 public:
-    MainMenuState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
+    MainMenuState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states, View* _view);
     virtual void UpdateInput(const float& _dt);
     void UpdateButton();
     virtual void Update(const float& _dt);
