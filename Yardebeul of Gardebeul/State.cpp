@@ -3,7 +3,7 @@
 void State::InitView()
 {
 	this->view.setSize(this->window->getSize().x, this->window->getSize().y);
-	this->view.setCenter(this->window->getSize().x / 2, this->window->getSize().y / 2);
+	this->view.setCenter(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
 }
 
 State::State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states)
@@ -23,7 +23,7 @@ void State::UpdateMousePosition()
 	this->mousePosScreen = Mouse::getPosition();
 	this->mousePosWindow = Mouse::getPosition(*this->window);
 	this->window->setView(this->view);
-	this->mousePosView = this->window->mapPixelToCoords(Mouse::getPosition(*this->window));
+	this->mousePosView = this->window->mapPixelToCoords(mousePosWindow);
 	this->window->setView(this->window->getDefaultView());
 }
 

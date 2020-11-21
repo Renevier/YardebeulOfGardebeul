@@ -11,6 +11,8 @@ Tile::Tile(float _x, float _y, float _side)
 	this->shape.setOrigin(this->shape.getGlobalBounds().width / 2, this->shape.getGlobalBounds().height / 2);
 	this->shape.setPosition(_x + this->shape.getGlobalBounds().width / 2,
 		_y + this->shape.getGlobalBounds().height / 2);
+	this->shape.setOutlineColor(Color::Black);
+	this->shape.setOutlineThickness(2.f);
 		
 }
 

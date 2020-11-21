@@ -28,7 +28,7 @@ void Entity::SetPosition(const float _x, const float _y)
 
 void Entity::Move(const float& _dt, const float _dir_x, const float _dir_y)
 {
-		this->shape.move(_dir_x * this->movementSpeed * _dt, _dir_y * this->movementSpeed * _dt);
+	this->shape.move(_dir_x * this->movementSpeed * _dt, _dir_y * this->movementSpeed * _dt);
 }
 
 void Entity::Update(const float& _dt)

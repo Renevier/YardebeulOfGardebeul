@@ -21,12 +21,11 @@ protected:
 	View view;
 	float viewSpeed;
 
-	Text text;
 
 	//Functions
 private:
 	virtual void InitKeybinds() = 0;
-	void InitView();
+	virtual void InitView();
 
 public:
 	State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);
