@@ -12,9 +12,10 @@ protected:
 
     Vector2u mousePosGrid;
 
-    vector<Tile*> tiles;
+    list<Tile*> tiles;
 
     RectangleShape tileSelector;
+    list<Tile*> tilePicker;
 
 private:
     void InitTileSelector();
@@ -22,6 +23,7 @@ private:
     virtual void InitKeybinds();
     void InitTiles();
     void InitVariables();
+    void InitTilePicker();
 
 public:
 	MapEditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
@@ -33,6 +35,7 @@ public:
     void ViewRender(RenderTarget* _target);
     void TilesRender(RenderTarget* _target);
     void TileSelectorRender(RenderTarget* _target);
+    void RenderTilePicker(RenderTarget* _target);
     virtual void EndState();
 	~MapEditorState();
 };

@@ -11,7 +11,7 @@ void MapEditorState::InitTileSelector()
 
 void MapEditorState::InitTileSize()
 {
-	this->tileSizeF = 100.f;
+	this->tileSizeF = 10.f;
 	this->tileSizeU = (unsigned)this->tileSizeF;
 }
 
@@ -38,6 +38,11 @@ void MapEditorState::InitVariables()
 	this->viewSpeed = 100.f;
 }
 
+void MapEditorState::InitTilePicker()
+{
+	for (int i = 0; i <= this->window->getSize().x / this->tileSizeU - 1; i++)
+		this->tilePicker.push_back(new Tile(i * this->tileSizeF, 0, this->tileSizeF));
+}
 
 MapEditorState::MapEditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
 	: State(_window, _supportedKeys, _states)
@@ -47,6 +52,7 @@ MapEditorState::MapEditorState(RenderWindow* _window, map<string, int>* _support
 	this->InitTiles();
 	this->InitVariables();
 	this->InitKeybinds();
+	this->InitTilePicker();
 }
 
 void MapEditorState::UpdateInput(const float& _dt)
@@ -65,7 +71,7 @@ void MapEditorState::UpdateMousePosGrid()
 {
 	if (this->mousePosView.x >= 0)
 		mousePosGrid.x = mousePosView.x / this->tileSizeU;
-
+	
 	if (this->mousePosView.y >= 0)
 		mousePosGrid.y = mousePosView.y / this->tileSizeU;
 	
@@ -77,8 +83,6 @@ void MapEditorState::Update(const float& _dt)
 	this->UpdateMousePosition();
 	this->UpdateMousePosGrid();
 	this->UpdateInput(_dt);
-
-		
 }
 
 void MapEditorState::Render(RenderTarget* _target)
@@ -90,11 +94,13 @@ void MapEditorState::Render(RenderTarget* _target)
 	this->TilesRender(_target);
 	this->TileSelectorRender(_target);
 	this->window->setView(_target->getDefaultView());
+	this->RenderTilePicker(_target);
 
-	cout << "Screen: " << this->mousePosScreen.x << " " << this->mousePosScreen.y << endl <<
-		"Window: X==>" << this->mousePosWindow.x << " Y==>" << this->mousePosWindow.y << endl <<
-		"View: X==>" << this->mousePosView.x << " Y==>" << this->mousePosView.y << endl <<
-		"Grid: X==>" << this->mousePosGrid.x << " Y==>" << this->mousePosGrid.y;
+	cout << "Screen: X==>" << this->mousePosScreen.x << " Y==>" << this->mousePosScreen.y << endl <<
+			"Window: X==>" << this->mousePosWindow.x << " Y==>" << this->mousePosWindow.y << endl <<
+			"View: X==>" << this->mousePosView.x << " Y==>" << this->mousePosView.y << endl <<
+			"Tile selector: X==>" << this->tileSelector.getPosition().x << " Y==>" << this->tileSelector.getPosition().y << endl <<
+			"Grid: X==>" << this->mousePosGrid.x << " Y==>" << this->mousePosGrid.y;
 
 	system("CLS");
 }
@@ -102,7 +108,6 @@ void MapEditorState::Render(RenderTarget* _target)
 void MapEditorState::ViewRender(RenderTarget* _target)
 {
 	_target->setView(this->view);
-	
 }
 
 void MapEditorState::TilesRender(RenderTarget* _target)
@@ -114,6 +119,12 @@ void MapEditorState::TilesRender(RenderTarget* _target)
 void MapEditorState::TileSelectorRender(RenderTarget* _target)
 {
 	_target->draw(this->tileSelector);
+}
+
+void MapEditorState::RenderTilePicker(RenderTarget* _target)
+{
+	for (auto it : this->tilePicker)
+		it->Render(_target);
 }
 
 void MapEditorState::UpdateState()
