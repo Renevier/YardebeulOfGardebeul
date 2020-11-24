@@ -1,6 +1,5 @@
 #include "MapEditorState.h"
 
-
 void MapEditorState::InitTileSelector()
 {
 	this->tileSelector.setSize(Vector2f(this->tileSizeF, this->tileSizeF));
@@ -11,7 +10,10 @@ void MapEditorState::InitTileSelector()
 
 void MapEditorState::InitTileSize()
 {
-	this->tileSizeF = 10.f;
+	if (!this->tilePickerTexture.loadFromFile("../Ressources/Tilesmap/IceDungeonTiles.png"))
+		exit(EXIT_FAILURE);
+
+	this->tileSizeF = this->tilePickerTexture.getSize().x / 5;
 	this->tileSizeU = (unsigned)this->tileSizeF;
 }
 
@@ -35,24 +37,24 @@ void MapEditorState::InitTiles()
 
 void MapEditorState::InitVariables()
 {
-	this->viewSpeed = 100.f;
+	this->viewSpeed = 200.f;
 }
 
 void MapEditorState::InitTilePicker()
 {
-	for (int i = 0; i <= this->window->getSize().x / this->tileSizeU - 1; i++)
-		this->tilePicker.push_back(new Tile(i * this->tileSizeF, 0, this->tileSizeF));
+	for (int i = 0; i <= this->window->getSize().x / tileSizeF; i++)
+		this->tilePicker.push_back(new Tile(&this->tilePickerTexture, i * tileSizeF, 0));
 }
 
 MapEditorState::MapEditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
 	: State(_window, _supportedKeys, _states)
 {
 	this->InitTileSize();
+	this->InitTilePicker();
 	this->InitTileSelector();
 	this->InitTiles();
 	this->InitVariables();
 	this->InitKeybinds();
-	this->InitTilePicker();
 }
 
 void MapEditorState::UpdateInput(const float& _dt)

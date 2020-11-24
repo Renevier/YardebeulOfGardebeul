@@ -13,7 +13,6 @@ class Tile
 protected:
 	TILE_STATE tileState;
 
-	Texture texture;
 	RectangleShape shape;
 
 	Color hoverColor;
@@ -25,6 +24,7 @@ private:
 
 public:
 	Tile(float _x, float _y, float _side);
+	Tile(Texture* _texture, float _x, float _y);
 	void Update(const Vector2f _mousePos);
 	void Render(RenderTarget* target);
 	bool IsPressed() const;

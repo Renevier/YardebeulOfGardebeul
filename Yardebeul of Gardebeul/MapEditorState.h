@@ -8,13 +8,13 @@ protected:
     float tileSizeF;
     unsigned tileSizeU;
 
-    Font font;
-
     Vector2u mousePosGrid;
 
     list<Tile*> tiles;
 
     RectangleShape tileSelector;
+
+    Texture tilePickerTexture;
     list<Tile*> tilePicker;
 
 private:

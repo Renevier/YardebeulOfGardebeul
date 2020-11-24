@@ -111,6 +111,9 @@
     <Filter Include="Classes\Error">
       <UniqueIdentifier>{606920d9-fbca-41d4-852d-84c038c888c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\TileMap\TilePicker">
+      <UniqueIdentifier>{d4febda1-632d-4f23-a68d-c0efa4fb69d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -205,6 +208,9 @@
     </ClCompile>
     <ClCompile Include="Error.cpp">
       <Filter>Classes\Error</Filter>
+    </ClCompile>
+    <ClCompile Include="TilePicker.cpp">
+      <Filter>Classes\TileMap\TilePicker</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +309,9 @@
     </ClInclude>
     <ClInclude Include="Error.h">
       <Filter>Classes\Error</Filter>
+    </ClInclude>
+    <ClInclude Include="TilePicker.h">
+      <Filter>Classes\TileMap\TilePicker</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
