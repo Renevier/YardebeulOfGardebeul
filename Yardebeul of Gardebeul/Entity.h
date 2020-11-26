@@ -5,7 +5,6 @@ class Entity
 {
 	//Variables
 protected:
-	RectangleShape shape;
 	Texture *texture;
 	Sprite *sprite;
 

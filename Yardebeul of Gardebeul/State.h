@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity.h"
+#include "Hero.h"
 
 //Mother of all our states
 class State
@@ -20,6 +20,8 @@ protected:
 	
 	View view;
 	float viewSpeed;
+
+	map<string, Texture> textures;
 
 
 	//Functions

@@ -12,11 +12,11 @@ class Hero :
 	//Function
 
 private:
-
-	virtual void InitVariable(string _name);
+	virtual void InitVariable();
+	void InitComponent(float _x, float _y, Texture* _texture);
 
 public:
-	Hero(string _name);
+	Hero(float _x, float _y, Texture* _texture);
 	virtual void DisplayStats();
 	void LevelProgress();
 	void GainExp(float _exp);

@@ -1,8 +1,7 @@
 #include "Hero.h"
 
-void Hero::InitVariable(string _name)
+void Hero::InitVariable()
 {
-	this->name = _name;
 	this->level = 1.f;
 	this->manaPoints = 100.f;
 	this->healthPoints = 100.f;
@@ -14,10 +13,16 @@ void Hero::InitVariable(string _name)
 	this->totalExp = .0f;
 }
 
-Hero::Hero(string _name)
+void Hero::InitComponent(float _x, float _y, Texture* _texture)
 {
-	InitVariable(_name);
-	cout << "Welcome " << this->name << endl;
+	this->CreateSprite(_texture);
+	this->SetPosition(_x, _y);
+}
+
+Hero::Hero(float _x, float _y, Texture* _texture)
+{
+	this->InitVariable();
+	this->InitComponent(_x, _y, _texture);
 }
 
 void Hero::DisplayStats()

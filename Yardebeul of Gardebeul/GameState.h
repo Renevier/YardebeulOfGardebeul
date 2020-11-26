@@ -4,11 +4,13 @@
 class GameState: public State
 {
 protected:
-    Entity player;
+    Hero* player;
 
     //Function
 private:
     virtual void InitKeybinds();
+    void InitTexture();
+    void InitPlayer();
 
 public:
     GameState(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);
