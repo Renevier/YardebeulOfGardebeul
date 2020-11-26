@@ -2,7 +2,7 @@
 
 void MapEditorState::InitTileSelector()
 {
-	this->tileSelector.setSize(Vector2f(this->tileSizeF, this->tileSizeF));
+	this->tileSelector.setSize(this->tileSizeF);
 	this->tileSelector.setFillColor(Color::Transparent);
 	this->tileSelector.setOutlineThickness(2.f);
 	this->tileSelector.setOutlineColor(Color::Red);
@@ -13,8 +13,9 @@ void MapEditorState::InitTileSize()
 	if (!this->tilePickerTexture.loadFromFile("../Ressources/Tilesmap/IceDungeonTiles.png"))
 		exit(EXIT_FAILURE);
 
-	this->tileSizeF = this->tilePickerTexture.getSize().x / 5;
-	this->tileSizeU = (unsigned)this->tileSizeF;
+	this->tileSizeF = Vector2f(this->tilePickerTexture.getSize().x / 5, this->tilePickerTexture.getSize().y / 22);
+	this->tileSizeU.x = (unsigned)tileSizeF.x;
+	this->tileSizeU.y = (unsigned)tileSizeF.y;
 }
 
 void MapEditorState::InitKeybinds()
@@ -28,10 +29,10 @@ void MapEditorState::InitKeybinds()
 
 void MapEditorState::InitTiles()
 {
-	for (int x = 0; x < this->window->getSize().x / this->tileSizeF; x++)
+	for (int x = 0; x < this->window->getSize().x / this->tileSizeF.x; x++)
 	{
-		for (int y = 0; y < this->window->getSize().y / tileSizeF; y++)
-			this->tiles.push_back(new Tile(x * this->tileSizeF, y * this->tileSizeF, this->tileSizeF));
+		for (int y = 0; y < this->window->getSize().y / tileSizeF.y; y++)
+			this->tiles.push_back(new Tile(x * this->tileSizeF.x, y * this->tileSizeF.y, this->tileSizeF));
 	}
 }
 
@@ -42,8 +43,8 @@ void MapEditorState::InitVariables()
 
 void MapEditorState::InitTilePicker()
 {
-	for (int i = 0; i <= this->window->getSize().x / tileSizeF; i++)
-		this->tilePicker.push_back(new Tile(&this->tilePickerTexture, i * tileSizeF, 0));
+	for (int i = 0; i <= this->window->getSize().x / tileSizeF.x; i++)
+		this->tilePicker.push_back(new Tile(&this->tilePickerTexture, i * tileSizeF.x, 0));
 }
 
 MapEditorState::MapEditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
@@ -72,12 +73,12 @@ void MapEditorState::UpdateInput(const float& _dt)
 void MapEditorState::UpdateMousePosGrid()
 {
 	if (this->mousePosView.x >= 0)
-		mousePosGrid.x = mousePosView.x / this->tileSizeU;
+		mousePosGrid.x = mousePosView.x / this->tileSizeU.x;
 	
 	if (this->mousePosView.y >= 0)
-		mousePosGrid.y = mousePosView.y / this->tileSizeU;
+		mousePosGrid.y = mousePosView.y / this->tileSizeU.y;
 	
-	this->tileSelector.setPosition(this->mousePosGrid.x * this->tileSizeF, this->mousePosGrid.y * this->tileSizeF);
+	this->tileSelector.setPosition(this->mousePosGrid.x * this->tileSizeF.x, this->mousePosGrid.y * this->tileSizeF.y);
 }
 
 void MapEditorState::Update(const float& _dt)

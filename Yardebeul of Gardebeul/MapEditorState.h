@@ -5,8 +5,8 @@
 class MapEditorState: public State
 {
 protected:
-    float tileSizeF;
-    unsigned tileSizeU;
+    Vector2f tileSizeF;
+    Vector2u tileSizeU;
 
     Vector2u mousePosGrid;
 

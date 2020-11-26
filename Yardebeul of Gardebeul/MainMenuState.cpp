@@ -46,6 +46,7 @@ MainMenuState::MainMenuState(RenderWindow* _window, map<string, int>* _supported
 
 void MainMenuState::UpdateInput(const float& _dt)
 {
+	this->UpdateButton();
 }
 
 void MainMenuState::UpdateButton()
@@ -69,7 +70,7 @@ void MainMenuState::Update(const float& _dt)
 {
 	this->UpdateMousePosition();
 	this->CheckForQuit();
-	this->UpdateButton();
+	this->UpdateInput(_dt);
 }
 
 void MainMenuState::RenderButton(RenderTarget* _target)

@@ -72,17 +72,11 @@
     <Filter Include="Classes\States\GameState">
       <UniqueIdentifier>{e9fdbf45-f468-45b3-be52-122142e1b782}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\States\MainMenuState">
-      <UniqueIdentifier>{73a8964d-8ae3-4a02-9d6a-50d143178458}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Ressources files">
       <UniqueIdentifier>{fc309245-be4e-41e6-b2e0-c7308ffee4cf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Ressources files\Button">
       <UniqueIdentifier>{8c92b23e-1131-4a4e-ab95-9b429ca6270f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\States\MapEditorState">
-      <UniqueIdentifier>{6e811d35-cdce-4912-8f30-67e8f51769fe}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Container\EventContainer">
       <UniqueIdentifier>{11289ce0-6149-4985-9817-08636c899162}</UniqueIdentifier>
@@ -113,6 +107,18 @@
     </Filter>
     <Filter Include="Classes\TileMap\TilePicker">
       <UniqueIdentifier>{d4febda1-632d-4f23-a68d-c0efa4fb69d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\States\Menu">
+      <UniqueIdentifier>{a1ac6e68-9c4a-46ab-93d3-f4d7065fb61c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\States\Menu\PauseMenuState">
+      <UniqueIdentifier>{5d94eb20-ba5e-4fa8-b6ef-364ffa316e86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\States\MapEditorState">
+      <UniqueIdentifier>{6e811d35-cdce-4912-8f30-67e8f51769fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\States\Menu\MainMenuState">
+      <UniqueIdentifier>{73a8964d-8ae3-4a02-9d6a-50d143178458}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -195,7 +201,7 @@
       <Filter>Classes\Container\DungeonContainer</Filter>
     </ClCompile>
     <ClCompile Include="MainMenuState.cpp">
-      <Filter>Classes\States\MainMenuState</Filter>
+      <Filter>Classes\States\Menu\MainMenuState</Filter>
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Classes\Ressources files\Button</Filter>
@@ -211,6 +217,9 @@
     </ClCompile>
     <ClCompile Include="TilePicker.cpp">
       <Filter>Classes\TileMap\TilePicker</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseMenuState.cpp">
+      <Filter>Classes\States\Menu\PauseMenuState</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -296,7 +305,7 @@
       <Filter>Classes\Container\DungeonContainer</Filter>
     </ClInclude>
     <ClInclude Include="MainMenuState.h">
-      <Filter>Classes\States\MainMenuState</Filter>
+      <Filter>Classes\States\Menu\MainMenuState</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Classes\Ressources files\Button</Filter>
@@ -312,6 +321,9 @@
     </ClInclude>
     <ClInclude Include="TilePicker.h">
       <Filter>Classes\TileMap\TilePicker</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenuState.h">
+      <Filter>Classes\States\Menu\PauseMenuState</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

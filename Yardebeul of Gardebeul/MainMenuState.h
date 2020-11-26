@@ -14,7 +14,7 @@ protected:
 
     map<string, Button*> buttons;
 
-private:
+protected:
     virtual void InitKeybinds();
     void InitBackground();
     virtual void InitFont();
@@ -23,11 +23,11 @@ private:
 public:
     MainMenuState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
     virtual void UpdateInput(const float& _dt);
-    void UpdateButton();
+    virtual void UpdateButton();
     virtual void Update(const float& _dt);
-    void RenderButton(RenderTarget* _target);
+    virtual void RenderButton(RenderTarget* _target);
     virtual void Render(RenderTarget* _target);
     virtual void EndState();
-    void CheckForQuit();
+    virtual  void CheckForQuit();
     ~MainMenuState();
 };

@@ -1,13 +1,13 @@
 #include "Tile.h"
 
-Tile::Tile(float _x, float _y, float _side)
+Tile::Tile(float _x, float _y, Vector2f _side)
 {
 	this->idleColor = Color::White;
 	this->tileState = TILE_STATE::TILE_IDLE;
 
 	this->shape.setFillColor(this->idleColor);
 
-	this->shape.setSize(Vector2f(_side, _side));
+	this->shape.setSize(_side);
 	this->shape.setOrigin(this->shape.getGlobalBounds().width / 2, this->shape.getGlobalBounds().height / 2);
 	this->shape.setPosition(_x + this->shape.getGlobalBounds().width / 2,
 		_y + this->shape.getGlobalBounds().height / 2);

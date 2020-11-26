@@ -42,6 +42,7 @@ void GameState::Render(RenderTarget* _target)
 		_target = this->window;
 
 	this->player.Render(_target);
+
 }
 
 void GameState::UpdateState()
