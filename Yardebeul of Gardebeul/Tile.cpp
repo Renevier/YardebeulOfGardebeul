@@ -25,9 +25,9 @@ Tile::Tile(Texture* _texture, float _x, float _y)
 	this->shape.setSize(Vector2f(tileSize.x, tileSize.y));
 	this->shape.setOrigin(this->shape.getGlobalBounds().width / 2, this->shape.getGlobalBounds().height / 2);
 
-	this->shape.setTextureRect(IntRect(_x * tileSize.x, _y * tileSize.y,
-		tileSize.x, tileSize.y));
-
+	this->shape.setTextureRect(IntRect(_x, _y, tileSize.x, tileSize.y));
+	
+	
 	this->shape.setPosition(_x + this->shape.getGlobalBounds().width / 2,
 		_y + this->shape.getGlobalBounds().height / 2);
 }

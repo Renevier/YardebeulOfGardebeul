@@ -44,7 +44,9 @@ void MapEditorState::InitVariables()
 void MapEditorState::InitTilePicker()
 {
 	for (int i = 0; i <= this->window->getSize().x / tileSizeF.x; i++)
-		this->tilePicker.push_back(new Tile(&this->tilePickerTexture, i * tileSizeF.x, 0));
+	{
+		this->tilePicker.push_back(new Tile(&this->tilePickerTexture, i * this->tileSizeF.x, 0));
+	}
 }
 
 MapEditorState::MapEditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
