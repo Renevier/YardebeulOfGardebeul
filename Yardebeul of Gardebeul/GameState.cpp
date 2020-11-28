@@ -18,7 +18,7 @@ void GameState::InitTexture()
 
 void GameState::InitPlayer()
 {
-	this->player = new Hero(0, 0, &this->textures["PLAYER_IDLE"]);
+	this->player = new Hero(0, 0, this->textures["PLAYER_IDLE"]);
 }
 
 GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)

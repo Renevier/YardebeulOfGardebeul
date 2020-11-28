@@ -13,10 +13,10 @@ class Hero :
 
 private:
 	virtual void InitVariable();
-	void InitComponent(float _x, float _y, Texture* _texture);
+	void InitComponent(float _x, float _y, Texture& _texture);
 
 public:
-	Hero(float _x, float _y, Texture* _texture);
+	Hero(float _x, float _y, Texture& _texture);
 	virtual void DisplayStats();
 	void LevelProgress();
 	void GainExp(float _exp);

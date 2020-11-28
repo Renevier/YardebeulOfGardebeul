@@ -13,13 +13,14 @@ void Hero::InitVariable()
 	this->totalExp = .0f;
 }
 
-void Hero::InitComponent(float _x, float _y, Texture* _texture)
+void Hero::InitComponent(float _x, float _y, Texture& _texture)
 {
-	this->CreateSprite(_texture);
+	this->SetTexture(_texture);
 	this->SetPosition(_x, _y);
+	this->CreateMovementComponent(100.f);
 }
 
-Hero::Hero(float _x, float _y, Texture* _texture)
+Hero::Hero(float _x, float _y, Texture& _texture)
 {
 	this->InitVariable();
 	this->InitComponent(_x, _y, _texture);

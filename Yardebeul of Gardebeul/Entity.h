@@ -1,19 +1,18 @@
 #pragma once
-#include "pch.h"
+#include "MovementComponent.h"
 
 class Entity
 {
 	//Variables
 protected:
-	Texture *texture;
-	Sprite *sprite;
+	Sprite sprite;
 
-	float movementSpeed;
-
+	MovementComponent* movementComponent;
 	//Function
 protected:
-	void CreateSprite(Texture *_texture);
 	void VariableInit();
+	void SetTexture(Texture& _texture);
+	void CreateMovementComponent(const float _maxVelocity);
 
 public:
 	Entity();

@@ -120,6 +120,12 @@
     <Filter Include="Classes\States\Menu\MainMenuState">
       <UniqueIdentifier>{73a8964d-8ae3-4a02-9d6a-50d143178458}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Component">
+      <UniqueIdentifier>{60bdcfc6-f004-4c8c-b6f7-077745adf45b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Component\MovementComponent">
+      <UniqueIdentifier>{d3f9dcd5-c974-4ca8-89fe-35c0122ffd52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -220,6 +226,9 @@
     </ClCompile>
     <ClCompile Include="PauseMenuState.cpp">
       <Filter>Classes\States\Menu\PauseMenuState</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementComponent.cpp">
+      <Filter>Classes\Component\MovementComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +333,9 @@
     </ClInclude>
     <ClInclude Include="PauseMenuState.h">
       <Filter>Classes\States\Menu\PauseMenuState</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementComponent.h">
+      <Filter>Classes\Component\MovementComponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
