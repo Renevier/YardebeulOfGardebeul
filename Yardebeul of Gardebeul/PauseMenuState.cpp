@@ -2,8 +2,8 @@
 
 void PauseMenuState::InitButton()
 {
-	this->buttons.emplace("SAVE_GAME", new Button(100, 420, 250, 50,
-		&this->font, "Save game", Color::White, Color::Green, Color::Red));
+	/*this->buttons.emplace("SAVE_GAME", new Button(100, 420, 250, 50,
+		&this->font, "Save game", Color::White, Color::Green, Color::Red));*/
 }
 
 PauseMenuState::PauseMenuState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)

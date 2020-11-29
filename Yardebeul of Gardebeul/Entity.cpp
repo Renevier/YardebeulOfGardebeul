@@ -5,9 +5,9 @@ void Entity::SetTexture(Texture& _texture)
 	this->sprite.setTexture(_texture);
 }
 
-void Entity::CreateMovementComponent(const float _maxVelocity)
+void Entity::CreateMovementComponent(const float _maxVelocity, float _acceleration, float _deceleretion)
 {
-	this->movementComponent = new MovementComponent(this->sprite, _maxVelocity); 
+	this->movementComponent = new MovementComponent(this->sprite, _maxVelocity, _acceleration, _deceleretion);
 }
 
 void Entity::VariableInit()
@@ -25,7 +25,7 @@ void Entity::SetPosition(const float _x, const float _y)
 	this->sprite.setPosition(_x, _y);
 }
 
-void Entity::Move(const float& _dt, const float _dir_x, const float _dir_y)
+void Entity::Move(const float _dir_x, const float _dir_y, const float& _dt)
 {
 	if (this->movementComponent)
 	{
@@ -35,6 +35,8 @@ void Entity::Move(const float& _dt, const float _dir_x, const float _dir_y)
 
 void Entity::Update(const float& _dt)
 {
+	if (this->movementComponent)
+		this->movementComponent->Update(_dt);
 	
 }
 

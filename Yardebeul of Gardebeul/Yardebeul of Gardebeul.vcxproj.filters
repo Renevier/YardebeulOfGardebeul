@@ -126,6 +126,12 @@
     <Filter Include="Classes\Component\MovementComponent">
       <UniqueIdentifier>{d3f9dcd5-c974-4ca8-89fe-35c0122ffd52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Component\Animation component">
+      <UniqueIdentifier>{dc68f2fb-e750-4aad-9295-a4951c445c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Animation">
+      <UniqueIdentifier>{0ded7ed5-6c99-42dc-8f52-def6b33226ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -229,6 +235,12 @@
     </ClCompile>
     <ClCompile Include="MovementComponent.cpp">
       <Filter>Classes\Component\MovementComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationComponent.cpp">
+      <Filter>Classes\Component\Animation component</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -336,6 +348,12 @@
     </ClInclude>
     <ClInclude Include="MovementComponent.h">
       <Filter>Classes\Component\MovementComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationComponent.h">
+      <Filter>Classes\Component\Animation component</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

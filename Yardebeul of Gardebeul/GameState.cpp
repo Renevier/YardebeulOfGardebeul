@@ -32,13 +32,13 @@ GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, st
 void GameState::UpdateInput(const float& _dt)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_TOP"))))
-		this->player->Move(_dt, 0.f, -1.f);
+		this->player->Move(0.f, -1.f, _dt);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_DOWN"))))
-		this->player->Move(_dt, 0.f, 1.f);
+		this->player->Move(0.f, 1.f, _dt);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_LEFT"))))
-		this->player->Move(_dt, -1.f, 0.f);
+		this->player->Move(-1.f, 0.f, _dt);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
-		this->player->Move(_dt, 1.f, 0.f);
+		this->player->Move(1.f, 0.f, _dt);
 }
 
 void GameState::Update(const float& _dt)

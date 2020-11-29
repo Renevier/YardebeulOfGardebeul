@@ -17,7 +17,7 @@ void Hero::InitComponent(float _x, float _y, Texture& _texture)
 {
 	this->SetTexture(_texture);
 	this->SetPosition(_x, _y);
-	this->CreateMovementComponent(100.f);
+	this->CreateMovementComponent(300.f, 15.f, 5.f);
 }
 
 Hero::Hero(float _x, float _y, Texture& _texture)
@@ -95,4 +95,5 @@ float Hero::TotalExpNeed()
 
 Hero::~Hero()
 {
+	delete this->movementComponent;
 }

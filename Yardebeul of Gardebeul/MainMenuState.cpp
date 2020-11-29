@@ -23,16 +23,24 @@ void MainMenuState::InitFont()
 void MainMenuState::InitButton()
 {
 	this->buttons.emplace("NEW_GAME", new Button(100, 420, 250, 50,
-		&this->font, "New game", Color::White, Color::Green, Color::Red));
+		&this->font, "New game", 50,
+		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
+		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
 	this->buttons.emplace("LOAD_GAME", new Button(100, 520, 250, 50,
-		&this->font, "Load game", Color::White, Color::Green, Color::Red));
+		&this->font, "Load game", 50,
+		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
+		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
 	this->buttons.emplace("MAP_EDITOR", new Button(100, 600, 250, 50,
-		&this->font, "Map editor", Color::White, Color::Green, Color::Red));
+		&this->font, "Map editor", 50,
+		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
+		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
 	this->buttons.emplace("EXIT", new Button(100, 700, 250, 50,
-		&this->font, "Quit", Color::White, Color::Green, Color::Red));
+		&this->font, "Quit", 50,
+		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
+		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
 }
 

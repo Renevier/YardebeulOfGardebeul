@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="ArmorContainer.cpp" />
     <ClCompile Include="Button.cpp" />
@@ -187,6 +189,8 @@
     <ClCompile Include="WeaponContainer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="Armor.h" />
     <ClInclude Include="ArmorContainer.h" />
     <ClInclude Include="Button.h" />
