@@ -5,7 +5,9 @@ class Animation
 {
 public:
 	Texture& textureSheet;
+	Sprite& sprite;
 	IntRect startRect;
+	IntRect currentRect;
 	IntRect endRect;
 
 	int width;
@@ -15,9 +17,9 @@ public:
 	float timer;
 
 public:
-	Animation(Texture& _textureSheet, float _speed, int _start_x, int _start_y, int _end_x, int _end_y, int _width, int _height);
-	void Update(const float& _dt);
-	void Play();
+	Animation(Sprite& _sprite, Texture& _texture_sheet, float _animation_timer,
+		int _start_frames_x, int _start_frames_y, int _frames_x, int _frames_y, int _width, int _height);
+	void Play(const float& _dt);
 	void Reset();
 	~Animation();
 };

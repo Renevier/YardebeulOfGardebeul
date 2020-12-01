@@ -4,7 +4,9 @@
 class AnimationComponent
 {
 protected:
-	map<string, Animation> animations;
+	Texture& textureSheet;
+	Sprite& sprite;
+	map<string, Animation*> animations;
 
 private:
 
@@ -12,5 +14,12 @@ public:
 	AnimationComponent(Sprite& _sprite, Texture& _texture_sheet);
 	~AnimationComponent();
 
+	void AddAnimation(const string _key,  float _animation_timer,
+		int _start_frames_x, int _start_frames_y, int _frames_x, int _frames_y, int _width, int _height);
+	/*void StartAnimation(const string _animation);
+	void PauseAnimation(const string _animation);
+	void ResetAnimation(const string _animation);*/
+
+	void Play(const string _key, const float& _dt);
 };
 

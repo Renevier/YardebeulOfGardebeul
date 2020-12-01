@@ -10,6 +10,11 @@ void Entity::CreateMovementComponent(const float _maxVelocity, float _accelerati
 	this->movementComponent = new MovementComponent(this->sprite, _maxVelocity, _acceleration, _deceleretion);
 }
 
+void Entity::CreateAnimationComponent(Texture& _texture_sheet)
+{
+	this->animationComponent = new AnimationComponent(this->sprite, _texture_sheet);
+}
+
 void Entity::VariableInit()
 {	
 	this->movementComponent = nullptr;
@@ -35,8 +40,6 @@ void Entity::Move(const float _dir_x, const float _dir_y, const float& _dt)
 
 void Entity::Update(const float& _dt)
 {
-	if (this->movementComponent)
-		this->movementComponent->Update(_dt);
 	
 }
 
@@ -48,4 +51,6 @@ void Entity::Render(RenderTarget* _target)
 
 Entity::~Entity()
 {
+	delete this->movementComponent;
+	delete this->animationComponent;
 }

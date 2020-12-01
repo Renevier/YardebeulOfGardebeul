@@ -13,11 +13,13 @@ void Hero::InitVariable()
 	this->totalExp = .0f;
 }
 
-void Hero::InitComponent(float _x, float _y, Texture& _texture)
+void Hero::InitComponent(float _x, float _y, Texture& _texture_sheet)
 {
-	this->SetTexture(_texture);
 	this->SetPosition(_x, _y);
 	this->CreateMovementComponent(300.f, 15.f, 5.f);
+	this->CreateAnimationComponent(_texture_sheet);
+
+	this->animationComponent->AddAnimation("IDLE_LEFT", 10.f, 0, 0, 13, 0, 192, 192);
 }
 
 Hero::Hero(float _x, float _y, Texture& _texture)
@@ -91,6 +93,13 @@ float Hero::TotalExpNeed()
 			return arrayOfExp.at(j);
 		}
 	}
+}
+
+void Hero::Update(const float& _dt)
+{
+	this->movementComponent->Update(_dt);
+
+	this->animationComponent->Play("IDLE_LEFT", _dt);
 }
 
 Hero::~Hero()

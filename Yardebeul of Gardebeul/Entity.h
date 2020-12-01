@@ -1,5 +1,6 @@
 #pragma once
 #include "MovementComponent.h"
+#include "AnimationComponent.h"
 
 class Entity
 {
@@ -7,11 +8,13 @@ protected:
 	Sprite sprite;
 
 	MovementComponent* movementComponent;
+	AnimationComponent* animationComponent;
 
 protected:
 	void VariableInit();
 	void SetTexture(Texture& _texture);
 	void CreateMovementComponent(const float _maxVelocity, float _acceleration, float _deceleretion);
+	void CreateAnimationComponent(Texture& _texture_sheet);
 
 public:
 	Entity();
