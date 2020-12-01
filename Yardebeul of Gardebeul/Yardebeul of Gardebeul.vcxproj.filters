@@ -240,7 +240,7 @@
       <Filter>Classes\Component\Animation component</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Classes\Animation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -353,7 +353,7 @@
       <Filter>Classes\Component\Animation component</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Classes\Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

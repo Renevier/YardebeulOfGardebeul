@@ -24,7 +24,7 @@ private:
 
 public:
 	Tile(float _x, float _y, Vector2f _side);
-	Tile(Texture* _texture, float _x, float _y);
+	Tile(Texture* _texture, Vector2f _posOnScreen, Vector2f _posInTexture);
 	void Update(const Vector2f _mousePos);
 	void Render(RenderTarget* target);
 	bool IsPressed() const;

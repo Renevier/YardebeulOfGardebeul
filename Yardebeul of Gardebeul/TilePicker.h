@@ -9,9 +9,9 @@ protected:
 	list<Tile*> tilePicker;
 
 private:
-	void InitPicker();
+	void InitPicker(RenderWindow* _window);
 
 public:
-	TilePicker();
+	TilePicker(RenderWindow* _window);
 	~TilePicker();
 };

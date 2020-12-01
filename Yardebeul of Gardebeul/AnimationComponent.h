@@ -9,7 +9,7 @@ protected:
 private:
 
 public:
-	AnimationComponent();
+	AnimationComponent(Sprite& _sprite, Texture& _texture_sheet);
 	~AnimationComponent();
 
 };

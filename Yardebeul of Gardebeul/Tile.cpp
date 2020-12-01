@@ -16,7 +16,7 @@ Tile::Tile(float _x, float _y, Vector2f _side)
 		
 }
 
-Tile::Tile(Texture* _texture, float _x, float _y)
+Tile::Tile(Texture* _texture, Vector2f _posOnScreen, Vector2f _posInTexture)
 {
 	Vector2f tileSize = Vector2f(_texture->getSize().x / 5, _texture->getSize().y / 22);
 
@@ -25,11 +25,11 @@ Tile::Tile(Texture* _texture, float _x, float _y)
 	this->shape.setSize(Vector2f(tileSize.x, tileSize.y));
 	this->shape.setOrigin(this->shape.getGlobalBounds().width / 2, this->shape.getGlobalBounds().height / 2);
 
-	this->shape.setTextureRect(IntRect(_x, _y, tileSize.x, tileSize.y));
+	this->shape.setTextureRect(IntRect(_posInTexture.x, _posInTexture.y, tileSize.x, tileSize.y));
 	
 	
-	this->shape.setPosition(_x + this->shape.getGlobalBounds().width / 2,
-		_y + this->shape.getGlobalBounds().height / 2);
+	this->shape.setPosition(_posOnScreen.x + this->shape.getGlobalBounds().width / 2,
+		_posOnScreen.y + this->shape.getGlobalBounds().height / 2);
 }
 
 void Tile::Update(const Vector2f _mousePos)

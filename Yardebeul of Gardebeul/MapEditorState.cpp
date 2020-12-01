@@ -43,9 +43,31 @@ void MapEditorState::InitVariables()
 
 void MapEditorState::InitTilePicker()
 {
+	Vector2f PosOnScreen(0, 0);
+	Vector2f PosInTexture(0, 0);
+
 	for (int i = 0; i <= this->window->getSize().x / tileSizeF.x; i++)
 	{
-		this->tilePicker.push_back(new Tile(&this->tilePickerTexture, i * this->tileSizeF.x, 0));
+		for (int y = 0; y < tilePickerTexture.getSize().y / tileSizeF.y; y++)
+		{
+			for (int x = 0; x < tilePickerTexture.getSize().x / tileSizeF.x; x++)
+			{
+				PosOnScreen.x = i * this->tileSizeF.x;
+				PosOnScreen.y = 0;
+
+				this->tilePicker.push_back(new Tile(&this->tilePickerTexture, PosOnScreen, PosInTexture));
+
+				if (i * tileSizeF.x < tilePickerTexture.getSize().x)
+					PosInTexture.x++;
+				else
+					PosInTexture.x = 0;
+			}
+
+			if (i * tileSizeF.y < tilePickerTexture.getSize().y)
+				PosInTexture.y++;
+			else
+				PosInTexture.y = 0;
+		}
 	}
 }
 
