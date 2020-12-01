@@ -43,30 +43,28 @@ void MapEditorState::InitVariables()
 
 void MapEditorState::InitTilePicker()
 {
+	int i = 0;
 	Vector2f PosOnScreen(0, 0);
 	Vector2f PosInTexture(0, 0);
 
-	for (int i = 0; i <= this->window->getSize().x / tileSizeF.x; i++)
+	for (int y = 0; y < tilePickerTexture.getSize().y/ tileSizeF.y; y++)
 	{
-		for (int y = 0; y < tilePickerTexture.getSize().y / tileSizeF.y; y++)
+ 		if (i * tileSizeF.y <= tilePickerTexture.getSize().y)
+			PosInTexture.y = y * this->tileSizeF.y;
+		else
+			PosInTexture.y = 0;
+
+		for (int x = 0; x < tilePickerTexture.getSize().x / tileSizeF.x; x++)
 		{
-			for (int x = 0; x < tilePickerTexture.getSize().x / tileSizeF.x; x++)
-			{
-				PosOnScreen.x = i * this->tileSizeF.x;
-				PosOnScreen.y = 0;
+			PosOnScreen.x = i * this->tileSizeF.x;
 
-				this->tilePicker.push_back(new Tile(&this->tilePickerTexture, PosOnScreen, PosInTexture));
-
-				if (i * tileSizeF.x < tilePickerTexture.getSize().x)
-					PosInTexture.x++;
-				else
-					PosInTexture.x = 0;
-			}
-
-			if (i * tileSizeF.y < tilePickerTexture.getSize().y)
-				PosInTexture.y++;
+			if (i * tileSizeF.x <= tilePickerTexture.getSize().x)
+				PosInTexture.x = x * this->tileSizeF.x;
 			else
-				PosInTexture.y = 0;
+				PosInTexture.x = 0;
+
+			this->tilePicker.push_back(new Tile(&this->tilePickerTexture, PosOnScreen, PosInTexture));
+			i++;
 		}
 	}
 }
@@ -85,7 +83,7 @@ MapEditorState::MapEditorState(RenderWindow* _window, map<string, int>* _support
 void MapEditorState::UpdateInput(const float& _dt)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_LEFT"))))
-		view.move(-this->viewSpeed * _dt, 0.f); 
+		view.move(-this->viewSpeed * _dt, 0.f);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
 		view.move(this->viewSpeed * _dt, 0.f);
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_TOP"))))
@@ -98,10 +96,10 @@ void MapEditorState::UpdateMousePosGrid()
 {
 	if (this->mousePosView.x >= 0)
 		mousePosGrid.x = mousePosView.x / this->tileSizeU.x;
-	
+
 	if (this->mousePosView.y >= 0)
 		mousePosGrid.y = mousePosView.y / this->tileSizeU.y;
-	
+
 	this->tileSelector.setPosition(this->mousePosGrid.x * this->tileSizeF.x, this->mousePosGrid.y * this->tileSizeF.y);
 }
 
@@ -124,10 +122,10 @@ void MapEditorState::Render(RenderTarget* _target)
 	this->RenderTilePicker(_target);
 
 	cout << "Screen: X==>" << this->mousePosScreen.x << " Y==>" << this->mousePosScreen.y << endl <<
-			"Window: X==>" << this->mousePosWindow.x << " Y==>" << this->mousePosWindow.y << endl <<
-			"View: X==>" << this->mousePosView.x << " Y==>" << this->mousePosView.y << endl <<
-			"Tile selector: X==>" << this->tileSelector.getPosition().x << " Y==>" << this->tileSelector.getPosition().y << endl <<
-			"Grid: X==>" << this->mousePosGrid.x << " Y==>" << this->mousePosGrid.y;
+		"Window: X==>" << this->mousePosWindow.x << " Y==>" << this->mousePosWindow.y << endl <<
+		"View: X==>" << this->mousePosView.x << " Y==>" << this->mousePosView.y << endl <<
+		"Tile selector: X==>" << this->tileSelector.getPosition().x << " Y==>" << this->tileSelector.getPosition().y << endl <<
+		"Grid: X==>" << this->mousePosGrid.x << " Y==>" << this->mousePosGrid.y;
 
 	system("CLS");
 }
