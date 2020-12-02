@@ -13,6 +13,10 @@ HitBoxComponent::HitBoxComponent(Sprite& _sprite, float _offset_x, float _offset
 
 }
 
+HitBoxComponent::~HitBoxComponent()
+{
+}
+
 
 bool HitBoxComponent::CheckIntersect(const FloatRect& _frect)
 {

@@ -29,6 +29,12 @@ GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, st
 	this->InitPlayer();
 }
 
+void GameState::Pause()
+{
+	if (Keyboard::isKeyPressed(Keyboard::Escape))
+		this->states->push(new PauseMenuState(this->window, this->supportedKeys, this->states));
+}
+
 void GameState::UpdateInput(const float& _dt)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_TOP"))))
@@ -45,6 +51,7 @@ void GameState::Update(const float& _dt)
 {
 	this->UpdateMousePosition();
 	this->UpdateInput(_dt);
+	this->UpdateState();
 	
 	this->player->Update(_dt);
 }
@@ -55,11 +62,11 @@ void GameState::Render(RenderTarget* _target)
 		_target = this->window;
 
 	this->player->Render(_target);
-
 }
 
 void GameState::UpdateState()
 {
+	this->Pause();
 }
 
 void GameState::EndState()
