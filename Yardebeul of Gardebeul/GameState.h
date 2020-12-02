@@ -1,12 +1,13 @@
 #pragma once
 #include "State.h"
 #include "MainMenuState.h"
+#include "PauseMenuState.h"
+
 class GameState: public State
 {
 protected:
     Hero* player;
 
-    //Function
 private:
     virtual void InitKeybinds();
     void InitTexture();
@@ -19,7 +20,5 @@ public:
     virtual void Render(RenderTarget *_target);
     void UpdateState();
     virtual void EndState();
-    void CheckForPause();
-    void PauseMenu();
     ~GameState();
 };

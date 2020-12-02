@@ -16,6 +16,7 @@ void Hero::InitVariable()
 void Hero::InitComponent(float _x, float _y, Texture& _texture_sheet)
 {
 	this->SetPosition(_x, _y);
+	this->CreateHitBoxComponent(this->sprite, 0, 0, sprite.getGlobalBounds().width, sprite.getGlobalBounds().height);
 	this->CreateMovementComponent(300.f, 15.f, 5.f);
 	this->CreateAnimationComponent(_texture_sheet);
 

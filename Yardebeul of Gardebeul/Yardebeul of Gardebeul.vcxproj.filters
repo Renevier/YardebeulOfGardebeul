@@ -132,6 +132,9 @@
     <Filter Include="Classes\Animation">
       <UniqueIdentifier>{0ded7ed5-6c99-42dc-8f52-def6b33226ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Component\HitBoxComponent">
+      <UniqueIdentifier>{ae048256-8b49-4b79-adf7-cbf1807cc7c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -241,6 +244,9 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Classes\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="HitBoxComponent.cpp">
+      <Filter>Classes\Component\HitBoxComponent</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -354,6 +360,9 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Classes\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="HitBoxComponent.h">
+      <Filter>Classes\Component\HitBoxComponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

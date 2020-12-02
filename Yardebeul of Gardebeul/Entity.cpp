@@ -5,6 +5,12 @@ void Entity::SetTexture(Texture& _texture)
 	this->sprite.setTexture(_texture);
 }
 
+void Entity::CreateHitBoxComponent(Sprite& _sprite, float _offset_x, float _offset_y, float _width, float _height)
+{
+	this->hitBoxComponent = new HitBoxComponent(_sprite, _offset_x, _offset_y,
+		_sprite.getGlobalBounds().width, _sprite.getGlobalBounds().height);
+}
+
 void Entity::CreateMovementComponent(const float _maxVelocity, float _acceleration, float _deceleretion)
 {
 	this->movementComponent = new MovementComponent(this->sprite, _maxVelocity, _acceleration, _deceleretion);
@@ -17,7 +23,9 @@ void Entity::CreateAnimationComponent(Texture& _texture_sheet)
 
 void Entity::VariableInit()
 {	
+	this->hitBoxComponent = nullptr;
 	this->movementComponent = nullptr;
+	this->animationComponent = nullptr;
 }
 
 Entity::Entity()
@@ -51,6 +59,7 @@ void Entity::Render(RenderTarget* _target)
 
 Entity::~Entity()
 {
+	delete this->hitBoxComponent;
 	delete this->movementComponent;
 	delete this->animationComponent;
 }

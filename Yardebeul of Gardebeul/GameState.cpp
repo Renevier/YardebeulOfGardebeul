@@ -66,17 +66,6 @@ void GameState::EndState()
 {
 }
 
-void GameState::CheckForPause()
-{
-	//if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("ESCAPE"))))
-}
-
-void GameState::PauseMenu()
-{
-	/*if(this->pause)
-		this->states->push(new MainMenuState(this->window, this->supportedKeys, this->states));*/
-}
-
 GameState::~GameState()
 {
 	delete this->player;

@@ -97,8 +97,8 @@ void MainMenuState::Render(RenderTarget* _target)
 	this->RenderButton(_target);
 
 	//print mouse potiton in the console
-	/*system("CLS");
-	cout << this->mousePosView.x << " " << this->mousePosView.y;*/
+	system("CLS");
+	cout << this->mousePosView.x << " " << this->mousePosView.y;
 }
 
 void MainMenuState::EndState()
