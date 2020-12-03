@@ -7,7 +7,7 @@ HitBoxComponent::HitBoxComponent(Sprite& _sprite, float _offset_x, float _offset
 		this->sprite.getPosition().y + _offset_y);
 
 	this->hitBox.setSize(Vector2f(_width, _height));
-	this->hitBox.setFillColor(Color::Transparent);
+	this->hitBox.setFillColor(Color::White);
 	this->hitBox.setOutlineColor(Color::Green);
 	this->hitBox.setOutlineThickness(1.f);
 

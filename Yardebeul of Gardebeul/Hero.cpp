@@ -16,11 +16,11 @@ void Hero::InitVariable()
 void Hero::InitComponent(float _x, float _y, Texture& _texture_sheet)
 {
 	this->SetPosition(_x, _y);
-	this->CreateHitBoxComponent(this->sprite, 0, 0, sprite.getGlobalBounds().width, sprite.getGlobalBounds().height);
+	this->CreateHitBoxComponent(this->sprite, 96, 96, 96, 96);
 	this->CreateMovementComponent(300.f, 15.f, 5.f);
 	this->CreateAnimationComponent(_texture_sheet);
 
-	this->animationComponent->AddAnimation("IDLE_LEFT", 10.f, 0, 0, 13, 0, 192, 192);
+	this->animationComponent->AddAnimation("IDLE_FRONT", 100.f, 0, 0, 3, 0, 22.25f, 33);
 }
 
 Hero::Hero(float _x, float _y, Texture& _texture)
@@ -100,7 +100,9 @@ void Hero::Update(const float& _dt)
 {
 	this->movementComponent->Update(_dt);
 
-	this->animationComponent->Play("IDLE_LEFT", _dt);
+	this->animationComponent->Play("IDLE_FRONT", _dt);
+
+	this->hitBoxComponent->Update();
 }
 
 Hero::~Hero()

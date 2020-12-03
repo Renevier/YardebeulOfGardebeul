@@ -51,9 +51,12 @@ void Entity::Update(const float& _dt)
 	
 }
 
-void Entity::Render(RenderTarget* _target)
+void Entity::Render(RenderTarget& _target)
 {
-	_target->draw(this->sprite);		
+	_target.draw(this->sprite);	
+
+	if (this->hitBoxComponent)
+		this->hitBoxComponent->Render(_target);
 }
 
 

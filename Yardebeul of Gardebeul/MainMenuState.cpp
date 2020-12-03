@@ -81,7 +81,7 @@ void MainMenuState::Update(const float& _dt)
 	this->UpdateInput(_dt);
 }
 
-void MainMenuState::RenderButton(RenderTarget* _target)
+void MainMenuState::RenderButton(RenderTarget& _target)
 {
 	for (auto it : this->buttons)
 		it.second->Render(_target);
@@ -94,7 +94,7 @@ void MainMenuState::Render(RenderTarget* _target)
 
 	_target->draw(this->background);
 
-	this->RenderButton(_target);
+	this->RenderButton(*_target);
 
 	//print mouse potiton in the console
 	system("CLS");

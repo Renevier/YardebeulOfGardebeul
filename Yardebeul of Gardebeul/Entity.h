@@ -24,7 +24,7 @@ public:
 	virtual void SetPosition(const float _x, const float _y);
 	virtual void Move(const float _x, const float _y, const float& _dt);
 	virtual void Update(const float &_dt);
-	virtual void Render(RenderTarget* _target);
+	virtual void Render(RenderTarget& _target);
 	~Entity();
 
 };

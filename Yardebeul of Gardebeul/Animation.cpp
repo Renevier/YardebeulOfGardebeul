@@ -5,20 +5,20 @@ Animation::Animation(Sprite& _sprite, Texture& _texture_sheet, float _animation_
 	:sprite(_sprite), textureSheet(_texture_sheet), animationTimer(_animation_timer), width(_width), height(_height)
 {
 	this->timer = 0;
-	this->startRect = IntRect(_start_frames_x, _start_frames_y, _width, _height);
+	this->startRect = IntRect(_start_frames_x * width, _start_frames_y * height, width, height);
 	this->currentRect = this->startRect;
-	this->endRect = IntRect(_frames_x * width, _frames_y * height, _width, _height);
+	this->endRect = IntRect(_frames_x * width, _frames_y * height, width, height);
 
-	this->sprite.setTexture(this->textureSheet, true);
+	this->sprite.setTexture(this->textureSheet);
 	this->sprite.setTextureRect(this->startRect);
 }
 
-void Animation::Play(const float& _dt)
+void Animation::Update(const float& _dt)
 {
 	//Update timer
-	this->timer += 10.f * _dt;
+	this->timer += 1000.f * _dt;
 
-	if (this->timer >= animationTimer)
+	if (this->timer >= this->animationTimer)
 	{
 		//reset timer
 		this->timer = 0.f;

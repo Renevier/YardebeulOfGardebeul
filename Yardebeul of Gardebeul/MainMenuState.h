@@ -25,7 +25,7 @@ public:
     virtual void UpdateInput(const float& _dt);
     virtual void UpdateButton();
     virtual void Update(const float& _dt);
-    virtual void RenderButton(RenderTarget* _target);
+    virtual void RenderButton(RenderTarget& _target);
     virtual void Render(RenderTarget* _target);
     virtual void EndState();
     virtual  void CheckForQuit();

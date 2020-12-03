@@ -69,10 +69,10 @@ void Button::Update(const Vector2f _mousePos)
 	}
 }
 
-void Button::Render(RenderTarget* target)
+void Button::Render(RenderTarget& target)
 {
-	target->draw(this->shape);
-	target->draw(this->text);
+	target.draw(this->shape);
+	target.draw(this->text);
 }
 
 bool Button::IsPressed() const
