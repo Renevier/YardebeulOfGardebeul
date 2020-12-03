@@ -39,5 +39,4 @@ public:
 	const bool& GetQuit() const;
 	const bool& GetPause() const;
 	~State();
-
 };

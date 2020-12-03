@@ -17,7 +17,7 @@ protected:
 protected:
     virtual void InitKeybinds();
     void InitBackground();
-    virtual void InitFont();
+    void InitFont();
     void InitButton();
 
 public:
@@ -28,6 +28,6 @@ public:
     virtual void RenderButton(RenderTarget& _target);
     virtual void Render(RenderTarget* _target);
     virtual void EndState();
-    virtual  void CheckForQuit();
+    virtual void CheckForQuit();
     ~MainMenuState();
 };

@@ -16,7 +16,7 @@ void MainMenuState::InitBackground()
 
 void MainMenuState::InitFont()
 {
-	if (!this->font.loadFromFile("../Ressources/Font/rpgFont.ttf"))
+	if (!this->font.loadFromFile("../Ressources/Fonts/rpgFont.ttf"))
 		exit(0);
 }
 
