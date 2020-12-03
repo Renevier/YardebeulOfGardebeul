@@ -1,8 +1,8 @@
 #pragma once
 #include "State.h"
 #include "Button.h"
-
-class PauseMenuState : public State
+class SaveState :
+    public State
 {
 protected:
     Texture backgroundTexture;
@@ -18,13 +18,14 @@ private:
     void InitBackground();
 
 public:
-    PauseMenuState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
+    SaveState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
     virtual void UpdateButton();
+    void Save(string _name_file);
     virtual void UpdateInput(const float& _dt);
     virtual void Update(const float& _dt);
     virtual void RenderButton(RenderTarget& _target);
     virtual void Render(RenderTarget* _target);
     virtual void EndState();
-    ~PauseMenuState();
+    ~SaveState();
 };
 

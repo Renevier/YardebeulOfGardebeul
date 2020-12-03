@@ -1,4 +1,5 @@
 #include "PauseMenuState.h"
+#include "SaveState.h"
 
 void PauseMenuState::InitKeybinds()
 {
@@ -36,12 +37,6 @@ PauseMenuState::PauseMenuState(RenderWindow* _window, map<string, int>* _support
 	this->InitButton();
 }
 
-void PauseMenuState::Save()
-{
-	system("CLS");
-	cout << "Game saved";
-}
-
 void PauseMenuState::UpdateButton()
 {
 	for (auto it : this->buttons)
@@ -52,7 +47,7 @@ void PauseMenuState::UpdateButton()
 
 	//save game
 	if (this->buttons.at("SAVE_GAME")->IsPressed())
-		this->Save();
+		this->states->push(new SaveState(this->window, this->supportedKeys, this->states));
 
 	//return to the main menu button
 	//Quit the pause menu sate and the game state

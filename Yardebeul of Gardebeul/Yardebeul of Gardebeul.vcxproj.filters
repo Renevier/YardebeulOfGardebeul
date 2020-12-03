@@ -135,6 +135,9 @@
     <Filter Include="Classes\Animation">
       <UniqueIdentifier>{67b13939-e9ca-4bfc-ba26-cf85a49a23f7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\States\SaveState">
+      <UniqueIdentifier>{b8e54199-f8be-416a-969d-33ebd4e54a26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -247,6 +250,9 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Classes\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveState.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -363,6 +369,9 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Classes\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveState.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
