@@ -6,6 +6,46 @@ MovementComponent::MovementComponent(Sprite& _sprite, float _maxVelocity, float 
 	this->maxVelocity = _maxVelocity;
 }
 
+bool MovementComponent::isIdle()
+{
+	if(this->velocity.x == 0.f && this->velocity.y == 0)
+		return true;
+
+	return false;
+}
+
+bool MovementComponent::isMovingLeft()
+{
+	if (this->velocity.x < 0.f)
+		return true;
+
+	return false;
+}
+
+bool MovementComponent::isMovingRight()
+{
+	if (this->velocity.x > 0.f)
+		return true;
+
+	return false;
+}
+
+bool MovementComponent::isMovingTop()
+{
+	if (this->velocity.y < 0.f)
+		return true;
+
+	return false;
+}
+
+bool MovementComponent::isMovingBottom()
+{
+	if (this->velocity.y > 0.f)
+		return true;
+
+	return false;
+}
+
 void MovementComponent::Move(const float _dir_x, const float _dir_y, const float& _dt)
 {
 	//Acceleration

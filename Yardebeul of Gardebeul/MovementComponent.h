@@ -20,6 +20,12 @@ public:
 	void Update(const float& _dt);
 	~MovementComponent();
 
+	bool isIdle();
+	bool isMovingLeft();
+	bool isMovingRight();
+	bool isMovingTop();
+	bool isMovingBottom();
+
 	inline Vector2f& GetVelocity() { return this->velocity; }
 };
 

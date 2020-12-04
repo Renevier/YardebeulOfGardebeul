@@ -12,7 +12,7 @@ void GameState::InitKeybinds()
 
 void GameState::InitTexture()
 {
-	if(!this->textures["PLAYER_IDLE"].loadFromFile("../Ressources/Sprites/Player/blue_link_idle_front.png"))
+	if(!this->textures["PLAYER_IDLE"].loadFromFile("../Ressources/Sprites/Player/blue_link.png"))
 		throw "ERROR game state could not load idle texture";
 }
 

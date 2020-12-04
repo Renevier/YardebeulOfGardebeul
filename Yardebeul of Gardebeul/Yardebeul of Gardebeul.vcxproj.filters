@@ -252,7 +252,7 @@
       <Filter>Classes\Animation</Filter>
     </ClCompile>
     <ClCompile Include="SaveState.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Classes\States\SaveState</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -371,7 +371,7 @@
       <Filter>Classes\Animation</Filter>
     </ClInclude>
     <ClInclude Include="SaveState.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Classes\States\SaveState</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
