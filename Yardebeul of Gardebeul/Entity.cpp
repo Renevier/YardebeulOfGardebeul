@@ -8,7 +8,7 @@ void Entity::SetTexture(Texture& _texture)
 void Entity::CreateHitBoxComponent(Sprite& _sprite, float _offset_x, float _offset_y, float _width, float _height)
 {
 	this->hitBoxComponent = new HitBoxComponent(_sprite, _offset_x, _offset_y,
-		_sprite.getGlobalBounds().width, _sprite.getGlobalBounds().height);
+		_width, _height);
 }
 
 void Entity::CreateMovementComponent(const float _maxVelocity, float _acceleration, float _deceleretion)

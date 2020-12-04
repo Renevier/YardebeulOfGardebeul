@@ -71,13 +71,12 @@ void MainMenuState::UpdateButton()
 		this->states->push(new MapEditorState(this->window, this->supportedKeys, this->states));
 
 	if (this->buttons.at("EXIT")->IsPressed())
-		this->Quit = true;
+		this->EndState();
 }
 
 void MainMenuState::Update(const float& _dt)
 {
 	this->UpdateMousePosition();
-	this->CheckForQuit();
 	this->UpdateInput(_dt);
 }
 
@@ -103,12 +102,7 @@ void MainMenuState::Render(RenderTarget* _target)
 
 void MainMenuState::EndState()
 {
-}
-
-void MainMenuState::CheckForQuit()
-{
-	if (Keyboard::isKeyPressed(Keyboard::Escape))
-		this->Quit = true;
+	this->quit = true;
 }
 
 MainMenuState::~MainMenuState()

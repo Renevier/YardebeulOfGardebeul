@@ -138,6 +138,9 @@
     <Filter Include="Classes\States\SaveState">
       <UniqueIdentifier>{b8e54199-f8be-416a-969d-33ebd4e54a26}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\States\EditorState">
+      <UniqueIdentifier>{3fb508c5-5ae8-45f2-926d-456b158a923a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -253,6 +256,9 @@
     </ClCompile>
     <ClCompile Include="SaveState.cpp">
       <Filter>Classes\States\SaveState</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorState.cpp">
+      <Filter>Classes\States\EditorState</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -372,6 +378,9 @@
     </ClInclude>
     <ClInclude Include="SaveState.h">
       <Filter>Classes\States\SaveState</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorState.h">
+      <Filter>Classes\States\EditorState</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

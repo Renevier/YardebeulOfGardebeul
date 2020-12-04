@@ -11,7 +11,7 @@ protected:
 	map<string, int>* supportedKeys;
 	map<string, int> keybinds;
 
-	bool Quit;
+	bool quit;
 	bool pause;
 
 	Vector2i mousePosScreen;

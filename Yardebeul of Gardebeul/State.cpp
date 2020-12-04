@@ -12,7 +12,7 @@ State::State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<Stat
 	this->supportedKeys = _supportedKeys;
 	this->states = _states;
 
-	this->Quit = false;
+	this->quit = false;
 	this->pause = false;
 
 	this->InitView();
@@ -29,7 +29,7 @@ void State::UpdateMousePosition()
 
 const bool& State::GetQuit() const
 {
-	return this->Quit;
+	return this->quit;
 }
 
 const bool& State::GetPause() const

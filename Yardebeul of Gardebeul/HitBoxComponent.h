@@ -4,8 +4,8 @@
 class HitBoxComponent
 {
 protected:
-	RectangleShape hitBox;
 	Sprite& sprite;
+	RectangleShape hitBox;
 
 	float offsetX;
 	float offsetY;

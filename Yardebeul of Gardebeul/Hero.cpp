@@ -16,11 +16,12 @@ void Hero::InitVariable()
 void Hero::InitComponent(float _x, float _y, Texture& _texture_sheet)
 {
 	this->SetPosition(_x, _y);
-	this->CreateHitBoxComponent(this->sprite, 96, 96, 96, 96);
+
 	this->CreateMovementComponent(300.f, 15.f, 5.f);
 	this->CreateAnimationComponent(_texture_sheet);
+	this->CreateHitBoxComponent(this->sprite, -5.f, 0.f, 35.f, 35.f);
 
-	this->animationComponent->AddAnimation("IDLE_FRONT", 100.f, 0, 0, 3, 0, 23, 33);
+	this->animationComponent->AddAnimation("IDLE_FRONT", 150.f, 0, 0, 3, 0, 23, 33);
 	this->animationComponent->AddAnimation("WALK_DOWN",  100.f, 0, 1, 4, 1, 23, 33);
 	this->animationComponent->AddAnimation("WALK_RIGHT", 100.f, 0, 2, 5, 2, 25, 34);
 	this->animationComponent->AddAnimation("WALK_LEFT",  100.f, 0, 4, 5, 4, 25, 36);
