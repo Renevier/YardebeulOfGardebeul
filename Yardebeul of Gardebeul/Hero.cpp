@@ -17,7 +17,7 @@ void Hero::InitComponent(float _x, float _y, Texture& _texture_sheet)
 {
 	this->SetPosition(_x, _y);
 	this->CreateHitBoxComponent(this->sprite, 96, 96, 96, 96);
-	this->CreateMovementComponent(30.f, 15.f, 5.f);
+	this->CreateMovementComponent(300.f, 15.f, 5.f);
 	this->CreateAnimationComponent(_texture_sheet);
 
 	this->animationComponent->AddAnimation("IDLE_FRONT", 100.f, 0, 0, 3, 0, 23, 33);

@@ -18,7 +18,7 @@ Tile::Tile(float _x, float _y, Vector2f _side)
 
 Tile::Tile(Texture* _texture, Vector2f _posOnScreen, Vector2f _posInTexture)
 {
-	Vector2f tileSize = Vector2f(_texture->getSize().x / 5, _texture->getSize().y / 22);
+	Vector2f tileSize = Vector2f(32, 32);
 
 	this->tileState = TILE_STATE::TILE_IDLE;
 	this->shape.setTexture(_texture);

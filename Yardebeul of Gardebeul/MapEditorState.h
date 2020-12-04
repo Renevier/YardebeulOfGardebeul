@@ -12,9 +12,10 @@ protected:
 
     list<Tile*> tiles;
 
-    RectangleShape tileSelector;
+    RectangleShape tileSelectorGrid;
 
     Texture tilePickerTexture;
+    RectangleShape tileSelectorTP;
     list<Tile*> tilePicker;
 
 private:
@@ -29,6 +30,7 @@ public:
 	MapEditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
     void UpdateState();
     void UpdateMousePosGrid();
+    void SelectTile();
     virtual void UpdateInput(const float& _dt);
     virtual void Update(const float& _dt);
     virtual void Render(RenderTarget* _target);

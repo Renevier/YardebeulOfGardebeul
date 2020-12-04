@@ -2,10 +2,15 @@
 
 void MapEditorState::InitTileSelector()
 {
-	this->tileSelector.setSize(this->tileSizeF);
-	this->tileSelector.setFillColor(Color::Transparent);
-	this->tileSelector.setOutlineThickness(2.f);
-	this->tileSelector.setOutlineColor(Color::Red);
+	this->tileSelectorGrid.setSize(this->tileSizeF);
+	this->tileSelectorGrid.setFillColor(Color::Transparent);
+	this->tileSelectorGrid.setOutlineThickness(1.5f);
+	this->tileSelectorGrid.setOutlineColor(Color::Red);
+
+	this->tileSelectorTP.setSize(this->tileSizeF);
+	this->tileSelectorTP.setFillColor(Color::Transparent);
+	this->tileSelectorTP.setOutlineThickness(1.5f);
+	this->tileSelectorTP.setOutlineColor(Color::Blue);
 }
 
 void MapEditorState::InitTileSize()
@@ -13,7 +18,7 @@ void MapEditorState::InitTileSize()
 	if (!this->tilePickerTexture.loadFromFile("../Ressources/Tilesmap/IceDungeonTiles.png"))
 		exit(EXIT_FAILURE);
 
-	this->tileSizeF = Vector2f(this->tilePickerTexture.getSize().x / 5, this->tilePickerTexture.getSize().y / 22);
+	this->tileSizeF = Vector2f(32, 32);
 	this->tileSizeU.x = (unsigned)tileSizeF.x;
 	this->tileSizeU.y = (unsigned)tileSizeF.y;
 }
@@ -44,12 +49,14 @@ void MapEditorState::InitVariables()
 void MapEditorState::InitTilePicker()
 {
 	int i = 0;
+	int j = 0;
 	Vector2f PosOnScreen(0, 0);
 	Vector2f PosInTexture(0, 0);
 
+
 	for (int y = 0; y < tilePickerTexture.getSize().y/ tileSizeF.y; y++)
 	{
- 		if (i * tileSizeF.y <= tilePickerTexture.getSize().y)
+ 		if (y * tileSizeF.y <= tilePickerTexture.getSize().y)
 			PosInTexture.y = y * this->tileSizeF.y;
 		else
 			PosInTexture.y = 0;
@@ -57,14 +64,23 @@ void MapEditorState::InitTilePicker()
 		for (int x = 0; x < tilePickerTexture.getSize().x / tileSizeF.x; x++)
 		{
 			PosOnScreen.x = i * this->tileSizeF.x;
+			PosOnScreen.y = j * this->tileSizeF.y;
 
-			if (i * tileSizeF.x <= tilePickerTexture.getSize().x)
+			if (x * tileSizeF.x <= tilePickerTexture.getSize().x)
 				PosInTexture.x = x * this->tileSizeF.x;
 			else
 				PosInTexture.x = 0;
 
 			this->tilePicker.push_back(new Tile(&this->tilePickerTexture, PosOnScreen, PosInTexture));
+
 			i++;
+
+			if (i * this->tileSizeF.x >= this->view.getSize().x)
+			{
+				j++;
+				i = 0;
+			}
+
 		}
 	}
 }
@@ -94,13 +110,22 @@ void MapEditorState::UpdateInput(const float& _dt)
 
 void MapEditorState::UpdateMousePosGrid()
 {
-	if (this->mousePosView.x >= 0)
+	//Update tileSelectorGrid
+	if (this->mousePosView.x >= 0 && this->mousePosView.x <= this->window->getSize().x)
 		mousePosGrid.x = mousePosView.x / this->tileSizeU.x;
 
-	if (this->mousePosView.y >= 0)
+	if (this->mousePosView.y >= 0 && this->mousePosView.y <= this->window->getSize().y)
 		mousePosGrid.y = mousePosView.y / this->tileSizeU.y;
 
-	this->tileSelector.setPosition(this->mousePosGrid.x * this->tileSizeF.x, this->mousePosGrid.y * this->tileSizeF.y);
+	this->tileSelectorGrid.setPosition(this->mousePosGrid.x * this->tileSizeF.x, this->mousePosGrid.y * this->tileSizeF.y);
+
+	//Update tileSelector on tilePicker
+	/*this->tileSelectorTP.setPosition();*/
+}
+
+void MapEditorState::SelectTile()
+{
+
 }
 
 void MapEditorState::Update(const float& _dt)
@@ -122,10 +147,11 @@ void MapEditorState::Render(RenderTarget* _target)
 	this->RenderTilePicker(_target);
 
 	cout << "Screen: X==>" << this->mousePosScreen.x << " Y==>" << this->mousePosScreen.y << endl <<
-		"Window: X==>" << this->mousePosWindow.x << " Y==>" << this->mousePosWindow.y << endl <<
-		"View: X==>" << this->mousePosView.x << " Y==>" << this->mousePosView.y << endl <<
-		"Tile selector: X==>" << this->tileSelector.getPosition().x << " Y==>" << this->tileSelector.getPosition().y << endl <<
-		"Grid: X==>" << this->mousePosGrid.x << " Y==>" << this->mousePosGrid.y;
+			"Window: X==>" << this->mousePosWindow.x << " Y==>" << this->mousePosWindow.y << endl <<
+			"View: X==>" << this->mousePosView.x << " Y==>" << this->mousePosView.y << endl <<
+			"Tile Selector Grid: X==>" << this->tileSelectorGrid.getPosition().x << " Y==>" << this->tileSelectorGrid.getPosition().y << endl <<
+			"Tile Selector TP: X==>" << this->tileSelectorTP.getPosition().x << " Y==>" << this->tileSelectorTP.getPosition().y << endl <<
+			"Grid: X==>" << this->mousePosGrid.x << " Y==>" << this->mousePosGrid.y;
 
 	system("CLS");
 }
@@ -143,13 +169,15 @@ void MapEditorState::TilesRender(RenderTarget* _target)
 
 void MapEditorState::TileSelectorRender(RenderTarget* _target)
 {
-	_target->draw(this->tileSelector);
+	if (this->mousePosView.x >= 0 && this->mousePosView.x <= this->window->getSize().x
+		&& this->mousePosView.y >= 0 && this->mousePosView.y <= this->window->getSize().y)
+			_target->draw(this->tileSelectorGrid);
 }
 
 void MapEditorState::RenderTilePicker(RenderTarget* _target)
 {
-	for (auto it : this->tilePicker)
-		it->Render(_target);
+		for (auto it : this->tilePicker)
+			it->Render(_target);
 }
 
 void MapEditorState::UpdateState()
