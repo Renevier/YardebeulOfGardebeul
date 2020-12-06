@@ -141,6 +141,9 @@
     <Filter Include="Classes\States\EditorState">
       <UniqueIdentifier>{3fb508c5-5ae8-45f2-926d-456b158a923a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\GUI">
+      <UniqueIdentifier>{e5851098-e097-4c92-9949-91c952e78e1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -259,6 +262,9 @@
     </ClCompile>
     <ClCompile Include="EditorState.cpp">
       <Filter>Classes\States\EditorState</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseMenu.cpp">
+      <Filter>Classes\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -381,6 +387,9 @@
     </ClInclude>
     <ClInclude Include="EditorState.h">
       <Filter>Classes\States\EditorState</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenu.h">
+      <Filter>Classes\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

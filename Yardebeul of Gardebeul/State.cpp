@@ -27,14 +27,19 @@ void State::UpdateMousePosition()
 	this->window->setView(this->window->getDefaultView());
 }
 
-const bool& State::GetQuit() const
+bool State::GetQuit()
 {
 	return this->quit;
 }
 
-const bool& State::GetPause() const
+void State::PauseState()
 {
-	return this->pause;
+	this->pause = true;
+}
+
+void State::UnpauseState()
+{
+	this->pause = false;
 }
 
 State::~State()

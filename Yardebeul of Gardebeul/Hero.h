@@ -9,7 +9,6 @@ class Hero :
 	float totalExp;
 
 	int caracPoint;
-	//Function
 
 private:
 	virtual void InitVariable();
@@ -17,6 +16,8 @@ private:
 
 public:
 	Hero(float _x, float _y, Texture& _texture);
+	~Hero();
+
 	virtual void DisplayStats();
 	void LevelProgress();
 	void GainExp(float _exp);
@@ -24,7 +25,11 @@ public:
 	void PickedUp();
 	float TotalExpNeed();
 	virtual void Update(const float& _dt);
-	~Hero();
 
+	//Getter
+	float GetCurrentExp();
+	float GetExpNeed();
+	float GetTotalExp();
+	int GetCaracPoint();
 };
 

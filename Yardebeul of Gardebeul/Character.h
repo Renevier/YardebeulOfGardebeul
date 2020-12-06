@@ -23,4 +23,12 @@ public:
 	Character();
 	virtual void DisplayStats() = 0;
 	~Character();
+
+	//getter
+	string GetName();
+	int GetLevel();
+	float GetHP();
+	float GetMP();
+	float GetEndurePoint();
+	float GetMindPoint();
 };

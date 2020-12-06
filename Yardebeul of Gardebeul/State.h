@@ -31,12 +31,14 @@ private:
 
 public:
 	State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);
+	~State();
+
 	virtual void UpdateMousePosition();
 	virtual void UpdateInput(const float& _dt) = 0;
-	virtual void Update(const float &_dt) = 0;
-	virtual void Render(RenderTarget *_target) = 0;
+	virtual void Update(const float& _dt) = 0;
+	virtual void Render(RenderTarget* _target) = 0;
 	virtual void EndState() = 0;
-	const bool& GetQuit() const;
-	const bool& GetPause() const;
-	~State();
+	bool GetQuit();
+	void PauseState();
+	void UnpauseState();
 };

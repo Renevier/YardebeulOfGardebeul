@@ -124,6 +124,26 @@ void Hero::Update(const float& _dt)
 	this->hitBoxComponent->Update();
 }
 
+float Hero::GetCurrentExp()
+{
+	return this->currentExp;
+}
+
+float Hero::GetExpNeed()
+{
+	return this->expNeed;
+}
+
+float Hero::GetTotalExp()
+{
+	return this->totalExp;
+}
+
+int Hero::GetCaracPoint()
+{
+	return this->caracPoint;
+}
+
 Hero::~Hero()
 {
 	delete this->movementComponent;

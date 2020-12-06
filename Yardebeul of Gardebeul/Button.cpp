@@ -33,7 +33,7 @@ Button::Button(float _x, float _y, float _width, float _height,
 	this->shape.setFillColor(this->buttonIdleColor);
 }
 
-void Button::Update(const Vector2f _mousePos)
+void Button::Update(const Vector2f& _mousePos)
 {
 	this->buttonState = BTN_STATES::BTN_IDLE;
 
@@ -85,4 +85,9 @@ bool Button::IsPressed() const
 
 Button::~Button()
 {
+}
+
+BTN_STATES Button::GetState()
+{
+	return this->buttonState;
 }
