@@ -7,6 +7,7 @@ class PauseMenu
 protected:
 	Font& font;
 	Text menuText;
+	Text descriptionText;
 
 	RectangleShape background;
 	RectangleShape buttonContainer;
@@ -19,12 +20,13 @@ private:
 	void InitBackground(RenderWindow& window);
 	void InitButtonContainer(RenderWindow& window);
 	void InitText(Font& font);
+	void InitDescriptionText(Font& font);
 	void InitDescriptionContainer(RenderWindow& window);
 public:
 	PauseMenu(RenderWindow& window, Font& font);
 	~PauseMenu();
 
-
+	void UpdateDescriptionText(string _readFile);
 	void Update(const Vector2f& mousePos);
 	void Render(RenderTarget& target, bool wantSave);
 	void AddButton(const string key, float x, float y, const string text);

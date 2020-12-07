@@ -1,0 +1,10 @@
+Time InGame: 5.50975
+Lvl: 1
+HP: 100
+MP: 100
+EndurePoint: 50
+MindPoint: 25
+CurrentExp: 0
+ExpNeeded: 0
+Total exp: 0
+Nb caracPoint: 0

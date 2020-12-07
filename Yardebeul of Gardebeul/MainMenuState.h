@@ -14,6 +14,7 @@ protected:
     Font font;
 
     map<string, Button*> buttons;
+    bool load;
 
 protected:
     virtual void InitKeybinds();

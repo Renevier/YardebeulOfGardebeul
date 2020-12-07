@@ -111,9 +111,6 @@
     <Filter Include="Classes\States\Menu">
       <UniqueIdentifier>{a1ac6e68-9c4a-46ab-93d3-f4d7065fb61c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\States\Menu\PauseMenuState">
-      <UniqueIdentifier>{5d94eb20-ba5e-4fa8-b6ef-364ffa316e86}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\States\MapEditorState">
       <UniqueIdentifier>{6e811d35-cdce-4912-8f30-67e8f51769fe}</UniqueIdentifier>
     </Filter>
@@ -242,9 +239,6 @@
     <ClCompile Include="TilePicker.cpp">
       <Filter>Classes\TileMap\TilePicker</Filter>
     </ClCompile>
-    <ClCompile Include="PauseMenuState.cpp">
-      <Filter>Classes\States\Menu\PauseMenuState</Filter>
-    </ClCompile>
     <ClCompile Include="MovementComponent.cpp">
       <Filter>Classes\Component\MovementComponent</Filter>
     </ClCompile>
@@ -366,9 +360,6 @@
     </ClInclude>
     <ClInclude Include="TilePicker.h">
       <Filter>Classes\TileMap\TilePicker</Filter>
-    </ClInclude>
-    <ClInclude Include="PauseMenuState.h">
-      <Filter>Classes\States\Menu\PauseMenuState</Filter>
     </ClInclude>
     <ClInclude Include="MovementComponent.h">
       <Filter>Classes\Component\MovementComponent</Filter>

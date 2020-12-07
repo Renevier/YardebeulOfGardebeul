@@ -1,4 +1,4 @@
-Time InGame: 3.58619
+Time InGame: 3.68128
 Lvl: 1
 HP: 100
 MP: 100

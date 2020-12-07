@@ -44,7 +44,23 @@ void GameState::InitButton()
 
 void GameState::InitPlayer()
 {
-	this->player = new Hero(100, 100, this->textures["PLAYER_IDLE"]);
+	
+		this->player = new Hero(100, 100, this->textures["PLAYER_IDLE"]);
+	//else if(_load == "Save 1")
+	//{
+	//	//Recuperer les données dans "Save 1"
+	//	this->player = new Hero(200, 200, this->textures["PLAYER_IDLE"]);
+	//}
+	//else if (_load == "Save 2")
+	//{
+	//	//Recuperer les données dans "Save 2"
+	//	this->player = new Hero(350, 350, this->textures["PLAYER_IDLE"]);
+	//}
+	//else if (_load == "Save 3")
+	//{
+	//	//Recuperer les données dans "Save 3"
+	//	this->player = new Hero(500, 500, this->textures["PLAYER_IDLE"]);
+	//}
 }
 
 GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
@@ -130,24 +146,24 @@ void GameState::UpdatePauseMenuButtons()
 {
 	if (this->wantSave)
 	{
-		string writeFile;
+		string file;
 
 		if (this->pauseMenu->IsButtonPressed("SAVE_1"))
 		{
-			writeFile = "Save1";
-			this->Save(writeFile);
+			file = "Save1";
+			this->Save(file);
 		}
 
 		if (this->pauseMenu->IsButtonPressed("SAVE_2"))
 		{
-			writeFile = "Save2";
-			this->Save(writeFile);
+			file = "Save2";
+			this->Save(file);
 		}
 
 		if (this->pauseMenu->IsButtonPressed("SAVE_3"))
 		{
-			writeFile = "Save3";
-			this->Save(writeFile);
+			file = "Save3";
+			this->Save(file);
 		}
 		if (this->pauseMenu->IsButtonPressed("BACK_TO_GAME"))
 		{
@@ -160,11 +176,11 @@ void GameState::UpdatePauseMenuButtons()
 	}
 	else
 	{
-		if (this->pauseMenu->IsButtonPressed("GAME_RETURN"))
+		/*if (this->pauseMenu->IsButtonPressed("GAME_RETURN"))
 		{
 			this->wantSave = false;
 			this->UnpauseState();
-		}
+		}*/
 
 		if (this->pauseMenu->IsButtonPressed("SAVE_GAME"))
 			this->wantSave = true;
@@ -179,7 +195,7 @@ void GameState::EndState()
 	this->quit = true;
 }
 
-void GameState::UpdateInput(const float& dt)
+void GameState::UpdateInput(const float& _dt)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{

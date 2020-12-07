@@ -177,7 +177,6 @@
     <ClCompile Include="MovementComponent.cpp" />
     <ClCompile Include="NpcContainer.cpp" />
     <ClCompile Include="PauseMenu.cpp" />
-    <ClCompile Include="PauseMenuState.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -219,7 +218,6 @@
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="NpcContainer.h" />
     <ClInclude Include="PauseMenu.h" />
-    <ClInclude Include="PauseMenuState.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />

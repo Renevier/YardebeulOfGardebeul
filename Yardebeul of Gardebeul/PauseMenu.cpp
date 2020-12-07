@@ -35,12 +35,24 @@ void PauseMenu::InitText(Font& font)
 	);
 }
 
+void PauseMenu::InitDescriptionText(Font& font)
+{
+	this->descriptionText.setFont(font);
+	this->descriptionText.setFillColor(Color(255, 255, 255, 200));
+	this->descriptionText.setCharacterSize(30);
+	this->descriptionText.setString("lorem ipsus");
+	this->descriptionText.setPosition(Vector2f(
+		800.f,
+		550.f
+	));
+}
+
 void PauseMenu::InitDescriptionContainer(RenderWindow& window)
 {
 	this->descriptionContainer.setSize(Vector2f(
 		window.getSize().x / 4.f,
 		window.getSize().y / 4.f
-		)
+	)
 	);
 
 	this->descriptionContainer.setOrigin(
@@ -62,6 +74,7 @@ PauseMenu::PauseMenu(RenderWindow& window, Font& font)
 	this->InitButtonContainer(window);
 	this->InitDescriptionContainer(window);
 	this->InitText(font);
+	this->InitDescriptionText(font);
 }
 
 PauseMenu::~PauseMenu()
@@ -70,10 +83,52 @@ PauseMenu::~PauseMenu()
 		delete it->second;
 }
 
+void PauseMenu::UpdateDescriptionText(string _readFile)
+{
+	ifstream readfile("../Ressources/Saves/" + _readFile + ".txt");
+	string timeInGame, champLevel;
+
+	string line;
+
+	if (readfile.is_open())
+	{
+		while (getline(readfile, line))
+		{
+			if (line.find("Time InGame") != -1)
+				timeInGame = line;
+
+			if (line.find("Lvl") != -1)
+				champLevel = line;
+
+			this->descriptionText.setString(timeInGame + "\n" + champLevel);
+		}
+	}
+
+	readfile.close();
+}
+
 void PauseMenu::Update(const Vector2f& mousePos)
 {
-	for (auto &i : this->buttons)
+	string file;
+
+	for (auto& i : this->buttons)
 		i.second->Update(mousePos);
+
+	if (this->buttons.at("SAVE_1")->GetState() == BTN_STATES::BTN_HOVER)
+	{
+		file = "Save1";
+		this->UpdateDescriptionText(file);
+	}
+	if (this->buttons.at("SAVE_2")->GetState() == BTN_STATES::BTN_HOVER)
+	{
+		file = "Save2";
+		this->UpdateDescriptionText(file);
+	}
+	if (this->buttons.at("SAVE_3")->GetState() == BTN_STATES::BTN_HOVER)
+	{
+		file = "Save3";
+		this->UpdateDescriptionText(file);
+	}
 }
 
 void PauseMenu::Render(RenderTarget& target, bool wantSave)
@@ -86,10 +141,13 @@ void PauseMenu::Render(RenderTarget& target, bool wantSave)
 	//Render button
 	if (wantSave)
 	{
-		if(this->buttons.at("SAVE_1")->GetState() == BTN_STATES::BTN_HOVER||
+		if (this->buttons.at("SAVE_1")->GetState() == BTN_STATES::BTN_HOVER ||
 			this->buttons.at("SAVE_2")->GetState() == BTN_STATES::BTN_HOVER ||
 			this->buttons.at("SAVE_3")->GetState() == BTN_STATES::BTN_HOVER)
-				target.draw(this->descriptionContainer);
+		{
+			target.draw(this->descriptionContainer);
+			target.draw(this->descriptionText);
+		}
 
 		this->buttons.at("SAVE_1")->Render(target);
 		this->buttons.at("SAVE_2")->Render(target);
@@ -102,7 +160,11 @@ void PauseMenu::Render(RenderTarget& target, bool wantSave)
 		this->buttons.at("GAME_RETURN")->Render(target);
 		this->buttons.at("SAVE_GAME")->Render(target);
 		this->buttons.at("EXIT_GAME")->Render(target);
-	}	
+	}
+
+	//print mouse potiton in the console
+	/*system("CLS");
+	cout << target.mapPixelToCoords(Mouse::getPosition()).x << " " << target.mapPixelToCoords(Mouse::getPosition()).y;*/
 }
 
 void PauseMenu::AddButton(const string key, float x, float y, const string text)

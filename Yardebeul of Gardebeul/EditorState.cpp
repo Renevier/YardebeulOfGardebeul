@@ -44,7 +44,7 @@ void EditorState::UpdateButton()
 		this->quit = true;
 }
 
-void EditorState::Update(const float& _dt)
+void EditorState::Update(RenderTarget* _window, const float& _dt)
 {
 	this->UpdateMousePosition();
 	this->UpdateInput(_dt);
