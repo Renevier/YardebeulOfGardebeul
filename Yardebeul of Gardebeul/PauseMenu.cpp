@@ -161,10 +161,6 @@ void PauseMenu::Render(RenderTarget& target, bool wantSave)
 		this->buttons.at("SAVE_GAME")->Render(target);
 		this->buttons.at("EXIT_GAME")->Render(target);
 	}
-
-	//print mouse potiton in the console
-	/*system("CLS");
-	cout << target.mapPixelToCoords(Mouse::getPosition()).x << " " << target.mapPixelToCoords(Mouse::getPosition()).y;*/
 }
 
 void PauseMenu::AddButton(const string key, float x, float y, const string text)

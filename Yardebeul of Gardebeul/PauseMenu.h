@@ -7,13 +7,12 @@ class PauseMenu
 protected:
 	Font& font;
 	Text menuText;
-	Text descriptionText;
 
 	RectangleShape background;
 	RectangleShape buttonContainer;
 
 	RectangleShape descriptionContainer;
-	RectangleShape saveDescription;
+	Text descriptionText;
 
 	map<string, Button*> buttons;
 private:

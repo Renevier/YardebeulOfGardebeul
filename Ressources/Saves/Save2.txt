@@ -1,4 +1,7 @@
-Time InGame: 66.5805
+Time InGame: 10.8766
+
+Player: 
+{
 Lvl: 1
 HP: 100
 MP: 100
@@ -8,3 +11,4 @@ CurrentExp: 0
 ExpNeeded: 0
 Total exp: 0
 Nb caracPoint: 0
+}

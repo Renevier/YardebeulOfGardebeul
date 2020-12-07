@@ -79,8 +79,9 @@ void GameState::Save(string _writeFile)
 
 	if (writeFile.is_open())
 	{
-		writeFile << "Time InGame: " << this->ingameTime << endl;
-
+		writeFile << "Time InGame: " << this->ingameTime << endl << endl;
+		writeFile << "Player: " << endl;
+		writeFile << "{" << endl;
 		writeFile << "Lvl: " << player->GetLevel() << endl;
 		writeFile << "HP: " << player->GetHP() << endl;
 		writeFile << "MP: " << player->GetMP() << endl;
@@ -90,6 +91,7 @@ void GameState::Save(string _writeFile)
 		writeFile << "ExpNeeded: " << player->GetExpNeed() << endl;
 		writeFile << "Total exp: " << player->GetTotalExp() << endl;
 		writeFile << "Nb caracPoint: " << player->GetCaracPoint() << endl;
+		writeFile << "}" << endl;
 	}
 
 	writeFile.close();
@@ -176,11 +178,11 @@ void GameState::UpdatePauseMenuButtons()
 	}
 	else
 	{
-		/*if (this->pauseMenu->IsButtonPressed("GAME_RETURN"))
+		if (this->pauseMenu->IsButtonPressed("GAME_RETURN"))
 		{
 			this->wantSave = false;
 			this->UnpauseState();
-		}*/
+		}
 
 		if (this->pauseMenu->IsButtonPressed("SAVE_GAME"))
 			this->wantSave = true;

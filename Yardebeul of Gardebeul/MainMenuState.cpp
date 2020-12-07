@@ -42,17 +42,17 @@ void MainMenuState::InitButton()
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SAVE_1", new Button(100, 420, 250, 50,
+	this->buttons.emplace("SAVE_1", new Button(100, 400, 250, 50,
 		&this->font, "Save 1", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SAVE_2", new Button(100, 520, 250, 50,
+	this->buttons.emplace("SAVE_2", new Button(100, 600, 250, 50,
 		&this->font, "Save 2", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SAVE_3", new Button(100, 600, 250, 50,
+	this->buttons.emplace("SAVE_3", new Button(100, 800, 250, 50,
 		&this->font, "Save 3", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));

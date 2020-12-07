@@ -16,6 +16,9 @@ protected:
     map<string, Button*> buttons;
     bool load;
 
+    RectangleShape descriptionContainer;
+    Text descriptionText;
+
 protected:
     virtual void InitKeybinds();
     void InitBackground();
