@@ -27,9 +27,15 @@ public:
 	virtual void Update(const float& _dt);
 
 	//Getter
-	float GetCurrentExp();
-	float GetExpNeed();
-	float GetTotalExp();
-	int GetCaracPoint();
+	inline float GetCurrentExp() { return this->currentExp; };
+	inline float GetExpNeed() { return this->expNeed; };
+	inline float GetTotalExp() { return this->totalExp; };
+	inline int GetCaracPoint() { return this->caracPoint; };
+
+	//Setter
+	inline void SetCurrentExp(float currentExp) { this->currentExp = currentExp; };
+	inline void SetExpNeed(float expNeed) { this->expNeed = expNeed; };
+	inline void SetTotalExp(float totalExp) { this->totalExp = totalExp; };
+	inline void SetCaracPoint(int caracPoint) { this->caracPoint = caracPoint; };
 };
 

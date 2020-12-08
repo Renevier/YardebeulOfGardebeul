@@ -1,4 +1,4 @@
-Time InGame: 10.8766
+TimeIngame: 2.98076
 
 Player: 
 {
@@ -9,6 +9,8 @@ EndurePoint: 50
 MindPoint: 25
 CurrentExp: 0
 ExpNeeded: 0
-Total exp: 0
-Nb caracPoint: 0
+TotalExp: 0
+NbCaracPoint: 0
+PosX: 50
+PosY: 50
 }

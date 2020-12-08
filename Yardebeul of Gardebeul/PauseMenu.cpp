@@ -94,7 +94,7 @@ void PauseMenu::UpdateDescriptionText(string _readFile)
 	{
 		while (getline(readfile, line))
 		{
-			if (line.find("Time InGame") != -1)
+			if (line.find("TimeIngame") != -1)
 				timeInGame = line;
 
 			if (line.find("Lvl") != -1)

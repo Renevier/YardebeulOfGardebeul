@@ -21,12 +21,13 @@ private:
     void InitTexture();
     void InitPauseMenu();
     void InitButton();
-    void InitPlayer();
+    void InitPlayer(string _sLoad);
 
 public:
-    GameState(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);
+    GameState(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states, string _sLoad);
     ~GameState();
 
+    void Load(string readFile);
     void Save(string writeFile);
     virtual void UpdatePlayerInput(const float& _dt);
     void UpdateState();

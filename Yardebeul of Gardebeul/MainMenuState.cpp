@@ -47,16 +47,20 @@ void MainMenuState::InitButton()
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SAVE_2", new Button(100, 600, 250, 50,
+	this->buttons.emplace("SAVE_2", new Button(100, 500, 250, 50,
 		&this->font, "Save 2", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SAVE_3", new Button(100, 800, 250, 50,
+	this->buttons.emplace("SAVE_3", new Button(100, 600, 250, 50,
 		&this->font, "Save 3", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
+	this->buttons.emplace("EXIT_SAVE", new Button(100, 850, 250, 50,
+		&this->font, "Quit", 50,
+		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
+		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 }
 
 MainMenuState::MainMenuState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
@@ -66,7 +70,8 @@ MainMenuState::MainMenuState(RenderWindow* _window, map<string, int>* _supported
 	this->InitFont();
 	this->InitButton();
 
-	this->load = false;
+	this->bLoad = false;
+	this->sLoad = "NEW_GAME";
 }
 
 void MainMenuState::UpdateInput(const float& _dt)
@@ -76,11 +81,12 @@ void MainMenuState::UpdateInput(const float& _dt)
 
 void MainMenuState::UpdateButton()
 {
-	if (this->load)
+	if (this->bLoad)
 	{
 		this->buttons.at("SAVE_1")->Update(this->mousePosView);
 		this->buttons.at("SAVE_2")->Update(this->mousePosView);
 		this->buttons.at("SAVE_3")->Update(this->mousePosView);
+		this->buttons.at("EXIT_SAVE")->Update(this->mousePosView);
 	}
 	else
 	{
@@ -91,18 +97,42 @@ void MainMenuState::UpdateButton()
 	}
 
 	if (this->buttons.at("NEW_GAME")->IsPressed())
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states));
+		this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
 	
 	if (this->buttons.at("LOAD_GAME")->IsPressed())
-	{
-		this->load = true;
-	}
+		this->bLoad = true;
 
 	/*if (this->buttons.at("MAP_EDITOR")->IsPressed())
 		this->states->push(new MapEditorState(this->window, this->supportedKeys, this->states));*/
 
 	if (this->buttons.at("EXIT")->IsPressed())
 		this->EndState();
+
+	//-------------------------Load-----------------------------------
+
+	if (this->buttons.at("SAVE_1")->IsPressed())
+	{
+		this->bLoad = false;
+		this->sLoad = "Save1";
+		this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+	}
+
+	if (this->buttons.at("SAVE_2")->IsPressed())
+	{
+		this->bLoad = false;
+		this->sLoad = "Save2";
+		this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+	}
+
+	if (this->buttons.at("SAVE_3")->IsPressed())
+	{
+		this->bLoad = false;
+		this->sLoad = "Save3";
+		this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+	}
+
+	if (this->buttons.at("EXIT_SAVE")->IsPressed())
+		this->bLoad = false;
 }
 
 void MainMenuState::Update(const float& _dt)
@@ -113,11 +143,12 @@ void MainMenuState::Update(const float& _dt)
 
 void MainMenuState::RenderButton(RenderTarget& _target)
 {
-	if (this->load)
+	if (this->bLoad)
 	{
 		this->buttons.at("SAVE_1")->Render(_target);
 		this->buttons.at("SAVE_2")->Render(_target);
-		this->buttons.at("SAVE_3")->Render(_target);
+		this->buttons.at("SAVE_3")->Render(_target); 
+		this->buttons.at("EXIT_SAVE")->Render(_target); 
 	}
 	else
 	{
@@ -126,7 +157,6 @@ void MainMenuState::RenderButton(RenderTarget& _target)
 		this->buttons.at("MAP_EDITOR")->Render(_target);
 		this->buttons.at("EXIT")->Render(_target);
 	}
-
 }
 
 void MainMenuState::Render(RenderTarget* _target)
@@ -139,8 +169,8 @@ void MainMenuState::Render(RenderTarget* _target)
 	this->RenderButton(*_target);
 
 	//print mouse potiton in the console
-	system("CLS");
-	cout << this->mousePosView.x << " " << this->mousePosView.y;
+	/*system("CLS");
+	cout << this->mousePosView.x << " " << this->mousePosView.y;*/
 }
 
 void MainMenuState::EndState()

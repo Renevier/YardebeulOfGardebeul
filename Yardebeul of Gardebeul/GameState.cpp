@@ -42,35 +42,63 @@ void GameState::InitButton()
 	this->pauseMenu->AddButton("BACK_TO_MAINMENU", 100.f, 750.f, "Back to main menu");
 }
 
-void GameState::InitPlayer()
+void GameState::InitPlayer(string _sLoad)
 {
-	
-		this->player = new Hero(100, 100, this->textures["PLAYER_IDLE"]);
-	//else if(_load == "Save 1")
-	//{
-	//	//Recuperer les données dans "Save 1"
-	//	this->player = new Hero(200, 200, this->textures["PLAYER_IDLE"]);
-	//}
-	//else if (_load == "Save 2")
-	//{
-	//	//Recuperer les données dans "Save 2"
-	//	this->player = new Hero(350, 350, this->textures["PLAYER_IDLE"]);
-	//}
-	//else if (_load == "Save 3")
-	//{
-	//	//Recuperer les données dans "Save 3"
-	//	this->player = new Hero(500, 500, this->textures["PLAYER_IDLE"]);
-	//}
+	if(_sLoad == "NEW_GAME")
+		this->player = new Hero(50, 50, this->textures["PLAYER_IDLE"]);
+	else
+	{
+		this->player = new Hero(0, 0, this->textures["PLAYER_IDLE"]);
+		this->Load(_sLoad);
+	}
 }
 
-GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
+GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states, string _sLoad)
 	: State(_window, _supportedKeys, _states)
 {
 	this->InitKeybinds();
 	this->InitFont();
 	this->InitTexture();
 	this->InitPauseMenu();
-	this->InitPlayer();
+	this->InitPlayer(_sLoad);
+}
+
+void GameState::Load(string _readFile)
+{
+	ifstream readFile("../Ressources/Saves/" + _readFile + ".txt");
+
+	string line;
+
+	if (readFile.is_open())
+	{
+		while (getline(readFile, line))
+		{
+			if (line.find("TimeIngame") != -1)
+				this->ingameTime = stof(line.substr(line.find(" ") + 1, line.size()));
+			if (line.find("Lvl") != -1)
+				this->player->SetLevel(stoi(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("HP") != -1)
+				this->player->SetHP(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("MP") != -1)
+				this->player->SetMP(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("EndurePoint") != -1)
+				this->player->SetEndurePoint(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("MindPoint") != -1)
+				this->player->SetMindPoint(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("CurrentExp") != -1)
+				this->player->SetMindPoint(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("ExpNeeded") != -1)
+				this->player->SetExpNeed(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("TotalExp") != -1)
+				this->player->SetExpNeed(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("NbCaracPoint") != -1)
+				this->player->SetCaracPoint(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("PosX") != -1)
+				this->player->SetPosX(stof(line.substr(line.find(" ") + 1, line.size())));
+			if (line.find("PosY") != -1)
+				this->player->SetPosY(stof(line.substr(line.find(" ") + 1, line.size())));
+		}
+	}
 }
 
 void GameState::Save(string _writeFile)
@@ -79,7 +107,7 @@ void GameState::Save(string _writeFile)
 
 	if (writeFile.is_open())
 	{
-		writeFile << "Time InGame: " << this->ingameTime << endl << endl;
+		writeFile << "TimeIngame: " << this->ingameTime << endl << endl;
 		writeFile << "Player: " << endl;
 		writeFile << "{" << endl;
 		writeFile << "Lvl: " << player->GetLevel() << endl;
@@ -89,8 +117,10 @@ void GameState::Save(string _writeFile)
 		writeFile << "MindPoint: " << player->GetMindPoint() << endl;
 		writeFile << "CurrentExp: " << player->GetCurrentExp() << endl;
 		writeFile << "ExpNeeded: " << player->GetExpNeed() << endl;
-		writeFile << "Total exp: " << player->GetTotalExp() << endl;
-		writeFile << "Nb caracPoint: " << player->GetCaracPoint() << endl;
+		writeFile << "TotalExp: " << player->GetTotalExp() << endl;
+		writeFile << "NbCaracPoint: " << player->GetCaracPoint() << endl;
+		writeFile << "PosX: " << player->GetPos().x << endl;
+		writeFile << "PosY: " << player->GetPos().y << endl;
 		writeFile << "}" << endl;
 	}
 

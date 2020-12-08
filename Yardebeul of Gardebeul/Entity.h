@@ -12,6 +12,8 @@ protected:
 	MovementComponent* movementComponent;
 	AnimationComponent* animationComponent;
 
+	Vector2f position;
+
 protected:
 	void VariableInit();
 	void SetTexture(Texture& _texture);
@@ -27,5 +29,11 @@ public:
 	virtual void Render(RenderTarget& _target);
 	~Entity();
 
+	//get
+	inline Vector2f GetPos() { return this->position; }
+
+	//set
+	inline void SetPosX(float pos) { this->position.x = pos; }
+	inline void SetPosY(float pos) { this->position.y = pos; }
 };
 

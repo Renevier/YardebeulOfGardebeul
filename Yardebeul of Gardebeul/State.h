@@ -23,7 +23,6 @@ protected:
 
 	map<string, Texture> textures;
 
-
 	//Functions
 private:
 	virtual void InitKeybinds() = 0;

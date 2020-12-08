@@ -14,7 +14,8 @@ protected:
     Font font;
 
     map<string, Button*> buttons;
-    bool load;
+    bool bLoad;
+    string sLoad;
 
     RectangleShape descriptionContainer;
     Text descriptionText;

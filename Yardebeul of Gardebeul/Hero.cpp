@@ -15,7 +15,10 @@ void Hero::InitVariable()
 
 void Hero::InitComponent(float _x, float _y, Texture& _texture_sheet)
 {
-	this->SetPosition(_x, _y);
+	this->position.x = _x;
+	this->position.y = _y;
+
+	this->SetPosition(this->position.x, this->position.y);
 
 	this->CreateMovementComponent(300.f, 15.f, 5.f);
 	this->CreateAnimationComponent(_texture_sheet);
@@ -122,26 +125,6 @@ void Hero::Update(const float& _dt)
 	
 
 	this->hitBoxComponent->Update();
-}
-
-float Hero::GetCurrentExp()
-{
-	return this->currentExp;
-}
-
-float Hero::GetExpNeed()
-{
-	return this->expNeed;
-}
-
-float Hero::GetTotalExp()
-{
-	return this->totalExp;
-}
-
-int Hero::GetCaracPoint()
-{
-	return this->caracPoint;
 }
 
 Hero::~Hero()
