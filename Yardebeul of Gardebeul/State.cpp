@@ -14,6 +14,8 @@ State::State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<Stat
 
 	this->quit = false;
 	this->pause = false;
+	this->keytime = 0.f;
+	this->keytimeMax = 10.f;
 
 	this->InitView();
 }
@@ -27,19 +29,21 @@ void State::UpdateMousePosition()
 	this->window->setView(this->window->getDefaultView());
 }
 
-bool State::GetQuit()
+void State::UpdateKeytime(const float& _dt)
 {
-	return this->quit;
+	if (this->keytime < this->keytimeMax)
+		this->keytime += 100.f * _dt;
 }
 
-void State::PauseState()
+bool State::GetKeytime()
 {
-	this->pause = true;
-}
+	if (this->keytime >= this->keytimeMax)
+	{
+		this->keytime = 0.f;
+		return true;
+	}
 
-void State::UnpauseState()
-{
-	this->pause = false;
+	return false;
 }
 
 State::~State()

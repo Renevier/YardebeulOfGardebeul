@@ -13,6 +13,8 @@ protected:
 
 	bool quit;
 	bool pause;
+	float keytime;
+	float keytimeMax;
 
 	Vector2i mousePosScreen;
 	Vector2i mousePosWindow;
@@ -34,10 +36,14 @@ public:
 
 	virtual void UpdateMousePosition();
 	virtual void UpdateInput(const float& _dt) = 0;
+	virtual void UpdateKeytime(const float& _dt);
 	virtual void Update(const float& _dt) = 0;
 	virtual void Render(RenderTarget* _target) = 0;
 	virtual void EndState() = 0;
-	bool GetQuit();
-	void PauseState();
-	void UnpauseState();
+
+	inline void PauseState() { this->pause = true; }
+	inline void UnpauseState() { this->pause = false; }
+
+	inline bool GetQuit() { return this->quit; }
+	bool GetKeytime();
 };

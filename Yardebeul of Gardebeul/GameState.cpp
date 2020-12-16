@@ -143,6 +143,7 @@ void GameState::UpdatePlayerInput(const float& _dt)
 void GameState::Update(const float& _dt)
 {
 	this->UpdateMousePosition();
+	this->UpdateKeytime(_dt);
 	this->UpdateInput(_dt);
 
 	if (!this->pause)
