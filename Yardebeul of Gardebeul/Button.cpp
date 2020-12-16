@@ -8,7 +8,7 @@ Button::Button(float _x, float _y, float _width, float _height,
 	this->buttonState = BTN_STATES::BTN_IDLE;
 
 	this->shape.setSize(Vector2f(_width, _height));
-	this->shape.setOrigin(this->shape.getGlobalBounds().width / 2, this->shape.getGlobalBounds().height / 2);
+	this->shape.setOrigin(this->shape.getSize().x / 2, this->shape.getSize().y / 2);
 	this->shape.setPosition(_x + this->shape.getGlobalBounds().width / 2,
 		_y + this->shape.getGlobalBounds().height / 2);
 	this->shape.setFillColor(_button_idle_color);
@@ -18,8 +18,8 @@ Button::Button(float _x, float _y, float _width, float _height,
 	this->text.setString(_text);
 	this->text.setFont(*this->font);
 	this->text.setCharacterSize(_charactere_size);
-	this->text.setOrigin(this->text.getGlobalBounds().width / 2, this->text.getGlobalBounds().height / 2);
-	this->text.setPosition(this->shape.getPosition().x,	this->shape.getPosition().y);
+	this->text.setOrigin(this->text.getGlobalBounds().width / 2, this->text.getGlobalBounds().height);
+	this->text.setPosition(Vector2f(this->shape.getPosition().x, this->shape.getPosition().y));
 	this->text.setFillColor(_text_idle_color);
 
 	this->textIdleColor = _text_idle_color;
