@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "MovementComponent.h"
 
 MovementComponent::MovementComponent(Sprite& _sprite, float _maxVelocity, float _acceleration, float _deceleretion)

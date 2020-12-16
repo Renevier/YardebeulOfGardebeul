@@ -1,6 +1,6 @@
 #pragma once
 #include "Animation.h"
-#include "pch.h"
+
 class AnimationComponent
 {
 private:			

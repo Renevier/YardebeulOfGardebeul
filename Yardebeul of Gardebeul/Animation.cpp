@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Animation.h"
 
 Animation::Animation(Sprite& _sprite, Texture& _texture_sheet, float _animation_timer,

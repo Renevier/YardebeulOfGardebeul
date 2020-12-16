@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Error.h"
 
 Error::Error(int _number, const char* _error, int _level) throw()

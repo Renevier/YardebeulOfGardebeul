@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Weapon.h"
 
 void Weapon::InitVariables(string _name, float _price, float _durability, float _attack, int _levelToAccess)

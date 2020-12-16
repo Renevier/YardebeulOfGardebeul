@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "cEvent.h"
 
 void cEvent::InitVariable(string _name, string _description, STATE_EVENT _type, BIOME _biome, bool hasReward)

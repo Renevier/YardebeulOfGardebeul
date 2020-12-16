@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Consumable.h"
 
 void Consumable::InitVariable(string _name, float _price,Effect _effect, float _durability)

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "PauseMenu.h"
 
 void PauseMenu::InitBackground(RenderWindow& window)

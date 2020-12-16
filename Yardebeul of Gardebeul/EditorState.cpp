@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "EditorState.h"
 
 void EditorState::InitKeybinds()

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "HitBoxComponent.h"
 
 HitBoxComponent::HitBoxComponent(Sprite& _sprite, float _offset_x, float _offset_y, float _width, float _height)

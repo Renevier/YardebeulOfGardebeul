@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Hero.h"
 
 void Hero::InitVariable()

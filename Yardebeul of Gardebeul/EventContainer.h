@@ -1,6 +1,5 @@
 #pragma once
 #include "cEvent.h"
-#include "pch.h"
 #include "Tool.h"
 
 class EventContainer

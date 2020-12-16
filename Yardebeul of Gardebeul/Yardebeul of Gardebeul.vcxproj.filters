@@ -141,6 +141,9 @@
     <Filter Include="Classes\GUI">
       <UniqueIdentifier>{e5851098-e097-4c92-9949-91c952e78e1e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Map">
+      <UniqueIdentifier>{864e6d8c-573b-44e6-a9b5-2c18b9fa8102}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -259,6 +262,12 @@
     </ClCompile>
     <ClCompile Include="PauseMenu.cpp">
       <Filter>Classes\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>Classes\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -381,6 +390,9 @@
     </ClInclude>
     <ClInclude Include="PauseMenu.h">
       <Filter>Classes\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMap.h">
+      <Filter>Classes\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

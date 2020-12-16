@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "MainMenuState.h"
 
 void MainMenuState::InitKeybinds()

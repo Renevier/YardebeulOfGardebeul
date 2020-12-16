@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Dungeon.h"
 
 void Dungeon::InitVariable(string _name, int _level, STATE_EVENT _type, int _nbEvent, vector<STATE_EVENT> _listOfEvent)

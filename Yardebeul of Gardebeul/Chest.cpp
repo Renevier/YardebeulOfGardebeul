@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Chest.h"
 
 Chest::Chest(string _name, Object* _myObject)

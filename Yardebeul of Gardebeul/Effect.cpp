@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Effect.h"
 
 void Effect::InitVariable(string _name, bool _isAoe, float _damage, float _duration)

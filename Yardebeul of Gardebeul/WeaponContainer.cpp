@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "WeaponContainer.h"
 
 void WeaponContainer::Fill()

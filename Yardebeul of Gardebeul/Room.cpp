@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Room.h"
 
 void Room::InitVariables(string _name, string _description, STATE_EVENT _state_event, bool _isBoss, cEvent _event)

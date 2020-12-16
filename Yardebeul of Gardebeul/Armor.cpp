@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Armor.h"
 
 void Armor::InitVariables(string _name, float _price, float _durability, float _defense, int _levelToAccess)

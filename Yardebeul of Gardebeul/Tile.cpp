@@ -1,4 +1,9 @@
+#include "pch.h"
 #include "Tile.h"
+
+Tile::Tile()
+{
+}
 
 Tile::Tile(float _x, float _y, Vector2f _side)
 {

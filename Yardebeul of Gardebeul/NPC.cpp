@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "NPC.h"
 
 void NPC::InitVariable(string _name, float _level, Behaviour _behaviour, float _Hp, float _Mp, float _endure)

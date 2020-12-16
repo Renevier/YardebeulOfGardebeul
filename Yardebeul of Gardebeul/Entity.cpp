@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Entity.h"
 
 void Entity::SetTexture(Texture& _texture)

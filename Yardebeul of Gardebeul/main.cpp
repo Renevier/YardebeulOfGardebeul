@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Tool.h"
 #include "Game.h"
 #include "Character.h"
