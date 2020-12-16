@@ -1,5 +1,4 @@
 #pragma once
-#include "pch.h"
 
 enum class TILE_STATE
 {
@@ -24,10 +23,11 @@ private:
 
 public:
 	Tile();
+	Tile(float _x, float _y, float _grisSizeF);
 	Tile(float _x, float _y, Vector2f _side);
 	Tile(Texture* _texture, Vector2f _posOnScreen, Vector2f _posInTexture);
 	void Update(const Vector2f _mousePos);
-	void Render(RenderTarget* target);
+	void Render(RenderTarget& target);
 	bool IsPressed() const;
 	~Tile();
 };

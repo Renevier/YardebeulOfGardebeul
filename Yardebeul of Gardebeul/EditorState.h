@@ -2,8 +2,7 @@
 #include "State.h"
 #include "Button.h"
 #include "GameState.h"
-#include "MapEditorState.h"
-#include "EditorState.h"
+#include "TileMap.h"
 
 class EditorState :
     public State
@@ -12,6 +11,8 @@ protected:
     Texture backgroundTexture;
     RectangleShape background;
     Font font;
+
+    TileMap Map;
 
     map<string, Button*> buttons;
 

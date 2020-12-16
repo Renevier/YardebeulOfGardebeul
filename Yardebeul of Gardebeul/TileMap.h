@@ -4,6 +4,7 @@
 class TileMap
 {
 protected:
+	float gridSizeF;
 	unsigned gridSizeU;
 	Vector2u maxSize;
 	unsigned layers;
@@ -13,5 +14,8 @@ protected:
 public:
 	TileMap();
 	~TileMap();
+
+	void Update();
+	void Render(RenderTarget& _target);
 };
 

@@ -175,7 +175,6 @@
     <ClCompile Include="EventType.cpp" />
     <ClCompile Include="HitBoxComponent.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
-    <ClCompile Include="MapEditorState.cpp" />
     <ClCompile Include="MovementComponent.cpp" />
     <ClCompile Include="NpcContainer.cpp" />
     <ClCompile Include="PauseMenu.cpp" />
@@ -221,7 +220,6 @@
     <ClInclude Include="EventType.h" />
     <ClInclude Include="HitBoxComponent.h" />
     <ClInclude Include="MainMenuState.h" />
-    <ClInclude Include="MapEditorState.h" />
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="NpcContainer.h" />
     <ClInclude Include="PauseMenu.h" />

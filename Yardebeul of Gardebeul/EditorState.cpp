@@ -53,6 +53,8 @@ void EditorState::RenderButton(RenderTarget& _target)
 
 void EditorState::Render(RenderTarget* _target)
 {
+	this->Map.Render(*_target);
+
 	if (!_target)
 		_target = this->window;
 

@@ -5,6 +5,14 @@ Tile::Tile()
 {
 }
 
+Tile::Tile(float _x, float _y, float _grisSizeF)
+{
+	this->shape.setSize(Vector2f(_grisSizeF, _grisSizeF));
+	this->shape.setFillColor(Color::Green);
+	this->shape.setPosition(_x, _y);
+
+}
+
 Tile::Tile(float _x, float _y, Vector2f _side)
 {
 	this->idleColor = Color::White;
@@ -69,9 +77,9 @@ void Tile::Update(const Vector2f _mousePos)
 	}
 }
 
-void Tile::Render(RenderTarget* target)
+void Tile::Render(RenderTarget& target)
 {
-	target->draw(this->shape);
+	target.draw(this->shape);
 }
 
 bool Tile::IsPressed() const

@@ -111,9 +111,6 @@
     <Filter Include="Classes\States\Menu">
       <UniqueIdentifier>{a1ac6e68-9c4a-46ab-93d3-f4d7065fb61c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\States\MapEditorState">
-      <UniqueIdentifier>{6e811d35-cdce-4912-8f30-67e8f51769fe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\States\Menu\MainMenuState">
       <UniqueIdentifier>{73a8964d-8ae3-4a02-9d6a-50d143178458}</UniqueIdentifier>
     </Filter>
@@ -229,9 +226,6 @@
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Classes\Ressources files\Button</Filter>
-    </ClCompile>
-    <ClCompile Include="MapEditorState.cpp">
-      <Filter>Classes\States\MapEditorState</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>Classes\TileMap\Tile</Filter>
@@ -357,9 +351,6 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Classes\Ressources files\Button</Filter>
-    </ClInclude>
-    <ClInclude Include="MapEditorState.h">
-      <Filter>Classes\States\MapEditorState</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Classes\TileMap\Tile</Filter>
