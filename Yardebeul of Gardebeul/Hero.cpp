@@ -3,7 +3,7 @@
 
 void Hero::InitVariable()
 {
-	this->level = 1.f;
+	this->level = 3.f;
 	this->manaPoints = 100.f;
 	this->healthPoints = 100.f;
 	this->endurePoints = 50.f;

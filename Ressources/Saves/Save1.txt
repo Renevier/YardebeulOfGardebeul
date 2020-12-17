@@ -1,8 +1,8 @@
-TimeIngame: 1.7675
+TimeIngame: 6.83007
 
 Player: 
 {
-Lvl: 1
+Lvl: 3
 HP: 100
 MP: 100
 EndurePoint: 50

@@ -15,6 +15,8 @@ protected:
     Clock clock;
     float ingameTime;
 
+    float waitingTime;
+
 private:
     virtual void InitKeybinds();
     void InitFont();
@@ -27,7 +29,8 @@ public:
     GameState(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states, string _sLoad);
     ~GameState();
 
-    void Load(string readFile);
+    void LoadStat(string readFile);
+    void LoadPos(string readFile);
     void Save(string writeFile);
     virtual void UpdatePlayerInput(const float& _dt);
     void UpdateState();

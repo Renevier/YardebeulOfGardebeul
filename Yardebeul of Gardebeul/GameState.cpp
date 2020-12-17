@@ -49,14 +49,17 @@ void GameState::InitPlayer(string _sLoad)
 		this->player = new Hero(50, 50, this->textures["PLAYER_IDLE"]);
 	else
 	{
+		this->LoadPos(_sLoad);
 		this->player = new Hero(0, 0, this->textures["PLAYER_IDLE"]);
-		this->Load(_sLoad);
+		this->LoadStat(_sLoad);
 	}
 }
 
 GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states, string _sLoad)
 	: State(_window, _supportedKeys, _states)
 {
+	this->waitingTime = this->clock.restart().asSeconds();
+
 	this->InitKeybinds();
 	this->InitFont();
 	this->InitTexture();
@@ -64,7 +67,7 @@ GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, st
 	this->InitPlayer(_sLoad);
 }
 
-void GameState::Load(string _readFile)
+void GameState::LoadStat(string _readFile)
 {
 	ifstream readFile("../Ressources/Saves/" + _readFile + ".txt");
 
@@ -94,6 +97,20 @@ void GameState::Load(string _readFile)
 				this->player->SetExpNeed(stof(line.substr(line.find(" ") + 1, line.size())));
 			if (line.find("NbCaracPoint") != -1)
 				this->player->SetCaracPoint(stof(line.substr(line.find(" ") + 1, line.size())));
+		}
+	}
+}
+
+void GameState::LoadPos(string _readFile)
+{
+	ifstream readFile("../Ressources/Saves/" + _readFile + ".txt");
+
+	string line;
+
+	if (readFile.is_open())
+	{
+		while (getline(readFile, line))
+		{
 			if (line.find("PosX") != -1)
 				this->player->SetPosX(stof(line.substr(line.find(" ") + 1, line.size())));
 			if (line.find("PosY") != -1)
@@ -144,18 +161,23 @@ void GameState::UpdatePlayerInput(const float& _dt)
 void GameState::Update(const float& _dt)
 {
 	this->UpdateMousePosition();
-	this->UpdateKeytime(_dt);
 	this->UpdateInput(_dt);
 
 	if (!this->pause)
 	{
-		this->ingameTime += clock.restart().asSeconds();
-
 		this->UpdatePlayerInput(_dt);
 		this->player->Update(_dt);
+
+		this->waitingTime += 0.f;
+		this->waitingTime += .2f;
+
+		this->ingameTime += clock.restart().asSeconds();
 	}
 	else
 	{
+		this->waitingTime += 0.f;
+		this->waitingTime += .2f;
+
 		this->pauseMenu->Update(this->mousePosView);
 		this->UpdatePauseMenuButtons();
 	}
@@ -233,8 +255,18 @@ void GameState::UpdateInput(const float& _dt)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
 	{
-		if (!this->pause)
+		if (this->waitingTime >= 200.f && !this->pause)
+		{
+			this->waitingTime = 0;
+
 			this->PauseState();
+		}
+		else if (this->waitingTime >= 200.f && this->pause)
+		{
+			this->waitingTime = 0;
+
+			this->UnpauseState();
+		}
 	}
 }
 
