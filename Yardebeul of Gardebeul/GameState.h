@@ -10,8 +10,6 @@ protected:
 
     Hero* player;
 
-    bool wantSave;
-
     Clock clock;
     float ingameTime;
 

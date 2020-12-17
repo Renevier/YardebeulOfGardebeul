@@ -11,6 +11,7 @@ protected:
 	map<string, int>* supportedKeys;
 	map<string, int> keybinds;
 
+	bool wantSave;
 	bool quit;
 	bool pause;
 	float keytime;

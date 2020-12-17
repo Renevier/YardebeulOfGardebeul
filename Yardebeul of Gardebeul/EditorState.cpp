@@ -4,6 +4,13 @@
 void EditorState::InitKeybinds()
 {}
 
+void EditorState::InitPauseMenu()
+{
+	this->pauseMenu = new PauseMenu(*this->window, this->font);
+
+	this->InitButton();
+}
+
 void EditorState::InitBackground()
 {}
 
@@ -14,51 +21,75 @@ void EditorState::InitFont()
 }
 
 void EditorState::InitButton()
-{}
+{
+	this->pauseMenu->AddButton("EXIT_GAME", 100.f, 800.f, "Quit");
+}
 
 EditorState::EditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
 	: State(_window, _supportedKeys, _states)
 {
 	this->InitBackground();
+	this->InitPauseMenu();
 	this->InitFont();
-	this->InitButton();
 
+}
+
+void EditorState::UpdatePauseMenuButtons()
+{
+	if (this->pauseMenu->IsButtonPressed("EXIT_GAME"))
+		this->EndState();
 }
 
 void EditorState::UpdateInput(const float& _dt)
 {
-	this->UpdateButton();
-
 	if (Keyboard::isKeyPressed(Keyboard::Escape))
-		this->EndState();
+	{
+		if (!this->pause)
+			this->PauseState();
+	}
 }
 
 void EditorState::UpdateButton()
 {
-	/*for (auto it : this->buttons)
-		it.second->Update(this->mousePosView);*/
+	for (auto& it : this->buttons)
+		it.second->Update(this->mousePosView);
 }
 
 void EditorState::Update(const float& _dt)
 {
 	this->UpdateMousePosition();
 	this->UpdateInput(_dt);
+
+	if (!this->pause)
+	{
+		this->UpdateButton();
+	}
+	else
+	{
+		this->pauseMenu->Update(this->mousePosView);
+		this->UpdatePauseMenuButtons();
+	}
+
 }
 
 void EditorState::RenderButton(RenderTarget& _target)
 {
-	/*for (auto it : this->buttons)
-		it.second->Render(_target);*/
+	for (auto& it : this->buttons)
+		it.second->Render(_target);
 }
 
 void EditorState::Render(RenderTarget* _target)
 {
-	this->Map.Render(*_target);
-
 	if (!_target)
 		_target = this->window;
 
-	//this->RenderButton(*_target);
+	this->Map.Render(*_target);
+
+	this->RenderButton(*_target);
+
+	if (this->pause)
+		this->pauseMenu->Render(*_target, this->wantSave);
+
 }
 
 void EditorState::EndState()
@@ -68,6 +99,8 @@ void EditorState::EndState()
 
 EditorState::~EditorState()
 {
-	/*for (auto it = this->buttons.begin(); it != this->buttons.end(); ++it)
-		delete it->second;*/
+	delete this->pauseMenu;
+
+	for (auto it = this->buttons.begin(); it != this->buttons.end(); ++it)
+		delete it->second;
 }

@@ -13,6 +13,7 @@ State::State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<Stat
 	this->supportedKeys = _supportedKeys;
 	this->states = _states;
 
+	this->wantSave = false;
 	this->quit = false;
 	this->pause = false;
 	this->keytime = 0.f;
