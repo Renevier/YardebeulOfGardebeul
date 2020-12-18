@@ -1,4 +1,4 @@
-TimeIngame: 6.83007
+TimeIngame: 39.6918
 
 Player: 
 {
@@ -11,6 +11,6 @@ CurrentExp: 0
 ExpNeeded: 0
 TotalExp: 0
 NbCaracPoint: 0
-PosX: 50
-PosY: 50
+PosX: 399.673
+PosY: 424.818
 }

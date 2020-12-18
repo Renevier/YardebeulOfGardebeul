@@ -44,6 +44,15 @@ void Entity::Move(const float _dir_x, const float _dir_y, const float& _dt)
 	if (this->movementComponent)
 	{
 		this->movementComponent->Move(_dir_x, _dir_y, _dt);
+
+		if(_dir_y < 0)
+			this->position.x -= this->movementComponent->GetVelocity().x * _dt;
+		if (_dir_y > 0)
+			this->position.x += this->movementComponent->GetVelocity().x * _dt;
+		if (_dir_x < 0)
+			this->position.y -= this->movementComponent->GetVelocity().y * _dt;
+		if (_dir_x > 0)
+			this->position.y += this->movementComponent->GetVelocity().y * _dt;
 	}
 }
 

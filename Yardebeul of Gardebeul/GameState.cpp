@@ -49,8 +49,8 @@ void GameState::InitPlayer(string _sLoad)
 		this->player = new Hero(50, 50, this->textures["PLAYER_IDLE"]);
 	else
 	{
-		this->LoadPos(_sLoad);
-		this->player = new Hero(0, 0, this->textures["PLAYER_IDLE"]);
+		this->LoadPos(_sLoad); 
+ 		this->player = new Hero(player->GetPos().x, player->GetPos().y, this->textures["PLAYER_IDLE"]);
 		this->LoadStat(_sLoad);
 	}
 }
