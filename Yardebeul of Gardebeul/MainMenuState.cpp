@@ -23,42 +23,42 @@ void MainMenuState::InitFont()
 
 void MainMenuState::InitButton()
 {
-	this->buttons.emplace("NEW_GAME", new Button(100, 500, 250, 50,
+	this->buttons.emplace("NEW_GAME", new gui::Button(100, 500, 250, 50,
 		&this->font, "New game", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("LOAD_GAME", new Button(100, 650, 250, 50,
+	this->buttons.emplace("LOAD_GAME", new gui::Button(100, 650, 250, 50,
 		&this->font, "Load game", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("MAP_EDITOR", new Button(100, 800, 250, 50,
+	this->buttons.emplace("MAP_EDITOR", new gui::Button(100, 800, 250, 50,
 		&this->font, "Editor", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("EXIT", new Button(100, 1000, 250, 50,
+	this->buttons.emplace("EXIT", new gui::Button(100, 1000, 250, 50,
 		&this->font, "Quit", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SAVE_1", new Button(100, 400, 250, 50,
+	this->buttons.emplace("SAVE_1", new gui::Button(100, 400, 250, 50,
 		&this->font, "Save 1", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SAVE_2", new Button(100, 500, 250, 50,
+	this->buttons.emplace("SAVE_2", new gui::Button(100, 500, 250, 50,
 		&this->font, "Save 2", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SAVE_3", new Button(100, 600, 250, 50,
+	this->buttons.emplace("SAVE_3", new gui::Button(100, 600, 250, 50,
 		&this->font, "Save 3", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("EXIT_SAVE", new Button(100, 850, 250, 50,
+	this->buttons.emplace("EXIT_SAVE", new gui::Button(100, 850, 250, 50,
 		&this->font, "Quit", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));

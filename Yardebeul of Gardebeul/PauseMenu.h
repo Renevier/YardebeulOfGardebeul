@@ -1,5 +1,5 @@
 #pragma once
-#include "Button.h"
+#include "Gui.h"
 #include "pch.h"
 
 class PauseMenu
@@ -14,7 +14,7 @@ protected:
 	RectangleShape descriptionContainer;
 	Text descriptionText;
 
-	map<string, Button*> buttons;
+	map<string, gui::Button*> buttons;
 private:
 	void InitBackground(RenderWindow& window);
 	void InitButtonContainer(RenderWindow& window);
@@ -32,5 +32,5 @@ public:
 	bool IsButtonPressed(const string key);
 
 	//get
-	map<string, Button*>& getButtons();
+	map<string, gui::Button*>& getButtons();
 };

@@ -1,7 +1,7 @@
 #include "pch.h"
-#include "Button.h"
+#include "Gui.h"
 
-Button::Button(float _x, float _y, float _width, float _height,
+gui::Button::Button(float _x, float _y, float _width, float _height,
 	Font* _font, string _text, unsigned _charactere_size,
 	Color _text_idle_color, Color _text_hover_color, Color _text_active_color,
 	Color _button_idle_color, Color _button_hover_color, Color _button_active_color)
@@ -34,7 +34,7 @@ Button::Button(float _x, float _y, float _width, float _height,
 	this->shape.setFillColor(this->buttonIdleColor);
 }
 
-void Button::Update(const Vector2f& _mousePos)
+void gui::Button::Update(const Vector2f& _mousePos)
 {
 	this->buttonState = BTN_STATES::BTN_IDLE;
 
@@ -70,25 +70,57 @@ void Button::Update(const Vector2f& _mousePos)
 	}
 }
 
-void Button::Render(RenderTarget& target)
+void gui::Button::Render(RenderTarget& target)
 {
 	target.draw(this->shape);
 	target.draw(this->text);
 }
 
-bool Button::IsPressed() const
+bool gui::Button::IsPressed() const
 {
-	if(this->buttonState == BTN_STATES::BTN_PRESSED)
+	if (this->buttonState == BTN_STATES::BTN_PRESSED)
 		return true;
 
 	return false;
 }
 
-Button::~Button()
+gui::Button::~Button()
 {
 }
 
-BTN_STATES Button::GetState()
+//***************DropDownList****************************
+
+gui::DropDownList::DropDownList(Font& _font, string _list[], unsigned _nbOfElement, unsigned _default_index)
+	:font(_font)
 {
-	return this->buttonState;
+	//unsigned nbOfElement = sizeof(_list) / sizeof(string);
+	for (size_t i = 0; i < _nbOfElement; i++)
+	{
+		this->list.push_back(
+			new gui::Button(
+				100, 500, 250, 50,
+				&this->font, _list[i], 50,
+				Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
+				Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
+	}
+
+	this->activeElement = new Button(*this->list[_default_index]);
+}
+
+gui::DropDownList::~DropDownList()
+{
+	delete this->activeElement;
+
+	for (auto& i : this->list)
+		delete i;
+}
+
+void gui::DropDownList::Update(const Vector2f& _mousePos)
+{
+	for (auto& i : this->list)
+		i->Update(_mousePos);
+}
+
+void gui::DropDownList::Render(RenderTarget& target)
+{
 }

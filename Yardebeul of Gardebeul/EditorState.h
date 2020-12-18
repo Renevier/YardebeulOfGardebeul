@@ -1,6 +1,6 @@
 #pragma once
 #include "State.h"
-#include "Button.h"
+#include "Gui.h"
 #include "GameState.h"
 #include "TileMap.h"
 #include "PauseMenu.h"
@@ -15,7 +15,7 @@ protected:
 
     TileMap Map;
     PauseMenu* pauseMenu;
-    map<string, Button*> buttons;
+    map<string, gui::Button*> buttons;
 
 protected:
     virtual void InitKeybinds();

@@ -1,6 +1,6 @@
 #pragma once
 #include "State.h"
-#include "Button.h"
+#include "Gui.h"
 class SaveState :
     public State
 {
@@ -9,7 +9,7 @@ protected:
     RectangleShape background;
     Font font;
 
-    map<string, Button*> buttons;
+    map<string, gui::Button*> buttons;
 
 private:
     virtual void InitKeybinds();

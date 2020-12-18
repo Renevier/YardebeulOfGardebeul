@@ -166,7 +166,7 @@ void PauseMenu::Render(RenderTarget& target, bool wantSave)
 
 void PauseMenu::AddButton(const string key, float x, float y, const string text)
 {
-	this->buttons.emplace(key, new Button(
+	this->buttons.emplace(key, new gui::Button(
 		x, y, 250, 40,
 		&this->font, text, 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
@@ -178,7 +178,7 @@ bool PauseMenu::IsButtonPressed(const string key)
 	return this->buttons.at(key)->IsPressed();
 }
 
-map<string, Button*>& PauseMenu::getButtons()
+map<string, gui::Button*>& PauseMenu::getButtons()
 {
 	return this->buttons;
 }

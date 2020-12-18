@@ -72,12 +72,6 @@
     <Filter Include="Classes\States\GameState">
       <UniqueIdentifier>{e9fdbf45-f468-45b3-be52-122142e1b782}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Ressources files">
-      <UniqueIdentifier>{fc309245-be4e-41e6-b2e0-c7308ffee4cf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\Ressources files\Button">
-      <UniqueIdentifier>{8c92b23e-1131-4a4e-ab95-9b429ca6270f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Container\EventContainer">
       <UniqueIdentifier>{11289ce0-6149-4985-9817-08636c899162}</UniqueIdentifier>
     </Filter>
@@ -140,6 +134,12 @@
     </Filter>
     <Filter Include="Classes\Map">
       <UniqueIdentifier>{864e6d8c-573b-44e6-a9b5-2c18b9fa8102}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\GUI\Ressources files">
+      <UniqueIdentifier>{fc309245-be4e-41e6-b2e0-c7308ffee4cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\GUI\Ressources files\Button">
+      <UniqueIdentifier>{8c92b23e-1131-4a4e-ab95-9b429ca6270f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -224,9 +224,6 @@
     <ClCompile Include="MainMenuState.cpp">
       <Filter>Classes\States\Menu\MainMenuState</Filter>
     </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>Classes\Ressources files\Button</Filter>
-    </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>Classes\TileMap\Tile</Filter>
     </ClCompile>
@@ -262,6 +259,9 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>Classes\GUI\Ressources files\Button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -349,9 +349,6 @@
     <ClInclude Include="MainMenuState.h">
       <Filter>Classes\States\Menu\MainMenuState</Filter>
     </ClInclude>
-    <ClInclude Include="Button.h">
-      <Filter>Classes\Ressources files\Button</Filter>
-    </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Classes\TileMap\Tile</Filter>
     </ClInclude>
@@ -384,6 +381,9 @@
     </ClInclude>
     <ClInclude Include="TileMap.h">
       <Filter>Classes\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui.h">
+      <Filter>Classes\GUI\Ressources files\Button</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

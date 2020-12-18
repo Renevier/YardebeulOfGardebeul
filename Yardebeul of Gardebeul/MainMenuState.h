@@ -1,6 +1,6 @@
 #pragma once
 #include "State.h"
-#include "Button.h"
+#include "Gui.h"
 #include "GameState.h"
 #include "EditorState.h"
 
@@ -12,7 +12,7 @@ protected:
     RectangleShape background;
     Font font;
 
-    map<string, Button*> buttons;
+    map<string, gui::Button*> buttons;
     bool bLoad;
     string sLoad;
 
