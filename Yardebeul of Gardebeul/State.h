@@ -1,11 +1,30 @@
 #pragma once
 #include "Hero.h"
 
+class State;
+
+//This class going to send all of our data to another state
+class StateData
+{
+public:
+	float gridSize;
+	RenderWindow* window;
+	map<string, int>* supportedKeys;
+	stack<State*>* states;
+
+public:
+	StateData() {};
+	~StateData() {};
+};
+
+
 //Mother of all our states
 class State
 {
 	//Variables
 protected:  
+	StateData* stateData;
+	float gridSize;
 	stack<State*>* states;
 	RenderWindow* window;
 	map<string, int>* supportedKeys;
@@ -33,7 +52,7 @@ private:
 	virtual void InitView();
 
 public:
-	State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states);
+	State(StateData* _state_data);
 	~State();
 
 	virtual void UpdateMousePosition();

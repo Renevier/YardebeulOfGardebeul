@@ -55,11 +55,9 @@ void GameState::InitPlayer(string _sLoad)
 	}
 }
 
-GameState::GameState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states, string _sLoad)
-	: State(_window, _supportedKeys, _states)
+GameState::GameState(StateData* _state_data, string _sLoad)
+	: State(_state_data)
 {
-	this->waitingTime = this->clock.restart().asSeconds();
-
 	this->InitKeybinds();
 	this->InitFont();
 	this->InitTexture();

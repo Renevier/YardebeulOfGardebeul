@@ -69,8 +69,8 @@ void MainMenuState::InitButton()
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 }
 
-MainMenuState::MainMenuState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
-	: State(_window, _supportedKeys, _states)
+MainMenuState::MainMenuState(StateData* _state_data)
+	: State(_state_data)
 {
 	this->InitBackground();
 	this->InitFont();
@@ -106,16 +106,16 @@ void MainMenuState::UpdateButton()
 	if (this->GetKeytime())
 	{
 		if (this->buttons.at("NEW_GAME")->IsPressed())
-			this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+			this->states->push(new GameState(this->stateData, this->sLoad));
 
 		if (this->buttons.at("LOAD_GAME")->IsPressed())
 			this->bLoad = true;
 
 		if (this->buttons.at("MAP_EDITOR")->IsPressed())
-			this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
+			this->states->push(new EditorState(this->stateData));
 
 		if (this->buttons.at("SETTING")->IsPressed())
-			this->states->push(new SettingState(this->window, this->supportedKeys, this->states));
+			this->states->push(new SettingState(this->stateData));
 
 		if (this->buttons.at("EXIT")->IsPressed())
 			this->EndState();
@@ -126,21 +126,21 @@ void MainMenuState::UpdateButton()
 		{
 			this->bLoad = false;
 			this->sLoad = "Save1";
-			this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+			this->states->push(new GameState(this->stateData, this->sLoad));
 		}
 
 		if (this->buttons.at("SAVE_2")->IsPressed())
 		{
 			this->bLoad = false;
 			this->sLoad = "Save2";
-			this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+			this->states->push(new GameState(this->stateData, this->sLoad));
 		}
 
 		if (this->buttons.at("SAVE_3")->IsPressed())
 		{
 			this->bLoad = false;
 			this->sLoad = "Save3";
-			this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+			this->states->push(new GameState(this->stateData, this->sLoad));
 		}
 
 		if (this->buttons.at("EXIT_SAVE")->IsPressed())
@@ -169,7 +169,6 @@ void MainMenuState::RenderButton(RenderTarget& _target)
 		this->buttons.at("NEW_GAME")->Render(_target);
 		this->buttons.at("LOAD_GAME")->Render(_target);
 		this->buttons.at("MAP_EDITOR")->Render(_target);
-		this->buttons.at("SETTING")->Render(_target);
 		this->buttons.at("EXIT")->Render(_target);
 	}
 }

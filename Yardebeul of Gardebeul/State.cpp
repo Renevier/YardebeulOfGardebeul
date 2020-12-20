@@ -7,12 +7,14 @@ void State::InitView()
 	this->view.setCenter(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
 }
 
-State::State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states)
+State::State(StateData* _state_data)
 	: keytimeMax(15.f), keytime(keytimeMax)
 {
-	this->window = _window;
-	this->supportedKeys = _supportedKeys;
-	this->states = _states;
+	this->stateData = _state_data;
+	this->window = _state_data->window;
+	this->supportedKeys = _state_data->supportedKeys;
+	this->states = _state_data->states;
+	this->gridSize = _state_data->gridSize;
 
 	this->wantSave = false;
 	this->quit = false;

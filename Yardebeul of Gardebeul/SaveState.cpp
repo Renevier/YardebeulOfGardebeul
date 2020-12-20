@@ -44,7 +44,8 @@ void SaveState::InitBackground()
 	this->background.setTexture(&this->backgroundTexture);
 }
 
-SaveState::SaveState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states) :State(_window, _supportedKeys, _states)
+SaveState::SaveState(StateData* _state_data)
+	:State(_state_data)
 {
 	this->InitBackground();
 	this->InitFont();

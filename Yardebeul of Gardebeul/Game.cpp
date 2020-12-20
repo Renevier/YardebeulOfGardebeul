@@ -1,6 +1,22 @@
 #include "pch.h"
 #include "Game.h"
 
+void Game::InitVariables()
+{
+	this->deltaTime = 0.f;
+	this->window = nullptr;
+	this->gridSize = 50.f;
+}
+
+void Game::InitStateData()
+{
+	this->stateData.window = this->window;
+	this->stateData.supportedKeys = &this->supportedKeys;
+	this->stateData.states = &this->states;
+	this->stateData.gridSize = this->gridSize;
+
+}
+
 void Game::InitWindow()
 {
 	this->window = new RenderWindow(VideoMode(1920, 1080), "Yardebeul of Gardebeul");
@@ -9,7 +25,7 @@ void Game::InitWindow()
 
 void Game::InitState()
 {
-	this->states.emplace(new MainMenuState(this->window, &this->supportedKeys, &this->states));
+	this->states.emplace(new MainMenuState(&this->stateData));
 }
 
 void Game::InitKeys()
@@ -23,8 +39,10 @@ void Game::InitKeys()
 
 Game::Game()
 {
+	this->InitVariables();
 	this->InitWindow();
 	this->InitKeys();
+	this->InitStateData();
 	this->InitState();
 }
 

@@ -25,7 +25,7 @@ protected:
     void InitButton();
 
 public:
-    EditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
+    EditorState(StateData *_state_data);
     ~EditorState();
     
     void UpdatePauseMenuButtons();

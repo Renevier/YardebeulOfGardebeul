@@ -5,6 +5,7 @@
 class Game
 {
 private:
+	StateData stateData;
 	RenderWindow* window;
 	Event event;
 
@@ -14,8 +15,12 @@ private:
 	stack<State*> states;
 
 	map<string, int> supportedKeys;
+	float gridSize;
 
 private:
+
+	void InitVariables();
+	void InitStateData();
 	void InitWindow();
 	void InitKeys();
 	void InitState();

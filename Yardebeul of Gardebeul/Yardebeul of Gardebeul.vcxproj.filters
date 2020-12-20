@@ -132,9 +132,6 @@
     <Filter Include="Classes\GUI">
       <UniqueIdentifier>{e5851098-e097-4c92-9949-91c952e78e1e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Map">
-      <UniqueIdentifier>{864e6d8c-573b-44e6-a9b5-2c18b9fa8102}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\States\SettingState">
       <UniqueIdentifier>{9efb5c78-7103-48b6-a8a8-8b271e364143}</UniqueIdentifier>
     </Filter>
@@ -251,9 +248,6 @@
     <ClCompile Include="EditorState.cpp">
       <Filter>Classes\States\EditorState</Filter>
     </ClCompile>
-    <ClCompile Include="TileMap.cpp">
-      <Filter>Classes\Map</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -265,6 +259,9 @@
     </ClCompile>
     <ClCompile Include="Gui.cpp">
       <Filter>Classes\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>Classes\TileMap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -379,9 +376,6 @@
     <ClInclude Include="EditorState.h">
       <Filter>Classes\States\EditorState</Filter>
     </ClInclude>
-    <ClInclude Include="TileMap.h">
-      <Filter>Classes\Map</Filter>
-    </ClInclude>
     <ClInclude Include="SettingState.h">
       <Filter>Classes\States\SettingState</Filter>
     </ClInclude>
@@ -390,6 +384,9 @@
     </ClInclude>
     <ClInclude Include="Gui.h">
       <Filter>Classes\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMap.h">
+      <Filter>Classes\TileMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

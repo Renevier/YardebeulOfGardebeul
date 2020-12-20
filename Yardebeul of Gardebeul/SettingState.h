@@ -23,7 +23,7 @@ protected:
     void InitGui();
 
 public:
-    SettingState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
+    SettingState(StateData* _state_data);
     ~SettingState();
 
     virtual void UpdateInput(const float& _dt);

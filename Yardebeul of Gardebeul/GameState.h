@@ -13,7 +13,6 @@ protected:
     Clock clock;
     float ingameTime;
 
-    float waitingTime;
 
 private:
     virtual void InitKeybinds();
@@ -24,7 +23,7 @@ private:
     void InitPlayer(string _sLoad);
 
 public:
-    GameState(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states, string _sLoad);
+    GameState(StateData* _state_data, string _sLoad);
     ~GameState();
 
     void LoadStat(string readFile);

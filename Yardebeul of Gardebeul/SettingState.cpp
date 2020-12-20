@@ -48,8 +48,8 @@ void SettingState::InitGui()
 		new gui::DropDownList(450, 450, 200, 50, font, li, 3));
 }
 
-SettingState::SettingState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
-	:State(_window, _supportedKeys, _states)
+SettingState::SettingState(StateData* _state_data)
+	:State(_state_data)
 {
 	this->InitBackground();
 	this->InitText();

@@ -18,7 +18,7 @@ private:
     void InitBackground();
 
 public:
-    SaveState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states);
+    SaveState(StateData* _state_data);
     virtual void UpdateButton();
     void Save(string _name_file);
     virtual void UpdateInput(const float& _dt);

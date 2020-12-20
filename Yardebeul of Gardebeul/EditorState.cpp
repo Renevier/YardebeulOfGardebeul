@@ -22,15 +22,23 @@ void EditorState::InitFont()
 
 void EditorState::InitButton()
 {
+	this->pauseMenu->AddButton("GAME_RETURN", 100.f, 400.f, "Resume the game");
+	this->pauseMenu->AddButton("SAVE_GAME", 100.f, 550.f, "Save");
 	this->pauseMenu->AddButton("EXIT_GAME", 100.f, 800.f, "Quit");
+
+	this->pauseMenu->AddButton("SAVE_1", 100.f, 300.f, "Save 1");
+	this->pauseMenu->AddButton("SAVE_2", 100.f, 400.f, "Save 2");
+	this->pauseMenu->AddButton("SAVE_3", 100.f, 500.f, "Save 3");
+	this->pauseMenu->AddButton("BACK_TO_GAME", 100.f, 600.f, "Resume the game");
+	this->pauseMenu->AddButton("BACK_TO_MAINMENU", 100.f, 750.f, "Back to main menu");
 }
 
-EditorState::EditorState(RenderWindow* _window, map<string, int>* _supportedKeys, stack<State*>* _states)
-	: State(_window, _supportedKeys, _states)
+EditorState::EditorState(StateData* _state_data)
+	: State(_state_data)
 {
 	this->InitBackground();
-	this->InitPauseMenu();
 	this->InitFont();
+	this->InitPauseMenu();
 
 }
 
@@ -42,10 +50,12 @@ void EditorState::UpdatePauseMenuButtons()
 
 void EditorState::UpdateInput(const float& _dt)
 {
-	if (Keyboard::isKeyPressed(Keyboard::Escape))
+	if (Keyboard::isKeyPressed(Keyboard::Escape) && this->GetKeytime())
 	{
 		if (!this->pause)
 			this->PauseState();
+		else
+			this->UnpauseState();
 	}
 }
 
@@ -57,6 +67,7 @@ void EditorState::UpdateButton()
 
 void EditorState::Update(const float& _dt)
 {
+	this->UpdateKeytime(_dt);
 	this->UpdateMousePosition();
 	this->UpdateInput(_dt);
 
@@ -99,8 +110,7 @@ void EditorState::EndState()
 
 EditorState::~EditorState()
 {
-	delete this->pauseMenu;
-
 	for (auto it = this->buttons.begin(); it != this->buttons.end(); ++it)
 		delete it->second;
+	delete this->pauseMenu;
 }
