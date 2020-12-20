@@ -4,15 +4,16 @@
 gui::Button::Button(float _x, float _y, float _width, float _height,
 	Font* _font, string _text, unsigned _charactere_size,
 	Color _text_idle_color, Color _text_hover_color, Color _text_active_color,
-	Color _button_idle_color, Color _button_hover_color, Color _button_active_color)
+	Color _button_idle_color, Color _button_hover_color, Color _button_active_color,
+	short unsigned _id)
 {
 	this->buttonState = BTN_STATES::BTN_IDLE;
+	this->id = _id;
 
 	this->shape.setSize(Vector2f(_width, _height));
 	this->shape.setOrigin(this->shape.getSize().x / 2, this->shape.getSize().y / 2);
 	this->shape.setPosition(_x + this->shape.getGlobalBounds().width / 2,
 		_y + this->shape.getGlobalBounds().height / 2);
-	this->shape.setFillColor(_button_idle_color);
 
 	this->font = _font;
 
@@ -54,18 +55,22 @@ void gui::Button::Update(const Vector2f& _mousePos)
 	case BTN_STATES::BTN_IDLE:
 		this->shape.setFillColor(this->buttonIdleColor);
 		this->text.setFillColor(this->textIdleColor);
+		this->shape.setOutlineColor(this->outlineIdleColor);
 		break;
 	case BTN_STATES::BTN_HOVER:
 		this->shape.setFillColor(this->buttonHoverColor);
 		this->text.setFillColor(this->textHoverColor);
+		this->shape.setOutlineColor(this->outlineHoverColor);
 		break;
 	case BTN_STATES::BTN_PRESSED:
 		this->shape.setFillColor(this->buttonActiveColor);
 		this->text.setFillColor(this->textActiveColor);
+		this->shape.setOutlineColor(this->outlineActiveColor);
 		break;
 	default:
 		this->shape.setFillColor(Color::Green);
 		this->text.setFillColor(Color::Blue);
+		this->shape.setOutlineColor(Color::Green);
 		break;
 	}
 }
@@ -90,21 +95,27 @@ gui::Button::~Button()
 
 //***************DropDownList****************************
 
-gui::DropDownList::DropDownList(Font& _font, string _list[], unsigned _nbOfElement, unsigned _default_index)
-	:font(_font)
+gui::DropDownList::DropDownList(float _x, float _y, float _width, float _height, Font& _font, string _list[], unsigned _nbOfElement, unsigned _default_index)
+	:font(_font), showList(false), keytimeMax(20.f), keytime(0.f)
 {
+	this->activeElement = new gui::Button(
+		_x, _y, _width, _height,
+		&this->font, _list[_default_index], 50,
+		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
+		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0));
+
 	//unsigned nbOfElement = sizeof(_list) / sizeof(string);
 	for (size_t i = 0; i < _nbOfElement; i++)
 	{
 		this->list.push_back(
 			new gui::Button(
-				100, 500, 250, 50,
+				_x, _y + (i + 1) * _height, _width, _height,
 				&this->font, _list[i], 50,
 				Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
-				Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
+				Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0),
+			i));
 	}
 
-	this->activeElement = new Button(*this->list[_default_index]);
 }
 
 gui::DropDownList::~DropDownList()
@@ -115,12 +126,61 @@ gui::DropDownList::~DropDownList()
 		delete i;
 }
 
-void gui::DropDownList::Update(const Vector2f& _mousePos)
+bool gui::DropDownList::GetKeytime()
 {
-	for (auto& i : this->list)
-		i->Update(_mousePos);
+	if (this->keytime >= this->keytimeMax)
+	{
+		this->keytime = 0.f;
+		return true;
+	}
+
+	return false;
+}
+
+void gui::DropDownList::UpdateKeytime(const float& _dt)
+{
+	if (this->keytime < this->keytimeMax)
+		this->keytime += 100.f * _dt;
+}
+
+void gui::DropDownList::Update(const Vector2f& _mousePos, const float& _dt)
+{
+	this->UpdateKeytime(_dt);
+	this->activeElement->Update(_mousePos);
+
+	if (this->activeElement->IsPressed() && this->GetKeytime())
+	{
+		if (this->showList)
+			this->showList = false;
+		else
+			this->showList = true;
+	}
+
+	//We want update the list just if we see it
+	if (showList)
+	{
+		for (auto& i : this->list)
+		{
+			i->Update(_mousePos);
+
+			if (i->IsPressed() && this->GetKeytime())
+			{
+				this->showList = false;
+				this->activeElement->SetText(i->GetText());
+				this->activeElement->SetID(i->GetID());
+			}
+
+		}
+	}
 }
 
 void gui::DropDownList::Render(RenderTarget& target)
 {
+	this->activeElement->Render(target);
+
+	if (showList)
+	{
+		for (auto& i : this->list)
+			i->Render(target);
+	}
 }

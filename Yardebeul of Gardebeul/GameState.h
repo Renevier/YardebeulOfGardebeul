@@ -35,6 +35,5 @@ public:
     void UpdatePauseMenuButtons();
     virtual void Update(const float& _dt);
     virtual void Render(RenderTarget* _target);
-    virtual void EndState();
     void UpdateInput(const float& dt);
 };

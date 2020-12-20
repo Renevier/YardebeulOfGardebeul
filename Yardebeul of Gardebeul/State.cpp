@@ -8,6 +8,7 @@ void State::InitView()
 }
 
 State::State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<State*>* _states)
+	: keytimeMax(15.f), keytime(keytimeMax)
 {
 	this->window = _window;
 	this->supportedKeys = _supportedKeys;
@@ -16,8 +17,6 @@ State::State(RenderWindow *_window, map<string, int>* _supportedKeys, stack<Stat
 	this->wantSave = false;
 	this->quit = false;
 	this->pause = false;
-	this->keytime = 0.f;
-	this->keytimeMax = 10.f;
 
 	this->InitView();
 }
@@ -35,6 +34,11 @@ void State::UpdateKeytime(const float& _dt)
 {
 	if (this->keytime < this->keytimeMax)
 		this->keytime += 100.f * _dt;
+}
+
+void State::EndState()
+{
+	this->quit = true;
 }
 
 bool State::GetKeytime()

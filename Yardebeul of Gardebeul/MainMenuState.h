@@ -3,6 +3,7 @@
 #include "Gui.h"
 #include "GameState.h"
 #include "EditorState.h"
+#include "SettingState.h"
 
 class MainMenuState :
     public State

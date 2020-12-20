@@ -45,12 +45,12 @@ void GameState::InitButton()
 
 void GameState::InitPlayer(string _sLoad)
 {
-	if(_sLoad == "NEW_GAME")
+	if (_sLoad == "NEW_GAME")
 		this->player = new Hero(50, 50, this->textures["PLAYER_IDLE"]);
 	else
 	{
-		this->LoadPos(_sLoad); 
- 		this->player = new Hero(player->GetPos().x, player->GetPos().y, this->textures["PLAYER_IDLE"]);
+		this->LoadPos(_sLoad);
+		this->player = new Hero(player->GetPos().x, player->GetPos().y, this->textures["PLAYER_IDLE"]);
 		this->LoadStat(_sLoad);
 	}
 }
@@ -161,6 +161,7 @@ void GameState::UpdatePlayerInput(const float& _dt)
 void GameState::Update(const float& _dt)
 {
 	this->UpdateMousePosition();
+	this->UpdateKeytime(_dt);
 	this->UpdateInput(_dt);
 
 	if (!this->pause)
@@ -168,16 +169,10 @@ void GameState::Update(const float& _dt)
 		this->UpdatePlayerInput(_dt);
 		this->player->Update(_dt);
 
-		this->waitingTime += 0.f;
-		this->waitingTime += .2f;
-
 		this->ingameTime += clock.restart().asSeconds();
 	}
 	else
 	{
-		this->waitingTime += 0.f;
-		this->waitingTime += .2f;
-
 		this->pauseMenu->Update(this->mousePosView);
 		this->UpdatePauseMenuButtons();
 	}
@@ -244,29 +239,17 @@ void GameState::UpdatePauseMenuButtons()
 		if (this->pauseMenu->IsButtonPressed("EXIT_GAME"))
 			this->EndState();
 	}
-}
 
-void GameState::EndState()
-{
-	this->quit = true;
 }
 
 void GameState::UpdateInput(const float& _dt)
 {
-	if (Keyboard::isKeyPressed(Keyboard::Escape))
+	if (Keyboard::isKeyPressed(Keyboard::Escape) && this->GetKeytime())
 	{
-		if (this->waitingTime >= 200.f && !this->pause)
-		{
-			this->waitingTime = 0;
-
+		if (!this->pause)
 			this->PauseState();
-		}
-		else if (this->waitingTime >= 200.f && this->pause)
-		{
-			this->waitingTime = 0;
-
+		else
 			this->UnpauseState();
-		}
 	}
 }
 

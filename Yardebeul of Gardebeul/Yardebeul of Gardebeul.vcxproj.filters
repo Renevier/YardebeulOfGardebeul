@@ -135,11 +135,11 @@
     <Filter Include="Classes\Map">
       <UniqueIdentifier>{864e6d8c-573b-44e6-a9b5-2c18b9fa8102}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\GUI\Ressources files">
-      <UniqueIdentifier>{fc309245-be4e-41e6-b2e0-c7308ffee4cf}</UniqueIdentifier>
+    <Filter Include="Classes\States\SettingState">
+      <UniqueIdentifier>{9efb5c78-7103-48b6-a8a8-8b271e364143}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\GUI\Ressources files\Button">
-      <UniqueIdentifier>{8c92b23e-1131-4a4e-ab95-9b429ca6270f}</UniqueIdentifier>
+    <Filter Include="Classes\States\Menu\PauseMenuState">
+      <UniqueIdentifier>{2385a19f-8261-406c-8bbf-ea54cb03cc94}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -251,17 +251,20 @@
     <ClCompile Include="EditorState.cpp">
       <Filter>Classes\States\EditorState</Filter>
     </ClCompile>
-    <ClCompile Include="PauseMenu.cpp">
-      <Filter>Classes\GUI</Filter>
-    </ClCompile>
     <ClCompile Include="TileMap.cpp">
       <Filter>Classes\Map</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="SettingState.cpp">
+      <Filter>Classes\States\SettingState</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseMenu.cpp">
+      <Filter>Classes\States\Menu\PauseMenuState</Filter>
+    </ClCompile>
     <ClCompile Include="Gui.cpp">
-      <Filter>Classes\GUI\Ressources files\Button</Filter>
+      <Filter>Classes\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -376,14 +379,17 @@
     <ClInclude Include="EditorState.h">
       <Filter>Classes\States\EditorState</Filter>
     </ClInclude>
-    <ClInclude Include="PauseMenu.h">
-      <Filter>Classes\GUI</Filter>
-    </ClInclude>
     <ClInclude Include="TileMap.h">
       <Filter>Classes\Map</Filter>
     </ClInclude>
+    <ClInclude Include="SettingState.h">
+      <Filter>Classes\States\SettingState</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenu.h">
+      <Filter>Classes\States\Menu\PauseMenuState</Filter>
+    </ClInclude>
     <ClInclude Include="Gui.h">
-      <Filter>Classes\GUI\Ressources files\Button</Filter>
+      <Filter>Classes\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

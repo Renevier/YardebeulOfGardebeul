@@ -14,6 +14,7 @@ protected:
 	bool wantSave;
 	bool quit;
 	bool pause;
+
 	float keytime;
 	float keytimeMax;
 
@@ -40,7 +41,7 @@ public:
 	virtual void UpdateKeytime(const float& _dt);
 	virtual void Update(const float& _dt) = 0;
 	virtual void Render(RenderTarget* _target) = 0;
-	virtual void EndState() = 0;
+	virtual void EndState();
 
 	inline void PauseState() { this->pause = true; }
 	inline void UnpauseState() { this->pause = false; }

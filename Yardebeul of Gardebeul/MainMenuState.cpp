@@ -28,13 +28,18 @@ void MainMenuState::InitButton()
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("LOAD_GAME", new gui::Button(100, 650, 250, 50,
+	this->buttons.emplace("LOAD_GAME", new gui::Button(100, 600, 250, 50,
 		&this->font, "Load game", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("MAP_EDITOR", new gui::Button(100, 800, 250, 50,
+	this->buttons.emplace("MAP_EDITOR", new gui::Button(100, 700, 250, 50,
 		&this->font, "Editor", 50,
+		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
+		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
+
+	this->buttons.emplace("SETTING", new gui::Button(100, 800, 250, 50,
+		&this->font, "Setting", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
@@ -94,51 +99,59 @@ void MainMenuState::UpdateButton()
 		this->buttons.at("NEW_GAME")->Update(this->mousePosView);
 		this->buttons.at("LOAD_GAME")->Update(this->mousePosView);
 		this->buttons.at("MAP_EDITOR")->Update(this->mousePosView);
+		this->buttons.at("SETTING")->Update(this->mousePosView);
 		this->buttons.at("EXIT")->Update(this->mousePosView);
 	}
 
-	if (this->buttons.at("NEW_GAME")->IsPressed())
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
-	
-	if (this->buttons.at("LOAD_GAME")->IsPressed())
-		this->bLoad = true;
-
-	if (this->buttons.at("MAP_EDITOR")->IsPressed())
-		this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
-
-	if (this->buttons.at("EXIT")->IsPressed())
-		this->EndState();
-
-	//-------------------------Load-----------------------------------
-
-	if (this->buttons.at("SAVE_1")->IsPressed())
+	if (this->GetKeytime())
 	{
-		this->bLoad = false;
-		this->sLoad = "Save1";
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
-	}
+		if (this->buttons.at("NEW_GAME")->IsPressed())
+			this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
 
-	if (this->buttons.at("SAVE_2")->IsPressed())
-	{
-		this->bLoad = false;
-		this->sLoad = "Save2";
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
-	}
+		if (this->buttons.at("LOAD_GAME")->IsPressed())
+			this->bLoad = true;
 
-	if (this->buttons.at("SAVE_3")->IsPressed())
-	{
-		this->bLoad = false;
-		this->sLoad = "Save3";
-		this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
-	}
+		if (this->buttons.at("MAP_EDITOR")->IsPressed())
+			this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
 
-	if (this->buttons.at("EXIT_SAVE")->IsPressed())
-		this->bLoad = false;
+		if (this->buttons.at("SETTING")->IsPressed())
+			this->states->push(new SettingState(this->window, this->supportedKeys, this->states));
+
+		if (this->buttons.at("EXIT")->IsPressed())
+			this->EndState();
+
+		//-------------------------Load-----------------------------------
+
+		if (this->buttons.at("SAVE_1")->IsPressed())
+		{
+			this->bLoad = false;
+			this->sLoad = "Save1";
+			this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+		}
+
+		if (this->buttons.at("SAVE_2")->IsPressed())
+		{
+			this->bLoad = false;
+			this->sLoad = "Save2";
+			this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+		}
+
+		if (this->buttons.at("SAVE_3")->IsPressed())
+		{
+			this->bLoad = false;
+			this->sLoad = "Save3";
+			this->states->push(new GameState(this->window, this->supportedKeys, this->states, this->sLoad));
+		}
+
+		if (this->buttons.at("EXIT_SAVE")->IsPressed())
+			this->bLoad = false;
+	}
 }
 
 void MainMenuState::Update(const float& _dt)
 {
 	this->UpdateMousePosition();
+	this->UpdateKeytime(_dt);
 	this->UpdateInput(_dt);
 }
 
@@ -148,14 +161,15 @@ void MainMenuState::RenderButton(RenderTarget& _target)
 	{
 		this->buttons.at("SAVE_1")->Render(_target);
 		this->buttons.at("SAVE_2")->Render(_target);
-		this->buttons.at("SAVE_3")->Render(_target); 
-		this->buttons.at("EXIT_SAVE")->Render(_target); 
+		this->buttons.at("SAVE_3")->Render(_target);
+		this->buttons.at("EXIT_SAVE")->Render(_target);
 	}
 	else
 	{
 		this->buttons.at("NEW_GAME")->Render(_target);
 		this->buttons.at("LOAD_GAME")->Render(_target);
 		this->buttons.at("MAP_EDITOR")->Render(_target);
+		this->buttons.at("SETTING")->Render(_target);
 		this->buttons.at("EXIT")->Render(_target);
 	}
 }
