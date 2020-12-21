@@ -12,18 +12,21 @@ protected:
     Texture backgroundTexture;
     RectangleShape background;
     Font font;
+    Text cursorText;
 
     TileMap* tileMap;
     PauseMenu* pauseMenu;
     map<string, gui::Button*> buttons;
 
     RectangleShape selector;
+    IntRect textureRect;
 
 protected:
     virtual void InitKeybinds();
     void InitPauseMenu();
     void InitBackground();
     void InitFont();
+    void InitText();
     void InitButton();
     void InitGui();
     void IniTileMap();

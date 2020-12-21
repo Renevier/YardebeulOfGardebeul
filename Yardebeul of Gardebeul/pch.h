@@ -5,6 +5,7 @@
 #include <stack>
 #include <map>
 #include <string>
+#include <sstream>
 #include <fstream>
 #include <cmath>
 

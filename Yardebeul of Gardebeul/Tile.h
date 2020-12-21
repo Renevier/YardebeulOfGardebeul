@@ -23,11 +23,13 @@ private:
 
 public:
 	Tile();
-	Tile(float _x, float _y, float _grisSizeF);
+	~Tile();
+
+	Tile(float _x, float _y, float _grisSizeF, Texture& _texture, IntRect& _texture_rect);
 	Tile(float _x, float _y, Vector2f _side);
 	Tile(Texture* _texture, Vector2f _posOnScreen, Vector2f _posInTexture);
 	void Update(const Vector2f _mousePos);
 	void Render(RenderTarget& target);
 	bool IsPressed() const;
-	~Tile();
+
 };

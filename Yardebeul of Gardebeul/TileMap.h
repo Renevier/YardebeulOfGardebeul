@@ -9,6 +9,7 @@ protected:
 	Vector2u maxSize;
 	unsigned layers;
 	vector<vector<vector<Tile*>>> map;
+	Texture tileSheet;
 
 
 public:
@@ -18,7 +19,9 @@ public:
 	void Update();
 	void Render(RenderTarget& _target);
 
-	void AddTile(unsigned _x, unsigned _y, unsigned _z);
-	void RemoveTile();
+	void AddTile(unsigned _x, unsigned _y, unsigned _z, IntRect& _texture_rect);
+	void RemoveTile(unsigned _x, unsigned _y, unsigned _z);
+
+	inline Texture* GetTileSheet() { return &this->tileSheet; }
 };
 

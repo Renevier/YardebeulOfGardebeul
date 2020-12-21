@@ -5,14 +5,12 @@ Tile::Tile()
 {
 }
 
-Tile::Tile(float _x, float _y, float _grisSizeF)
+Tile::Tile(float _x, float _y, float _grisSizeF, Texture& _texture, IntRect& _texture_rect)
 {
 	this->shape.setSize(Vector2f(_grisSizeF, _grisSizeF));
-	this->shape.setFillColor(Color::Green);
-	this->shape.setOutlineThickness(1.f);
-	this->shape.setOutlineColor(Color::Black);
 	this->shape.setPosition(_x, _y);
-
+	this->shape.setTexture(&_texture);
+	this->shape.setTextureRect(_texture_rect);
 }
 
 Tile::Tile(float _x, float _y, Vector2f _side)

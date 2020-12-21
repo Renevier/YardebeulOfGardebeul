@@ -27,6 +27,9 @@ TileMap::TileMap(float _gridSize, unsigned _widht, unsigned _height)
 			}
 		}
 	}
+
+	if (!this->tileSheet.loadFromFile("../Ressources/Tilesmap/IceDungeonTiles.png"))
+		cerr << "Can't load texture";
 }
 
 TileMap::~TileMap()
@@ -62,7 +65,7 @@ void TileMap::Render(RenderTarget& _target)
 	}
 }
 
-void TileMap::AddTile(unsigned _x, unsigned _y, unsigned _z)
+void TileMap::AddTile(unsigned _x, unsigned _y, unsigned _z, IntRect& _texture_rect)
 {
 	if (_x < this->maxSize.x && _x >= 0 &&
 		_y < this->maxSize.x && _y >= 0 &&
@@ -70,7 +73,22 @@ void TileMap::AddTile(unsigned _x, unsigned _y, unsigned _z)
 	{
 		if (this->map[_x][_y][_z] == nullptr)
 		{
-			this->map[_x][_y][_z] = new Tile(_x * this->gridSizeF, _y * this->gridSizeF, this->gridSizeF);
+			this->map[_x][_y][_z] = new Tile(_x * this->gridSizeF, _y * this->gridSizeF, this->gridSizeF, this->tileSheet, _texture_rect);
+		}
+
+	}
+}
+
+void TileMap::RemoveTile(unsigned _x, unsigned _y, unsigned _z)
+{
+	if (_x < this->maxSize.x && _x >= 0 &&
+		_y < this->maxSize.x && _y >= 0 &&
+		_z < this->layers && _z >= 0)
+	{
+		if (this->map[_x][_y][_z] != nullptr)
+		{
+			delete this->map[_x][_y][_z];
+			this->map[_x][_y][_z] = nullptr;
 		}
 
 	}
