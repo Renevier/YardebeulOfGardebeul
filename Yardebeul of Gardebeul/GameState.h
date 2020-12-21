@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "PauseMenu.h"
+#include "TileMap.h"
 
 class GameState: public State
 {
@@ -10,6 +11,7 @@ protected:
 
     Hero* player;
 
+    TileMap* tileMap;
     Clock clock;
     float ingameTime;
 
@@ -21,6 +23,7 @@ private:
     void InitPauseMenu();
     void InitButton();
     void InitPlayer(string _sLoad);
+    void InitTileMap();
 
 public:
     GameState(StateData* _state_data, string _sLoad);

@@ -13,9 +13,11 @@ protected:
     RectangleShape background;
     Font font;
 
-    TileMap Map;
+    TileMap* tileMap;
     PauseMenu* pauseMenu;
     map<string, gui::Button*> buttons;
+
+    RectangleShape selector;
 
 protected:
     virtual void InitKeybinds();
@@ -23,6 +25,8 @@ protected:
     void InitBackground();
     void InitFont();
     void InitButton();
+    void InitGui();
+    void IniTileMap();
 
 public:
     EditorState(StateData *_state_data);
@@ -30,9 +34,12 @@ public:
     
     void UpdatePauseMenuButtons();
     virtual void UpdateInput(const float& _dt);
+    virtual void UpdateEditorInput(const float& _dt);
     virtual void UpdateButton();
+    void UpdateGui();
     virtual void Update(const float& _dt);
     virtual void RenderButton(RenderTarget& _target);
+    void RenderGui(RenderTarget& _target);
     virtual void Render(RenderTarget* _target);
     virtual void EndState();
 };

@@ -55,6 +55,11 @@ void GameState::InitPlayer(string _sLoad)
 	}
 }
 
+void GameState::InitTileMap()
+{
+	this->tileMap = new TileMap(this->stateData->gridSize, 10, 10);
+}
+
 GameState::GameState(StateData* _state_data, string _sLoad)
 	: State(_state_data)
 {
@@ -63,6 +68,7 @@ GameState::GameState(StateData* _state_data, string _sLoad)
 	this->InitTexture();
 	this->InitPauseMenu();
 	this->InitPlayer(_sLoad);
+	this->InitTileMap();
 }
 
 void GameState::LoadStat(string _readFile)
@@ -255,4 +261,5 @@ GameState::~GameState()
 {
 	delete this->pauseMenu;
 	delete this->player;
+	delete this->tileMap;
 }

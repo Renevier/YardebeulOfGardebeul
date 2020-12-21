@@ -5,7 +5,7 @@ void Game::InitVariables()
 {
 	this->deltaTime = 0.f;
 	this->window = nullptr;
-	this->gridSize = 50.f;
+	this->gridSize = 100.f;
 }
 
 void Game::InitStateData()

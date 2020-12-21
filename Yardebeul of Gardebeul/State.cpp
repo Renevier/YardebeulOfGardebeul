@@ -27,8 +27,12 @@ void State::UpdateMousePosition()
 {
 	this->mousePosScreen = Mouse::getPosition();
 	this->mousePosWindow = Mouse::getPosition(*this->window);
-	this->window->setView(this->view);
 	this->mousePosView = this->window->mapPixelToCoords(mousePosWindow);
+	this->mousePosGrid = Vector2u (
+		static_cast<unsigned> (this->mousePosView.x) / static_cast<unsigned> (this->gridSize),
+		static_cast<unsigned> (this->mousePosView.y) / static_cast<unsigned> (this->gridSize));
+
+	this->window->setView(this->view);
 	this->window->setView(this->window->getDefaultView());
 }
 
