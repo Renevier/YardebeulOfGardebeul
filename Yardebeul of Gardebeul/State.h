@@ -56,7 +56,7 @@ public:
 	State(StateData* _state_data);
 	~State();
 
-	virtual void UpdateMousePosition();
+	virtual void UpdateMousePosition(View* view = nullptr);
 	virtual void UpdateInput(const float& _dt) = 0;
 	virtual void UpdateKeytime(const float& _dt);
 	virtual void Update(const float& _dt) = 0;

@@ -2,6 +2,19 @@
 #include "GameState.h"
 
 
+void GameState::InitDifferedRender()
+{
+	this->renderTexture.create(this->window->getSize().x, this->window->getSize().y);
+	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	this->renderSprite.setTextureRect(IntRect(0, 0, this->window->getSize().x, this->window->getSize().y));
+}
+
+void GameState::InitView()
+{
+	this->view.setSize(Vector2f(this->window->getSize().x, this->window->getSize().y));
+	this->view.setCenter(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
+}
+
 void GameState::InitKeybinds()
 {
 	this->keybinds.emplace("ESCAPE", this->supportedKeys->at("Escape"));
@@ -33,6 +46,7 @@ void GameState::InitPauseMenu()
 void GameState::InitButton()
 {
 	this->pauseMenu->AddButton("GAME_RETURN", 100.f, 400.f, "Resume the game");
+	this->pauseMenu->AddButton("LOAD_GAME", 100.f, 480.f, "Load");
 	this->pauseMenu->AddButton("SAVE_GAME", 100.f, 550.f, "Save");
 	this->pauseMenu->AddButton("EXIT_GAME", 100.f, 800.f, "Quit");
 
@@ -57,12 +71,17 @@ void GameState::InitPlayer(string _sLoad)
 
 void GameState::InitTileMap()
 {
-	this->tileMap = new TileMap(this->stateData->gridSize, 10, 10);
+	this->tileMap = new TileMap(this->stateData->gridSize, 10, 10,
+		"../Ressources/Tilesmap/IceDungeonTiles.png");
+
+	this->tileMap->Load("TileMap");
 }
 
 GameState::GameState(StateData* _state_data, string _sLoad)
 	: State(_state_data)
 {
+	this->InitDifferedRender();
+	this->InitView();
 	this->InitKeybinds();
 	this->InitFont();
 	this->InitTexture();
@@ -149,6 +168,11 @@ void GameState::Save(string _writeFile)
 	writeFile.close();
 }
 
+void GameState::UpdateView(const float& _dt)
+{
+	this->view.setCenter(this->player->GetPos());
+}
+
 void GameState::UpdatePlayerInput(const float& _dt)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_TOP"))))
@@ -164,12 +188,13 @@ void GameState::UpdatePlayerInput(const float& _dt)
 
 void GameState::Update(const float& _dt)
 {
-	this->UpdateMousePosition();
+	this->UpdateMousePosition(&this->view);
 	this->UpdateKeytime(_dt);
 	this->UpdateInput(_dt);
 
 	if (!this->pause)
 	{
+		this->UpdateView(_dt);
 		this->UpdatePlayerInput(_dt);
 		this->player->Update(_dt);
 
@@ -177,7 +202,7 @@ void GameState::Update(const float& _dt)
 	}
 	else
 	{
-		this->pauseMenu->Update(this->mousePosView);
+		this->pauseMenu->Update(this->mousePosWindow);
 		this->UpdatePauseMenuButtons();
 	}
 }
@@ -187,10 +212,21 @@ void GameState::Render(RenderTarget* _target)
 	if (!_target)
 		_target = this->window;
 
-	this->player->Render(*_target);
+	this->renderTexture.clear();
+	this->renderTexture.setView(this->view);
+	this->tileMap->Render(this->renderTexture);
+
+	this->player->Render(this->renderTexture);
 
 	if (this->pause)
-		this->pauseMenu->Render(*_target, this->wantSave);
+	{
+		this->renderTexture.setView(this->renderTexture.getDefaultView());
+		this->pauseMenu->Render(this->renderTexture, this->wantSave);
+	}
+
+	this->renderTexture.display();
+	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	_target->draw(this->renderSprite);
 }
 
 void GameState::UpdateState()

@@ -57,7 +57,7 @@ void SaveState::UpdateButton()
 	string nameFile;
 
 	for (auto it : this->buttons)
-		it.second->Update(this->mousePosView);	
+		it.second->Update(this->mousePosWindow);
 
 	if (this->buttons.at("SAVE_1")->IsPressed())
 	{

@@ -75,7 +75,7 @@ void SettingState::UpdateGui(const float& _dt)
 {
 	//Buttons
 	for (auto& it : this->buttons)
-		it.second->Update(this->mousePosView);
+		it.second->Update(this->mousePosWindow);
 
 	if (this->GetKeytime())
 	{
@@ -94,7 +94,7 @@ void SettingState::UpdateGui(const float& _dt)
 	//****************DropDownList***********************
 
 	for (auto& it : this->dropDownLists)
-		it.second->Update(this->mousePosView, _dt);
+		it.second->Update(this->mousePosWindow, _dt);
 }
 
 void SettingState::Update(const float& _dt)

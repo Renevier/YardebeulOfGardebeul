@@ -41,7 +41,7 @@ namespace gui
 			Color _button_idle_color, Color _button_hover_color, Color _button_active_color, 
 			short unsigned _id = 0);
 		~Button();
-		void Update(const Vector2f& _mousePos);
+		void Update(const Vector2i& _mousePosWindow);
 		void Render(RenderTarget& target);
 
 		//get
@@ -73,7 +73,40 @@ namespace gui
 		bool GetKeytime();
 		void UpdateKeytime(const float& _dt);
 
-		void Update(const Vector2f& _mousePos, const float& _dt);
+		void Update(const Vector2i& _mousePosWindow, const float& _dt);
 		void Render(RenderTarget& target);
 	};
+
+	class TextureSelector
+	{
+	private:
+		float keytime;
+		float keytimeMax;
+
+		float gridSize;
+		bool isActive;
+		bool isHidden;
+		Button* hideButton;
+		RectangleShape bounds;
+		Sprite sheet;
+
+		RectangleShape sideBar;
+
+		RectangleShape selector;
+		Vector2u mousePosGrid;
+		IntRect textureRect;
+
+	public:
+		TextureSelector(float _x, float _y, float _width, float _height, float _gridSize, Texture& _texture_sheet, Font& _font, string _text);
+		~TextureSelector();
+
+		void Update(Vector2i& _mousePosWindow, const float& _dt);
+		void Render(RenderTarget& target);
+		void UpdateKeytime(const float& _dt);
+
+		inline bool& GetActive() { return this->isActive; }
+		inline IntRect& GetTextureRect() { return this->textureRect; }
+		bool GetKeytime();
+	};
+
 }

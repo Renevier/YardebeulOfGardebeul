@@ -9,10 +9,20 @@ class EditorState :
     public State
 {
 protected:
+    View view;
+    float cameraSpeed;
+
     Texture backgroundTexture;
     RectangleShape background;
     Font font;
     Text cursorText;
+
+    RectangleShape sideBar;
+
+    gui::TextureSelector* textureSelector;
+
+    bool collision;
+    short type;
 
     TileMap* tileMap;
     PauseMenu* pauseMenu;
@@ -22,6 +32,7 @@ protected:
     IntRect textureRect;
 
 protected:
+    void InitView();
     virtual void InitKeybinds();
     void InitPauseMenu();
     void InitBackground();
@@ -39,7 +50,7 @@ public:
     virtual void UpdateInput(const float& _dt);
     virtual void UpdateEditorInput(const float& _dt);
     virtual void UpdateButton();
-    void UpdateGui();
+    void UpdateGui(const float& _dt);
     virtual void Update(const float& _dt);
     virtual void RenderButton(RenderTarget& _target);
     void RenderGui(RenderTarget& _target);

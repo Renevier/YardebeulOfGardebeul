@@ -12,16 +12,16 @@ void PauseMenu::InitBackground(RenderWindow& window)
 
 void PauseMenu::InitButtonContainer(RenderWindow& window)
 {
+	this->buttonContainer.setPosition(Vector2f(
+		0.f,
+		0.f)
+	);
 	this->buttonContainer.setSize(Vector2f(
 		window.getSize().x / 4.f,
 		window.getSize().y)
 	);
 
 	this->buttonContainer.setFillColor(Color(20, 20, 20, 100));
-	this->buttonContainer.setPosition(Vector2f(
-		0.f,
-		0.f)
-	);
 }
 
 void PauseMenu::InitText(Font& font)
@@ -108,12 +108,12 @@ void PauseMenu::UpdateDescriptionText(string _readFile)
 	readfile.close();
 }
 
-void PauseMenu::Update(const Vector2f& mousePos)
+void PauseMenu::Update(const Vector2i& mousePosWindow)
 {
 	string file;
 
 	for (auto& i : this->buttons)
-		i.second->Update(mousePos);
+		i.second->Update(mousePosWindow);
 
 	if (this->buttons.at("SAVE_1")->GetState() == BTN_STATES::BTN_HOVER)
 	{
@@ -160,6 +160,7 @@ void PauseMenu::Render(RenderTarget& target, bool wantSave)
 	{
 		this->buttons.at("GAME_RETURN")->Render(target);
 		this->buttons.at("SAVE_GAME")->Render(target);
+		this->buttons.at("LOAD_GAME")->Render(target);
 		this->buttons.at("EXIT_GAME")->Render(target);
 	}
 }

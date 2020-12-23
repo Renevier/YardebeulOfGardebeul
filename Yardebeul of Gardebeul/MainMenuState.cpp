@@ -89,18 +89,18 @@ void MainMenuState::UpdateButton()
 {
 	if (this->bLoad)
 	{
-		this->buttons.at("SAVE_1")->Update(this->mousePosView);
-		this->buttons.at("SAVE_2")->Update(this->mousePosView);
-		this->buttons.at("SAVE_3")->Update(this->mousePosView);
-		this->buttons.at("EXIT_SAVE")->Update(this->mousePosView);
+		this->buttons.at("SAVE_1")->Update(this->mousePosWindow);
+		this->buttons.at("SAVE_2")->Update(this->mousePosWindow);
+		this->buttons.at("SAVE_3")->Update(this->mousePosWindow);
+		this->buttons.at("EXIT_SAVE")->Update(this->mousePosWindow);
 	}
 	else
 	{
-		this->buttons.at("NEW_GAME")->Update(this->mousePosView);
-		this->buttons.at("LOAD_GAME")->Update(this->mousePosView);
-		this->buttons.at("MAP_EDITOR")->Update(this->mousePosView);
-		this->buttons.at("SETTING")->Update(this->mousePosView);
-		this->buttons.at("EXIT")->Update(this->mousePosView);
+		this->buttons.at("NEW_GAME")->Update(this->mousePosWindow);
+		this->buttons.at("LOAD_GAME")->Update(this->mousePosWindow);
+		this->buttons.at("MAP_EDITOR")->Update(this->mousePosWindow);
+		this->buttons.at("SETTING")->Update(this->mousePosWindow);
+		this->buttons.at("EXIT")->Update(this->mousePosWindow);
 	}
 
 	if (this->GetKeytime())

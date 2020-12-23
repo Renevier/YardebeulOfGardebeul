@@ -6,6 +6,9 @@
 class GameState: public State
 {
 protected:
+    View view;
+    RenderTexture renderTexture;
+    Sprite renderSprite;
     Font font;
     PauseMenu* pauseMenu;
 
@@ -17,6 +20,8 @@ protected:
 
 
 private:
+    void InitDifferedRender();
+    void InitView();
     virtual void InitKeybinds();
     void InitFont();
     void InitTexture();
@@ -32,6 +37,7 @@ public:
     void LoadStat(string readFile);
     void LoadPos(string readFile);
     void Save(string writeFile);
+    void UpdateView(const float& _dt);
     virtual void UpdatePlayerInput(const float& _dt);
     void UpdateState();
     void UpdatePauseMenuButtons();

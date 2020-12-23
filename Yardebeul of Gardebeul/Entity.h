@@ -30,7 +30,7 @@ public:
 	~Entity();
 
 	//get
-	inline Vector2f GetPos() { return this->position; }
+	inline Vector2f GetPos() { return this->sprite.getPosition(); }
 
 	//set
 	inline void SetPosX(float pos) { this->position.x = pos; }

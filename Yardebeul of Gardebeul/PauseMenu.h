@@ -26,7 +26,7 @@ public:
 	~PauseMenu();
 
 	void UpdateDescriptionText(string _readFile);
-	void Update(const Vector2f& mousePos);
+	void Update(const Vector2i& mousePosWindow);
 	void Render(RenderTarget& target, bool wantSave);
 	void AddButton(const string key, float x, float y, const string text);
 	bool IsButtonPressed(const string key);

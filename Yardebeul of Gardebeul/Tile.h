@@ -7,17 +7,18 @@ enum class TILE_STATE
 	TILE_PRESSED
 };
 
+enum TILE_TYPE
+{
+	DEFAULT = 0,
+	DAMAGING
+};
+
 class Tile
 {
 protected:
-	TILE_STATE tileState;
-
 	RectangleShape shape;
-
-	Color hoverColor;
-	Color idleColor;
-	Color activeColor;
-
+	short type;
+	bool collision;
 private:
 
 
@@ -25,11 +26,12 @@ public:
 	Tile();
 	~Tile();
 
-	Tile(float _x, float _y, float _grisSizeF, Texture& _texture, IntRect& _texture_rect);
-	Tile(float _x, float _y, Vector2f _side);
-	Tile(Texture* _texture, Vector2f _posOnScreen, Vector2f _posInTexture);
-	void Update(const Vector2f _mousePos);
+	Tile(unsigned _grid_x, unsigned _grid_y, float _gridSizeF, const Texture& _texture, const IntRect& _texture_rect, 
+		bool _collision, short _type);
+	void Update();
 	void Render(RenderTarget& target);
-	bool IsPressed() const;
+
+
+	string GetAsString();
 
 };
