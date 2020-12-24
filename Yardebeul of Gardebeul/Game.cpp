@@ -5,7 +5,7 @@ void Game::InitVariables()
 {
 	this->deltaTime = 0.f;
 	this->window = nullptr;
-	this->gridSize = 35.f;
+	this->gridSize = 32.f;
 }
 
 void Game::InitStateData()
@@ -68,12 +68,15 @@ void Game::Update()
 
 	if (!this->states.empty())
 	{
-		this->states.top()->Update(this->deltaTime);
-
-		if (this->states.top()->GetQuit())
+		if (this->window->hasFocus())
 		{
-			delete this->states.top();
-			this->states.pop();
+			this->states.top()->Update(this->deltaTime);
+
+			if (this->states.top()->GetQuit())
+			{
+				delete this->states.top();
+				this->states.pop();
+			}
 		}
 	}
 	else

@@ -41,6 +41,7 @@ public:
     virtual void UpdatePlayerInput(const float& _dt);
     void UpdateState();
     void UpdatePauseMenuButtons();
+    void UpdateTileMap(const float& _dt);
     virtual void Update(const float& _dt);
     virtual void Render(RenderTarget* _target);
     void UpdateInput(const float& dt);

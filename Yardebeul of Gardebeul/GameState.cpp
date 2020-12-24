@@ -170,7 +170,7 @@ void GameState::Save(string _writeFile)
 
 void GameState::UpdateView(const float& _dt)
 {
-	this->view.setCenter(this->player->GetPos());
+	this->view.setCenter(Vector2f(this->player->GetPos().x, this->player->GetPos().y));
 }
 
 void GameState::UpdatePlayerInput(const float& _dt)
@@ -197,6 +197,7 @@ void GameState::Update(const float& _dt)
 		this->UpdateView(_dt);
 		this->UpdatePlayerInput(_dt);
 		this->player->Update(_dt);
+		this->UpdateTileMap(_dt);
 
 		this->ingameTime += clock.restart().asSeconds();
 	}
@@ -280,6 +281,12 @@ void GameState::UpdatePauseMenuButtons()
 			this->EndState();
 	}
 
+}
+
+void GameState::UpdateTileMap(const float& _dt)
+{
+	this->tileMap->Update();
+	this->tileMap->UpdateCollision(this->player);
 }
 
 void GameState::UpdateInput(const float& _dt)

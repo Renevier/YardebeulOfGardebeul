@@ -33,5 +33,8 @@ public:
 
 
 	string GetAsString();
+	inline Vector2f GetPosition() { return this->shape.getPosition(); }
+	inline bool GetCollision() { return this->collision; }
+
 
 };

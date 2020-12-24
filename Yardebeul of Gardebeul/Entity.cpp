@@ -36,7 +36,10 @@ Entity::Entity()
 
 void Entity::SetPosition(const float _x, const float _y)
 {
-	this->sprite.setPosition(_x, _y);
+	if (this->hitBoxComponent)
+		this->hitBoxComponent->SetPosition(_x, _y);
+	else
+		this->sprite.setPosition(_x, _y);
 }
 
 void Entity::Move(const float _dir_x, const float _dir_y, const float& _dt)
@@ -75,4 +78,20 @@ Entity::~Entity()
 	delete this->hitBoxComponent;
 	delete this->movementComponent;
 	delete this->animationComponent;
+}
+
+Vector2f Entity::GetPos()
+{
+	if (this->hitBoxComponent)
+		return this->hitBoxComponent->GetPosition();
+
+	return this->sprite.getPosition();
+}
+
+FloatRect Entity::GetGlobalBounds()
+{
+	if (this->hitBoxComponent)
+		return this->hitBoxComponent->GetGlobalBounds();
+
+	return this->sprite.getGlobalBounds();
 }

@@ -19,7 +19,7 @@ HitBoxComponent::~HitBoxComponent()
 }
 
 
-bool HitBoxComponent::CheckIntersect(const FloatRect& _frect)
+bool HitBoxComponent::Intersect(const FloatRect& _frect)
 {
 	return this->hitBox.getGlobalBounds().intersects(_frect);
 }
@@ -33,4 +33,16 @@ void HitBoxComponent::Update()
 void HitBoxComponent::Render(RenderTarget& _target)
 {
 	_target.draw(this->hitBox);
+}
+
+void HitBoxComponent::SetPosition(Vector2f _position)
+{
+	this->hitBox.setPosition(_position);
+	this->sprite.setPosition(_position.x - this->offsetX, _position.y - offsetY);
+}
+
+void HitBoxComponent::SetPosition(const float _x, const float _y)
+{
+	this->hitBox.setPosition(_x, _y);
+	this->sprite.setPosition(_x - this->offsetX, _y - offsetY);
 }

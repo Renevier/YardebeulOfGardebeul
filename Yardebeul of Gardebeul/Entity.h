@@ -23,17 +23,18 @@ protected:
 
 public:
 	Entity();
-	virtual void SetPosition(const float _x, const float _y);
 	virtual void Move(const float _x, const float _y, const float& _dt);
 	virtual void Update(const float &_dt);
 	virtual void Render(RenderTarget& _target);
 	~Entity();
 
 	//get
-	inline Vector2f GetPos() { return this->sprite.getPosition(); }
+	Vector2f GetPos();
+	FloatRect GetGlobalBounds();
 
 	//set
 	inline void SetPosX(float pos) { this->position.x = pos; }
 	inline void SetPosY(float pos) { this->position.y = pos; }
+	virtual void SetPosition(const float _x, const float _y);
 };
 
