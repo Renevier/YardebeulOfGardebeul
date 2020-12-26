@@ -6,6 +6,7 @@ class HitBoxComponent
 protected:
 	Sprite& sprite;
 	RectangleShape hitBox;
+	FloatRect nextPosition;
 
 	float offsetX;
 	float offsetY;
@@ -23,6 +24,7 @@ public:
 	//Get
 	inline Vector2f GetPosition() { return this->hitBox.getPosition(); }
 	inline FloatRect GetGlobalBounds() { return this->hitBox.getGlobalBounds(); }
+	FloatRect GetNextPosition(Vector2f& _velocity);
 
 	//Set
 	void SetPosition(Vector2f _position);

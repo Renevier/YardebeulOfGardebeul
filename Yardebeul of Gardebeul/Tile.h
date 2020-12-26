@@ -35,6 +35,7 @@ public:
 	string GetAsString();
 	inline Vector2f GetPosition() { return this->shape.getPosition(); }
 	inline bool GetCollision() { return this->collision; }
+	inline bool Intersects(FloatRect _bounds) { return this->shape.getGlobalBounds().intersects(_bounds); }
 
-
+	inline void SetCollision(bool _collision) { this->collision = _collision; }
 };

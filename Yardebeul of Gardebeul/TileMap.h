@@ -16,6 +16,14 @@ protected:
 
 	RectangleShape collideBox;
 
+	//Culling
+	int fromX;
+	int toX;
+	int fromY;
+	int toY;
+	int currentLayer;
+
+
 private:
 	void Clear();
 

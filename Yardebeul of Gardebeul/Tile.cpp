@@ -14,7 +14,7 @@ Tile::Tile(unsigned _grid_x, unsigned _grid_y, float _gridSizeF, const Texture& 
 	this->shape.setTexture(&_texture);
 	this->shape.setTextureRect(_texture_rect);
 
-	this->collision = false;
+	this->collision = _collision;
 	this->type = _type;
 }
 
@@ -33,7 +33,7 @@ string Tile::GetAsString()
 	stringstream ss;
 
 	ss << this->shape.getTextureRect().left << " " << this->shape.getTextureRect().top << " " << this->collision << " " << 
-		this->type;
+		this->type << " ";
 
 	return ss.str();
 }

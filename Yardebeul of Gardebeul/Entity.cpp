@@ -72,6 +72,24 @@ void Entity::Render(RenderTarget& _target)
 		this->hitBoxComponent->Render(_target);
 }
 
+void Entity::StopVelocity()
+{
+	if (this->movementComponent)
+		this->movementComponent->StopVelocity();
+}
+
+void Entity::StopVelocityX()
+{
+	if (this->movementComponent)
+		this->movementComponent->StopVelocityX();
+}
+
+void Entity::StopVelocityY()
+{
+	if (this->movementComponent)
+		this->movementComponent->StopVelocityY();
+}
+
 
 Entity::~Entity()
 {
@@ -86,6 +104,18 @@ Vector2f Entity::GetPos()
 		return this->hitBoxComponent->GetPosition();
 
 	return this->sprite.getPosition();
+}
+
+Vector2u Entity::GetGridPosition(unsigned _gridSizeU)
+{
+	if (this->hitBoxComponent)
+		return Vector2u(
+			static_cast<unsigned>(this->hitBoxComponent->GetPosition().x) / _gridSizeU,
+			static_cast<unsigned>(this->hitBoxComponent->GetPosition().y) / _gridSizeU);
+
+	return Vector2u(
+		static_cast<unsigned>(this->sprite.getPosition().x) / _gridSizeU,
+		static_cast<unsigned>(this->sprite.getPosition().y) / _gridSizeU);
 }
 
 FloatRect Entity::GetGlobalBounds()

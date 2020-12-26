@@ -4,6 +4,11 @@
 HitBoxComponent::HitBoxComponent(Sprite& _sprite, float _offset_x, float _offset_y, float _width, float _height)
 	:sprite(_sprite), offsetX(_offset_x), offsetY(_offset_y)
 {
+	this->nextPosition.left = 0.f;
+	this->nextPosition.top = 0.f;
+	this->nextPosition.width = _width;
+	this->nextPosition.height = _height;
+
 	this->hitBox.setPosition(this->sprite.getPosition().x + _offset_x,
 		this->sprite.getPosition().y + _offset_y);
 
@@ -11,7 +16,6 @@ HitBoxComponent::HitBoxComponent(Sprite& _sprite, float _offset_x, float _offset
 	this->hitBox.setFillColor(Color::Transparent);
 	this->hitBox.setOutlineThickness(1.f);
 	this->hitBox.setOutlineColor(Color::Green);
-
 }
 
 HitBoxComponent::~HitBoxComponent()
@@ -33,6 +37,14 @@ void HitBoxComponent::Update()
 void HitBoxComponent::Render(RenderTarget& _target)
 {
 	_target.draw(this->hitBox);
+}
+
+FloatRect HitBoxComponent::GetNextPosition(Vector2f& _velocity)
+{
+	this->nextPosition.left = this->hitBox.getPosition().x + _velocity.x;
+	this->nextPosition.top = this->hitBox.getPosition().y + _velocity.y;
+
+	return this->nextPosition;
 }
 
 void HitBoxComponent::SetPosition(Vector2f _position)

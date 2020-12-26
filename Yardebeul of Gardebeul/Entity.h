@@ -23,13 +23,18 @@ protected:
 
 public:
 	Entity();
-	virtual void Move(const float _x, const float _y, const float& _dt);
-	virtual void Update(const float &_dt);
-	virtual void Render(RenderTarget& _target);
 	~Entity();
+
+	virtual void Move(const float _x, const float _y, const float& _dt);
+	virtual void Update(const float& _dt);
+	virtual void Render(RenderTarget& _target);
+	void StopVelocity();
+	void StopVelocityX();
+	void StopVelocityY();
 
 	//get
 	Vector2f GetPos();
+	virtual Vector2u GetGridPosition(unsigned _gridSizeU);
 	FloatRect GetGlobalBounds();
 
 	//set

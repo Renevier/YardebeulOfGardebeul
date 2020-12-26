@@ -208,28 +208,6 @@ void GameState::Update(const float& _dt)
 	}
 }
 
-void GameState::Render(RenderTarget* _target)
-{
-	if (!_target)
-		_target = this->window;
-
-	this->renderTexture.clear();
-	this->renderTexture.setView(this->view);
-	this->tileMap->Render(this->renderTexture);
-
-	this->player->Render(this->renderTexture);
-
-	if (this->pause)
-	{
-		this->renderTexture.setView(this->renderTexture.getDefaultView());
-		this->pauseMenu->Render(this->renderTexture, this->wantSave);
-	}
-
-	this->renderTexture.display();
-	this->renderSprite.setTexture(this->renderTexture.getTexture());
-	_target->draw(this->renderSprite);
-}
-
 void GameState::UpdateState()
 {
 }
@@ -305,4 +283,26 @@ GameState::~GameState()
 	delete this->pauseMenu;
 	delete this->player;
 	delete this->tileMap;
+}
+
+void GameState::Render(RenderTarget* _target)
+{
+	if (!_target)
+		_target = this->window;
+
+	this->renderTexture.clear();
+	this->renderTexture.setView(this->view);
+	this->tileMap->Render(this->renderTexture, this->player);
+
+	this->player->Render(this->renderTexture);
+
+	if (this->pause)
+	{
+		this->renderTexture.setView(this->renderTexture.getDefaultView());
+		this->pauseMenu->Render(this->renderTexture, this->wantSave);
+	}
+
+	this->renderTexture.display();
+	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	_target->draw(this->renderSprite);
 }
