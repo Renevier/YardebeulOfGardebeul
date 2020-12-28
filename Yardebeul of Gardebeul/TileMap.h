@@ -6,11 +6,11 @@ class TileMap
 {
 protected:
 	float gridSizeF;
-	unsigned gridSizeU;
-	Vector2u maxSizeWorldGrid;
+	int gridSizeI;
+	Vector2i maxSizeWorldGrid;
 	Vector2f maxSizeWorldF;
 	unsigned layers;
-	vector<vector<vector<Tile*>>> map;
+	vector<vector<vector<vector<Tile*>>>> map;
 	Texture tileSheet;
 	string textureFile;
 
@@ -28,7 +28,7 @@ private:
 	void Clear();
 
 public:
-	TileMap(float _gridSize, unsigned _widht, unsigned _height, string texture_file);
+	TileMap(float _gridSize, int _widht, int _height, string texture_file);
 	~TileMap();
 
 	void Update();
@@ -39,7 +39,7 @@ public:
 	void Save(string file_name);
 	void Load(string file_name);
 
-	void UpdateCollision(Entity* _entity);
+	void UpdateCollision(Entity* _entity, float _dt);
 
 	inline Texture* GetTileSheet() { return &this->tileSheet; }
 };

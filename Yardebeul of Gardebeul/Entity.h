@@ -36,6 +36,7 @@ public:
 	Vector2f GetPos();
 	virtual Vector2u GetGridPosition(unsigned _gridSizeU);
 	FloatRect GetGlobalBounds();
+	FloatRect GetNextPositionBounds(const float& _dt);
 
 	//set
 	inline void SetPosX(float pos) { this->position.x = pos; }

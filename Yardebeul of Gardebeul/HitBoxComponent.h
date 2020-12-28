@@ -24,7 +24,7 @@ public:
 	//Get
 	inline Vector2f GetPosition() { return this->hitBox.getPosition(); }
 	inline FloatRect GetGlobalBounds() { return this->hitBox.getGlobalBounds(); }
-	FloatRect GetNextPosition(Vector2f& _velocity);
+	FloatRect GetNextPosition(const Vector2f& _velocity);
 
 	//Set
 	void SetPosition(Vector2f _position);

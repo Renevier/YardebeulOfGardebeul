@@ -36,6 +36,7 @@ public:
 	inline Vector2f GetPosition() { return this->shape.getPosition(); }
 	inline bool GetCollision() { return this->collision; }
 	inline bool Intersects(FloatRect _bounds) { return this->shape.getGlobalBounds().intersects(_bounds); }
+	inline FloatRect GetGlobalBounds() { return this->shape.getGlobalBounds(); }
 
 	inline void SetCollision(bool _collision) { this->collision = _collision; }
 };

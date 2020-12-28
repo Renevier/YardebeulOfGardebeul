@@ -125,3 +125,11 @@ FloatRect Entity::GetGlobalBounds()
 
 	return this->sprite.getGlobalBounds();
 }
+
+FloatRect Entity::GetNextPositionBounds(const float& _dt)
+{
+	if (this->hitBoxComponent && this->movementComponent)
+		return this->hitBoxComponent->GetNextPosition(this->movementComponent->GetVelocity() * _dt);
+	
+	return FloatRect();
+}

@@ -196,8 +196,8 @@ void GameState::Update(const float& _dt)
 	{
 		this->UpdateView(_dt);
 		this->UpdatePlayerInput(_dt);
-		this->player->Update(_dt);
 		this->UpdateTileMap(_dt);
+		this->player->Update(_dt);
 
 		this->ingameTime += clock.restart().asSeconds();
 	}
@@ -264,7 +264,7 @@ void GameState::UpdatePauseMenuButtons()
 void GameState::UpdateTileMap(const float& _dt)
 {
 	this->tileMap->Update();
-	this->tileMap->UpdateCollision(this->player);
+	this->tileMap->UpdateCollision(this->player, _dt);
 }
 
 void GameState::UpdateInput(const float& _dt)

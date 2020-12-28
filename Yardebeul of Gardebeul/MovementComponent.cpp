@@ -50,13 +50,12 @@ bool MovementComponent::isMovingBottom()
 void MovementComponent::Move(const float _dir_x, const float _dir_y, const float& _dt)
 {
 	//Acceleration
-	this->velocity.x += this->acceleration * _dir_x;
-	this->velocity.y += this->acceleration * _dir_y;	
+	this->velocity.x += this->acceleration * _dir_x * _dt;
+	this->velocity.y += this->acceleration * _dir_y * _dt;
 }
 
 void MovementComponent::Update(const float& _dt)
 {
-
 	if (velocity.x > 0)
 	{
 		//Max velocity check positive
@@ -64,7 +63,7 @@ void MovementComponent::Update(const float& _dt)
 			this->velocity.x = this->maxVelocity;
 				
 		//Deceleration x positive
-		this->velocity.x -= this->deceleration;
+		this->velocity.x -= this->deceleration * _dt;
 		if (velocity.x < 0)
 			this->velocity.x = 0;
 
@@ -76,7 +75,7 @@ void MovementComponent::Update(const float& _dt)
 			this->velocity.x = -this->maxVelocity;
 
 		//Deceleration x negative
-		this->velocity.x += this->deceleration;
+		this->velocity.x += this->deceleration * _dt;
 		if (velocity.x > 0)
 			this->velocity.x = 0;
 	}
@@ -88,7 +87,7 @@ void MovementComponent::Update(const float& _dt)
 			this->velocity.y = this->maxVelocity;
 
 		//Deceleration positive x 
-		this->velocity.y -= this->deceleration;
+		this->velocity.y -= this->deceleration * _dt;
 		if (velocity.y < 0)
 			this->velocity.y = 0;
 
@@ -100,7 +99,7 @@ void MovementComponent::Update(const float& _dt)
 			this->velocity.y = -this->maxVelocity;
 
 		//Deceleration negative x 
-		this->velocity.y += this->deceleration;
+		this->velocity.y += this->deceleration * _dt;
 		if (velocity.y > 0)
 			this->velocity.y = 0;
 	}
