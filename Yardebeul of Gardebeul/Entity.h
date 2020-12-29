@@ -34,7 +34,7 @@ public:
 
 	//get
 	Vector2f GetPos();
-	virtual Vector2u GetGridPosition(unsigned _gridSizeU);
+	virtual Vector2i GetGridPosition(int _gridSizeU);
 	FloatRect GetGlobalBounds();
 	FloatRect GetNextPositionBounds(const float& _dt);
 

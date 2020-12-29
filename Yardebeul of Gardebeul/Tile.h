@@ -10,7 +10,8 @@ enum class TILE_STATE
 enum TILE_TYPE
 {
 	DEFAULT = 0,
-	DAMAGING
+	DAMAGING,
+	DOODAD
 };
 
 class Tile
@@ -37,6 +38,7 @@ public:
 	inline bool GetCollision() { return this->collision; }
 	inline bool Intersects(FloatRect _bounds) { return this->shape.getGlobalBounds().intersects(_bounds); }
 	inline FloatRect GetGlobalBounds() { return this->shape.getGlobalBounds(); }
+	inline short GetType() { return type; }
 
 	inline void SetCollision(bool _collision) { this->collision = _collision; }
 };

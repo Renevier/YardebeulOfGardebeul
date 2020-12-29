@@ -106,16 +106,16 @@ Vector2f Entity::GetPos()
 	return this->sprite.getPosition();
 }
 
-Vector2u Entity::GetGridPosition(unsigned _gridSizeU)
+Vector2i Entity::GetGridPosition(int _gridSizeU)
 {
 	if (this->hitBoxComponent)
-		return Vector2u(
-			static_cast<unsigned>(this->hitBoxComponent->GetPosition().x) / _gridSizeU,
-			static_cast<unsigned>(this->hitBoxComponent->GetPosition().y) / _gridSizeU);
+		return Vector2i(
+			static_cast<int>(this->hitBoxComponent->GetPosition().x) / _gridSizeU,
+			static_cast<int>(this->hitBoxComponent->GetPosition().y) / _gridSizeU);
 
-	return Vector2u(
-		static_cast<unsigned>(this->sprite.getPosition().x) / _gridSizeU,
-		static_cast<unsigned>(this->sprite.getPosition().y) / _gridSizeU);
+	return Vector2i(
+		static_cast<int>(this->sprite.getPosition().x) / _gridSizeU,
+		static_cast<int>(this->sprite.getPosition().y) / _gridSizeU);
 }
 
 FloatRect Entity::GetGlobalBounds()

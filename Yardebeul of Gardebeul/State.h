@@ -40,7 +40,7 @@ protected:
 	Vector2i mousePosScreen;
 	Vector2i mousePosWindow;
 	Vector2f mousePosView;
-	Vector2u mousePosGrid;
+	Vector2i mousePosGrid;
 	
 	View view;
 	float viewSpeed;

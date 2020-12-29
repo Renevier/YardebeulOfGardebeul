@@ -76,12 +76,12 @@ void EditorState::IniTileMap()
 {
 	this->textureRect = IntRect(0, 0, static_cast<int>(this->stateData->gridSize), static_cast<int>(this->stateData->gridSize));
 
-	this->tileMap = new TileMap(this->stateData->gridSize, 10, 10,
+	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100,
 		"../Ressources/Tilesmap/IceDungeonTiles.png");
 }
 
 EditorState::EditorState(StateData* _state_data)
-	: State(_state_data), collision(false), type(TILE_TYPE::DEFAULT), cameraSpeed(1000.f)
+	: State(_state_data), collision(false), type(TILE_TYPE::DEFAULT), cameraSpeed(1000.f), layer(0.f)
 {
 	this->InitBackground();
 	this->InitView();
@@ -189,7 +189,8 @@ void EditorState::UpdateGui(const float& _dt)
 	ss << "X: " << this->mousePosGrid.x << endl
 		<< "Y: " << this->mousePosGrid.y << endl
 		<< "Collision: " << this->collision << endl
-		<< "Type: " << this->type << endl;
+		<< "Type: " << this->type << endl
+		<< "Tiles: " << this->tileMap->GetLayerSize(this->mousePosGrid.x, this->mousePosGrid.x, this->layer) << endl;
 
 	this->cursorText.setString(ss.str());
 
@@ -243,7 +244,8 @@ void EditorState::Render(RenderTarget* _target)
 		_target = this->window;
 
 	_target->setView(this->view);
-	this->tileMap->Render(*_target);
+	this->tileMap->Render(*_target, this->mousePosGrid);
+	this->tileMap->RenderDeferred(*_target);
 
 	_target->setView(this->window->getDefaultView());
 	this->RenderButton(*_target);

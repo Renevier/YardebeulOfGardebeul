@@ -71,7 +71,7 @@ void GameState::InitPlayer(string _sLoad)
 
 void GameState::InitTileMap()
 {
-	this->tileMap = new TileMap(this->stateData->gridSize, 10, 10,
+	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100,
 		"../Ressources/Tilesmap/IceDungeonTiles.png");
 
 	this->tileMap->Load("TileMap");
@@ -292,9 +292,11 @@ void GameState::Render(RenderTarget* _target)
 
 	this->renderTexture.clear();
 	this->renderTexture.setView(this->view);
-	this->tileMap->Render(this->renderTexture, this->player);
+	this->tileMap->Render(this->renderTexture, this->player->GetGridPosition(static_cast<int>(this->stateData->gridSize)));
 
 	this->player->Render(this->renderTexture);
+
+	this->tileMap->RenderDeferred(this->renderTexture);
 
 	if (this->pause)
 	{

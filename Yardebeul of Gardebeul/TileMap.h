@@ -11,6 +11,7 @@ protected:
 	Vector2f maxSizeWorldF;
 	unsigned layers;
 	vector<vector<vector<vector<Tile*>>>> map;
+	stack<Tile*> deferredRenderStack;
 	Texture tileSheet;
 	string textureFile;
 
@@ -32,7 +33,8 @@ public:
 	~TileMap();
 
 	void Update();
-	void Render(RenderTarget& _target, Entity* _entity = nullptr);
+	void Render(RenderTarget& _target, const Vector2i& _gridPosition);
+	void RenderDeferred(RenderTarget& _target);
 
 	void AddTile(unsigned _x, unsigned _y, unsigned _z, IntRect& _texture_rect, const bool& _collision, const short& _type);
 	void RemoveTile(unsigned _x, unsigned _y, unsigned _z);
@@ -42,5 +44,6 @@ public:
 	void UpdateCollision(Entity* _entity, float _dt);
 
 	inline Texture* GetTileSheet() { return &this->tileSheet; }
+	int GetLayerSize(int _x, int _y, int _layer);
 };
 

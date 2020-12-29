@@ -11,6 +11,7 @@ class EditorState :
 protected:
     View view;
     float cameraSpeed;
+    int layer;
 
     Texture backgroundTexture;
     RectangleShape background;
