@@ -157,6 +157,7 @@
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="ArmorContainer.cpp" />
+    <ClCompile Include="AttributeComponent.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="cEvent.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="Armor.h" />
     <ClInclude Include="ArmorContainer.h" />
+    <ClInclude Include="AttributeComponent.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="cEvent.h" />
     <ClInclude Include="Character.h" />

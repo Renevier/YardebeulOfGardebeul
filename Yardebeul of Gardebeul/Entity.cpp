@@ -22,6 +22,11 @@ void Entity::CreateAnimationComponent(Texture& _texture_sheet)
 	this->animationComponent = new AnimationComponent(this->sprite, _texture_sheet);
 }
 
+void Entity::CreateAttributeComponent(unsigned _level)
+{
+	this->attributeComponent = new AttributeComponent(_level);
+}
+
 void Entity::VariableInit()
 {	
 	this->hitBoxComponent = nullptr;
@@ -96,6 +101,7 @@ Entity::~Entity()
 	delete this->hitBoxComponent;
 	delete this->movementComponent;
 	delete this->animationComponent;
+	delete this->attributeComponent;
 }
 
 Vector2f Entity::GetPos()

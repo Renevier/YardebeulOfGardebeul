@@ -138,6 +138,9 @@
     <Filter Include="Classes\States\Menu\PauseMenuState">
       <UniqueIdentifier>{2385a19f-8261-406c-8bbf-ea54cb03cc94}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Component\AttributeComponent">
+      <UniqueIdentifier>{14d85904-d7ab-4bd8-92de-1579e1edefc9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -263,6 +266,9 @@
     <ClCompile Include="TileMap.cpp">
       <Filter>Classes\TileMap</Filter>
     </ClCompile>
+    <ClCompile Include="AttributeComponent.cpp">
+      <Filter>Classes\Component\AttributeComponent</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -387,6 +393,9 @@
     </ClInclude>
     <ClInclude Include="TileMap.h">
       <Filter>Classes\TileMap</Filter>
+    </ClInclude>
+    <ClInclude Include="AttributeComponent.h">
+      <Filter>Classes\Component\AttributeComponent</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,7 @@
 #include "MovementComponent.h"
 #include "HitBoxComponent.h"
 #include "AnimationComponent.h"
+#include "AttributeComponent.h"
 
 class Entity
 {
@@ -11,6 +12,7 @@ protected:
 	HitBoxComponent* hitBoxComponent;
 	MovementComponent* movementComponent;
 	AnimationComponent* animationComponent;
+	AttributeComponent* attributeComponent;
 
 	Vector2f position;
 
@@ -20,6 +22,7 @@ protected:
 	void CreateHitBoxComponent(Sprite& _sprite, float _offset_x, float _offset_y, float _width, float _height);
 	void CreateMovementComponent(const float _maxVelocity, float _acceleration, float _deceleretion);
 	void CreateAnimationComponent(Texture& _texture_sheet);
+	void CreateAttributeComponent(unsigned _level);
 
 public:
 	Entity();

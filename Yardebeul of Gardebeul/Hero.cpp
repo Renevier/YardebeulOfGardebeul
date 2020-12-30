@@ -24,6 +24,7 @@ void Hero::InitComponent(float _x, float _y, Texture& _texture_sheet)
 	this->CreateMovementComponent(300.f, 1500.f, 500.f);
 	this->CreateAnimationComponent(_texture_sheet);
 	this->CreateHitBoxComponent(this->sprite, -5.f, 0.f, 35.f, 35.f);
+	this->CreateAttributeComponent(1);
 
 	this->animationComponent->AddAnimation("IDLE_FRONT", 150.f, 0, 0, 3, 0, 23, 33);
 	this->animationComponent->AddAnimation("WALK_DOWN",  100.f, 0, 1, 4, 1, 23, 33);
@@ -107,6 +108,12 @@ float Hero::TotalExpNeed()
 
 void Hero::Update(const float& _dt)
 {
+	if(Keyboard::isKeyPressed(Keyboard::E))
+		this->attributeComponent->GainExp(20);
+
+	system("CLS");
+	cout << this->attributeComponent->Debug();
+
 	this->movementComponent->Update(_dt);
 
 	if(this->movementComponent->isIdle())
