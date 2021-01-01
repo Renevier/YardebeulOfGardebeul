@@ -2,6 +2,7 @@
 #include "State.h"
 #include "PauseMenu.h"
 #include "TileMap.h"
+#include "PlayerGUI.h"
 
 class GameState: public State
 {
@@ -13,6 +14,7 @@ protected:
     PauseMenu* pauseMenu;
 
     Hero* player;
+    PlayerGUI* playerGUI;
 
     TileMap* tileMap;
     Clock clock;
@@ -28,6 +30,7 @@ private:
     void InitPauseMenu();
     void InitButton();
     void InitPlayer(string _sLoad);
+    void InitPlayerGUI();
     void InitTileMap();
 
 public:
@@ -38,6 +41,7 @@ public:
     void LoadPos(string readFile);
     void Save(string writeFile);
     void UpdateView(const float& _dt);
+    void UpdatePlayerGUI(float& _dt);
     virtual void UpdatePlayerInput(const float& _dt);
     void UpdateState();
     void UpdatePauseMenuButtons();

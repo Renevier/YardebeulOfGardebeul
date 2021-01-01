@@ -183,6 +183,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
+    <ClCompile Include="PlayerGUI.cpp" />
     <ClCompile Include="Room.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -226,6 +227,7 @@
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="NpcContainer.h" />
     <ClInclude Include="PauseMenu.h" />
+    <ClInclude Include="PlayerGUI.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />

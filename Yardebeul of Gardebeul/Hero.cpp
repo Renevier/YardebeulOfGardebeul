@@ -111,8 +111,8 @@ void Hero::Update(const float& _dt)
 	if(Keyboard::isKeyPressed(Keyboard::E))
 		this->attributeComponent->GainExp(20);
 
-	system("CLS");
-	cout << this->attributeComponent->Debug();
+	/*system("CLS");
+	cout << this->attributeComponent->Debug();*/
 
 	this->movementComponent->Update(_dt);
 

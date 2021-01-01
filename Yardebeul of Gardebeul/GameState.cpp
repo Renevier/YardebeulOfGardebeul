@@ -69,6 +69,11 @@ void GameState::InitPlayer(string _sLoad)
 	}
 }
 
+void GameState::InitPlayerGUI()
+{
+	this->playerGUI = new PlayerGUI(this->player);
+}
+
 void GameState::InitTileMap()
 {
 	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100,
@@ -87,6 +92,7 @@ GameState::GameState(StateData* _state_data, string _sLoad)
 	this->InitTexture();
 	this->InitPauseMenu();
 	this->InitPlayer(_sLoad);
+	this->InitPlayerGUI();
 	this->InitTileMap();
 }
 
@@ -173,6 +179,11 @@ void GameState::UpdateView(const float& _dt)
 	this->view.setCenter(Vector2f(this->player->GetPos().x, this->player->GetPos().y));
 }
 
+void GameState::UpdatePlayerGUI(float& _dt)
+{
+	this->playerGUI->Update(_dt);
+}
+
 void GameState::UpdatePlayerInput(const float& _dt)
 {
 	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_TOP"))))
@@ -198,6 +209,7 @@ void GameState::Update(const float& _dt)
 		this->UpdatePlayerInput(_dt);
 		this->UpdateTileMap(_dt);
 		this->player->Update(_dt);
+		this->playerGUI->Update(_dt);
 
 		this->ingameTime += clock.restart().asSeconds();
 	}
@@ -283,6 +295,7 @@ GameState::~GameState()
 	delete this->pauseMenu;
 	delete this->player;
 	delete this->tileMap;
+	delete this->playerGUI;
 }
 
 void GameState::Render(RenderTarget* _target)
@@ -297,6 +310,9 @@ void GameState::Render(RenderTarget* _target)
 	this->player->Render(this->renderTexture);
 
 	this->tileMap->RenderDeferred(this->renderTexture);
+
+	this->renderTexture.setView(this->renderTexture.getDefaultView());
+	this->playerGUI->Render(*_target);
 
 	if (this->pause)
 	{

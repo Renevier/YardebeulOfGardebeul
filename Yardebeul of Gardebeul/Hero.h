@@ -31,6 +31,7 @@ public:
 	inline float GetExpNeed() { return this->expNeed; };
 	inline float GetTotalExp() { return this->totalExp; };
 	inline int GetCaracPoint() { return this->caracPoint; };
+	inline AttributeComponent* GetAttributeComponent() { return this->attributeComponent; }
 
 	//Setter
 	inline void SetCurrentExp(float currentExp) { this->currentExp = currentExp; };

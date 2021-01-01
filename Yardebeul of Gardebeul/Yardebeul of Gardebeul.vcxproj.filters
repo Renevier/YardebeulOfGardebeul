@@ -269,6 +269,9 @@
     <ClCompile Include="AttributeComponent.cpp">
       <Filter>Classes\Component\AttributeComponent</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerGUI.cpp">
+      <Filter>Classes\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="State.h">
@@ -396,6 +399,9 @@
     </ClInclude>
     <ClInclude Include="AttributeComponent.h">
       <Filter>Classes\Component\AttributeComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerGUI.h">
+      <Filter>Classes\GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
