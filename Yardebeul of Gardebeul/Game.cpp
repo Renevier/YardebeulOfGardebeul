@@ -11,7 +11,6 @@ void Game::InitVariables()
 void Game::InitStateData()
 {
 	this->stateData.window = this->window;
-	this->stateData.supportedKeys = &this->supportedKeys;
 	this->stateData.states = &this->states;
 	this->stateData.gridSize = this->gridSize;
 

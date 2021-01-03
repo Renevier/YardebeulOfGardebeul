@@ -12,7 +12,6 @@ State::State(StateData* _state_data)
 {
 	this->stateData = _state_data;
 	this->window = _state_data->window;
-	this->supportedKeys = _state_data->supportedKeys;
 	this->states = _state_data->states;
 	this->gridSize = _state_data->gridSize;
 

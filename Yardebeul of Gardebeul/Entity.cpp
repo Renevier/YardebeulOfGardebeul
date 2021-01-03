@@ -1,6 +1,13 @@
 #include "pch.h"
 #include "Entity.h"
 
+void Entity::VariableInit()
+{
+	this->hitBoxComponent = nullptr;
+	this->movementComponent = nullptr;
+	this->animationComponent = nullptr;
+}
+
 void Entity::SetTexture(Texture& _texture)
 {
 	this->sprite.setTexture(_texture);
@@ -27,16 +34,8 @@ void Entity::CreateAttributeComponent(unsigned _level)
 	this->attributeComponent = new AttributeComponent(_level);
 }
 
-void Entity::VariableInit()
-{	
-	this->hitBoxComponent = nullptr;
-	this->movementComponent = nullptr;
-	this->animationComponent = nullptr;
-}
-
 Entity::Entity()
 {
-	this->VariableInit();
 }
 
 void Entity::SetPosition(const float _x, const float _y)

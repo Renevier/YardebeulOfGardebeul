@@ -24,7 +24,6 @@ protected:
 private:
     void InitDifferedRender();
     void InitView();
-    virtual void InitKeybinds();
     void InitFont();
     void InitTexture();
     void InitPauseMenu();

@@ -3,9 +3,7 @@
 
 AnimationComponent::AnimationComponent(Sprite& _sprite, Texture& _texture_sheet)
 	:sprite(_sprite), textureSheet(_texture_sheet)
-{
-	
-}
+{}
 
 AnimationComponent::~AnimationComponent()
 {

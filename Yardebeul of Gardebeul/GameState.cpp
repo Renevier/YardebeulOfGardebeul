@@ -15,15 +15,6 @@ void GameState::InitView()
 	this->view.setCenter(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
 }
 
-void GameState::InitKeybinds()
-{
-	this->keybinds.emplace("ESCAPE", this->supportedKeys->at("Escape"));
-	this->keybinds.emplace("MOVE_TOP", this->supportedKeys->at("Up"));
-	this->keybinds.emplace("MOVE_LEFT", this->supportedKeys->at("Left"));
-	this->keybinds.emplace("MOVE_RIGHT", this->supportedKeys->at("Right"));
-	this->keybinds.emplace("MOVE_DOWN", this->supportedKeys->at("Down"));
-}
-
 void GameState::InitFont()
 {
 	if (!this->font.loadFromFile("../Ressources/Fonts/rpgFont.ttf"))
@@ -87,7 +78,6 @@ GameState::GameState(StateData* _state_data, string _sLoad)
 {
 	this->InitDifferedRender();
 	this->InitView();
-	this->InitKeybinds();
 	this->InitFont();
 	this->InitTexture();
 	this->InitPauseMenu();
@@ -186,13 +176,13 @@ void GameState::UpdatePlayerGUI(float& _dt)
 
 void GameState::UpdatePlayerInput(const float& _dt)
 {
-	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_TOP"))))
+	if (Keyboard::isKeyPressed(Keyboard::Up))
 		this->player->Move(0.f, -1.f, _dt);
-	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_DOWN"))))
+	if (Keyboard::isKeyPressed(Keyboard::Down))
 		this->player->Move(0.f, 1.f, _dt);
-	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_LEFT"))))
+	if (Keyboard::isKeyPressed(Keyboard::Left))
 		this->player->Move(-1.f, 0.f, _dt);
-	if (Keyboard::isKeyPressed(Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
+	if (Keyboard::isKeyPressed(Keyboard::Right))
 		this->player->Move(1.f, 0.f, _dt);
 
 }

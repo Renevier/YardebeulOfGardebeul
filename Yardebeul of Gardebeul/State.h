@@ -9,7 +9,6 @@ class StateData
 public:
 	float gridSize;
 	RenderWindow* window;
-	map<string, int>* supportedKeys;
 	stack<State*>* states;
 
 public:
@@ -27,8 +26,6 @@ protected:
 	float gridSize;
 	stack<State*>* states;
 	RenderWindow* window;
-	map<string, int>* supportedKeys;
-	map<string, int> keybinds;
 
 	bool wantSave;
 	bool quit;
@@ -49,7 +46,6 @@ protected:
 
 	//Functions
 private:
-	virtual void InitKeybinds() = 0;
 	virtual void InitView();
 
 public:
