@@ -12,7 +12,7 @@ public:
 	stack<State*>* states;
 
 public:
-	StateData() {};
+	StateData()  {};
 	~StateData() {};
 };
 

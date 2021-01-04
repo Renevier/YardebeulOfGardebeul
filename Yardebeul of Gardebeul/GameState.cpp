@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "GameState.h"
 
+void GameState::InitEnemy()
+{
+}
 
 void GameState::InitDifferedRender()
 {
@@ -11,8 +14,15 @@ void GameState::InitDifferedRender()
 
 void GameState::InitView()
 {
-	this->view.setSize(Vector2f(this->window->getSize().x, this->window->getSize().y));
-	this->view.setCenter(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
+	this->view.setSize(Vector2f(
+		static_cast<float>(this->window->getSize().x),
+		static_cast<float>(this->window->getSize().y)
+	));
+
+	this->view.setCenter(
+		static_cast<float>(this->window->getSize().x / 2.f),
+		static_cast<float>(this->window->getSize().y / 2.f)
+	);
 }
 
 void GameState::InitFont()
@@ -23,7 +33,7 @@ void GameState::InitFont()
 
 void GameState::InitTexture()
 {
-	if (!this->textures["PLAYER_IDLE"].loadFromFile("../Ressources/Sprites/Player/blue_link.png"))
+	if (!this->textures["PLAYER"].loadFromFile("../Ressources/Sprites/Player/blue_link.png"))
 		throw "ERROR game state could not load idle texture";
 }
 
@@ -51,11 +61,10 @@ void GameState::InitButton()
 void GameState::InitPlayer(string _sLoad)
 {
 	if (_sLoad == "NEW_GAME")
-		this->player = new Hero(50, 50, this->textures["PLAYER_IDLE"]);
+		this->player = new Hero(50, 50, this->textures["PLAYER"]);
 	else
 	{
-		this->LoadPos(_sLoad);
-		this->player = new Hero(player->GetPos().x, player->GetPos().y, this->textures["PLAYER_IDLE"]);
+		this->player = new Hero(50, 50, this->textures["PLAYER"]);
 		this->LoadStat(_sLoad);
 	}
 }
@@ -115,7 +124,7 @@ void GameState::LoadStat(string _readFile)
 			if (line.find("TotalExp") != -1)
 				this->player->SetExpNeed(stof(line.substr(line.find(" ") + 1, line.size())));
 			if (line.find("NbCaracPoint") != -1)
-				this->player->SetCaracPoint(stof(line.substr(line.find(" ") + 1, line.size())));
+				this->player->SetCaracPoint(stoi(line.substr(line.find(" ") + 1, line.size())));
 		}
 	}
 }
@@ -313,4 +322,5 @@ void GameState::Render(RenderTarget* _target)
 	this->renderTexture.display();
 	this->renderSprite.setTexture(this->renderTexture.getTexture());
 	_target->draw(this->renderSprite);
+	
 }

@@ -3,8 +3,15 @@
 
 void EditorState::InitView()
 {
-	this->view.setSize(Vector2f(this->window->getSize().x, this->window->getSize().y));
-	this->view.setCenter(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
+	this->view.setSize(Vector2f(
+		static_cast<float>(this->window->getSize().x),
+		static_cast<float>(this->window->getSize().y)
+	));
+
+	this->view.setCenter(
+		static_cast<float>(this->window->getSize().x / 2.f),
+		static_cast<float>(this->window->getSize().y / 2.f)
+	);
 }
 
 void EditorState::InitKeybinds()
@@ -81,7 +88,7 @@ void EditorState::IniTileMap()
 }
 
 EditorState::EditorState(StateData* _state_data)
-	: State(_state_data), collision(false), type(TILE_TYPE::DEFAULT), cameraSpeed(1000.f), layer(0.f)
+	: State(_state_data), collision(false), type(TILE_TYPE::DEFAULT), cameraSpeed(1000.f), layer(0)
 {
 	this->InitBackground();
 	this->InitView();
@@ -188,9 +195,8 @@ void EditorState::UpdateGui(const float& _dt)
 	stringstream ss;
 	ss << "X: " << this->mousePosGrid.x << endl
 		<< "Y: " << this->mousePosGrid.y << endl
-		<< "Collision: " << this->collision << endl
-		<< "Type: " << this->type << endl
-		<< "Tiles: " << this->tileMap->GetLayerSize(this->mousePosGrid.x, this->mousePosGrid.x, this->layer) << endl;
+		<< "[C] Collision: " << this->collision << endl
+		<< "Type: " << this->type << endl;
 
 	this->cursorText.setString(ss.str());
 

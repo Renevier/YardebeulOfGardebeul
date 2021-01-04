@@ -3,8 +3,15 @@
 
 void State::InitView()
 {
-	this->view.setSize(this->window->getSize().x, this->window->getSize().y);
-	this->view.setCenter(this->window->getSize().x / 2.f, this->window->getSize().y / 2.f);
+	this->view.setSize(
+		static_cast<float>(this->window->getSize().x),
+		static_cast<float>(this->window->getSize().y)
+	);
+
+	this->view.setCenter(
+		static_cast<float>(this->window->getSize().x / 2.f),
+		static_cast<float>(this->window->getSize().y / 2.f)
+	);
 }
 
 State::State(StateData* _state_data)

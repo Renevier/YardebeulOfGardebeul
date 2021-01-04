@@ -12,18 +12,13 @@ class Hero :
 
 private:
 	virtual void InitVariable();
-	void InitComponent(float _x, float _y, Texture& _texture_sheet);
+	virtual void InitComponent(float _x, float _y, Texture& _texture_sheet);
 
 public:
 	Hero(float _x, float _y, Texture& _texture);
 	~Hero();
 
-	virtual void DisplayStats();
-	void LevelProgress();
-	void GainExp(float _exp);
-	void LvlUp(vector<int> _arrayOfExp);
 	void PickedUp();
-	float TotalExpNeed();
 	virtual void Update(const float& _dt);
 
 	//Getter

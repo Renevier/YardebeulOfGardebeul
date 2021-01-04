@@ -330,25 +330,25 @@ void TileMap::Render(RenderTarget& _target, const Vector2i& _gridPosition)
 {
 	this->currentLayer = 0;
 
-	this->fromX = _gridPosition.x - 20;
+	this->fromX = _gridPosition.x - 10000;
 	if (this->fromX < 0)
 		this->fromX = 0;
 	else if (this->fromX > this->maxSizeWorldGrid.x)
 		this->fromX = this->maxSizeWorldGrid.x;
 
-	this->toX = _gridPosition.x + 20;
+	this->toX = _gridPosition.x + 10000;
 	if (this->toX < 0)
 		this->toX = 0;
 	else if (this->toX > this->maxSizeWorldGrid.x)
 		this->toX = this->maxSizeWorldGrid.x;
 
-	this->fromY = _gridPosition.y - 20;
+	this->fromY = _gridPosition.y - 10000;
 	if (this->fromY < 0)
 		this->fromY = 0;
 	else if (this->fromY > this->maxSizeWorldGrid.x)
 		this->fromY = this->maxSizeWorldGrid.x;
 
-	this->toY = _gridPosition.y + 20;
+	this->toY = _gridPosition.y + 10000;
 	if (this->toY < 0)
 		this->toY = 0;
 	else if (this->toY > this->maxSizeWorldGrid.x)

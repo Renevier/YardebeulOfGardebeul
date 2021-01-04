@@ -38,11 +38,6 @@ void MainMenuState::InitButton()
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
 		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
 
-	this->buttons.emplace("SETTING", new gui::Button(100, 800, 250, 50,
-		&this->font, "Setting", 50,
-		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
-		Color(70, 70, 70, 0), Color(250, 250, 250, 0), Color(20, 20, 20, 0)));
-
 	this->buttons.emplace("EXIT", new gui::Button(100, 1000, 250, 50,
 		&this->font, "Quit", 50,
 		Color(70, 70, 70, 200), Color(250, 250, 250, 250), Color(20, 20, 20, 50),
@@ -99,7 +94,6 @@ void MainMenuState::UpdateButton()
 		this->buttons.at("NEW_GAME")->Update(this->mousePosWindow);
 		this->buttons.at("LOAD_GAME")->Update(this->mousePosWindow);
 		this->buttons.at("MAP_EDITOR")->Update(this->mousePosWindow);
-		this->buttons.at("SETTING")->Update(this->mousePosWindow);
 		this->buttons.at("EXIT")->Update(this->mousePosWindow);
 	}
 
@@ -113,9 +107,6 @@ void MainMenuState::UpdateButton()
 
 		if (this->buttons.at("MAP_EDITOR")->IsPressed())
 			this->states->push(new EditorState(this->stateData));
-
-		if (this->buttons.at("SETTING")->IsPressed())
-			this->states->push(new SettingState(this->stateData));
 
 		if (this->buttons.at("EXIT")->IsPressed())
 			this->EndState();

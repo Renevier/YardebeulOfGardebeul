@@ -7,6 +7,7 @@
 class GameState: public State
 {
 protected:
+    RectangleShape map;
     View view;
     RenderTexture renderTexture;
     Sprite renderSprite;
@@ -22,6 +23,7 @@ protected:
 
 
 private:
+    void InitEnemy();
     void InitDifferedRender();
     void InitView();
     void InitFont();

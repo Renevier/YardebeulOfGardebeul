@@ -17,10 +17,10 @@ protected:
 
 	//Function
 protected:
+	virtual void InitComponent(float _x, float _y, Texture& _texture_sheet);
 
 public:
 	Character();
-	virtual void DisplayStats() = 0;
 	~Character();
 
 	//getter

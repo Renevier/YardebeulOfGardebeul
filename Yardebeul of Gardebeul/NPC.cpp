@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "NPC.h"
 
-void NPC::InitVariable(string _name, float _level, Behaviour _behaviour, float _Hp, float _Mp, float _endure)
+void NPC::InitVariable(string _name, int _level, Behaviour _behaviour, float _Hp, float _Mp, float _endure)
 	
 {
 	this->name = _name;
@@ -14,7 +14,12 @@ void NPC::InitVariable(string _name, float _level, Behaviour _behaviour, float _
 	this->behaviour = _behaviour;
 }
 
-NPC::NPC(string _name, float _level, Behaviour _behaviour, float _Hp, float _Mp, float _endure)
+void NPC::InitComponent(float _x, float _y, Texture& _texture_sheet)
+{
+	Character::InitComponent(_x, _y, _texture_sheet);
+}
+
+NPC::NPC(string _name, int _level, Behaviour _behaviour, float _Hp, float _Mp, float _endure)
 {
 	InitVariable(_name, _level, _behaviour, _Hp, _Mp, _endure);
 	this->DisplayStats();

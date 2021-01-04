@@ -132,9 +132,6 @@
     <Filter Include="Classes\GUI">
       <UniqueIdentifier>{e5851098-e097-4c92-9949-91c952e78e1e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\States\SettingState">
-      <UniqueIdentifier>{9efb5c78-7103-48b6-a8a8-8b271e364143}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\States\Menu\PauseMenuState">
       <UniqueIdentifier>{2385a19f-8261-406c-8bbf-ea54cb03cc94}</UniqueIdentifier>
     </Filter>
@@ -253,9 +250,6 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SettingState.cpp">
-      <Filter>Classes\States\SettingState</Filter>
     </ClCompile>
     <ClCompile Include="PauseMenu.cpp">
       <Filter>Classes\States\Menu\PauseMenuState</Filter>
@@ -384,9 +378,6 @@
     </ClInclude>
     <ClInclude Include="EditorState.h">
       <Filter>Classes\States\EditorState</Filter>
-    </ClInclude>
-    <ClInclude Include="SettingState.h">
-      <Filter>Classes\States\SettingState</Filter>
     </ClInclude>
     <ClInclude Include="PauseMenu.h">
       <Filter>Classes\States\Menu\PauseMenuState</Filter>

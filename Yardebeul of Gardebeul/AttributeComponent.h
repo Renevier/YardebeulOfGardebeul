@@ -34,5 +34,9 @@ public:
 	void UpdateLevel();
 
 	void Update();
+
+	//Get
+
+	//Set
 };
 
